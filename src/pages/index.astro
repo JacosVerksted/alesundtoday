@@ -164,6 +164,8 @@ const dataIsStale = daysSinceUpdate > 14;
   <ShipDrawer />
 
   <script>
+    import { getCapacity } from '../lib/ships';
+
     // ── Translations ──────────────────────────────────────────────────────────
     type Lang = 'en' | 'nb' | 'nn' | 'de' | 'nl' | 'fr';
 
@@ -642,6 +644,93 @@ const dataIsStale = daysSinceUpdate > 14;
       installBar.hidden = true;
       deferredPrompt = null;
     });
+
+    // ── Live date refresh ─────────────────────────────────────────────────────
+    // The static build captures "today" at deploy time. On subsequent days the
+    // status card would show the wrong date until a rebuild. This fetches fresh
+    // data from schedule.json and patches the DOM if the date has changed.
+    (async () => {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const dateEl = document.querySelector<HTMLElement>('[data-i18n-date-long]');
+      if (!dateEl || dateEl.dataset.date === todayStr) return; // already correct
+
+      let calls: Array<{ date: string; ships: string[]; count: number; level: string }> = [];
+      try {
+        const res = await fetch('/schedule.json');
+        const data = await res.json();
+        calls = data.calls ?? [];
+      } catch { return; }
+
+      const call = calls.find(c => c.date === todayStr);
+      const ships   = call?.ships ?? [];
+      const count   = call?.count ?? 0;
+      const level   = (call?.level ?? 'quiet') as 'quiet' | 'moderate' | 'busy' | 'very-busy';
+
+      const levelCfg = {
+        quiet:       { bg: 'bg-emerald-50', ring: 'ring-emerald-200', dot: 'bg-emerald-500', text: 'text-emerald-700', key: 'level_quiet' },
+        moderate:    { bg: 'bg-yellow-50',  ring: 'ring-yellow-200',  dot: 'bg-yellow-400',  text: 'text-yellow-700',  key: 'level_moderate' },
+        busy:        { bg: 'bg-orange-50',  ring: 'ring-orange-200',  dot: 'bg-orange-500',  text: 'text-orange-700',  key: 'level_busy' },
+        'very-busy': { bg: 'bg-red-50',     ring: 'ring-red-200',     dot: 'bg-red-500',     text: 'text-red-700',     key: 'level_very_busy' },
+      } as const;
+      const cfg = levelCfg[level];
+
+      // Update date attribute (applyLang re-renders the formatted text)
+      dateEl.dataset.date = todayStr;
+
+      const section = document.querySelector<HTMLElement>('section.rounded-2xl');
+      if (section) {
+        // Background + ring
+        ['bg-emerald-50','bg-yellow-50','bg-orange-50','bg-red-50',
+         'ring-emerald-200','ring-yellow-200','ring-orange-200','ring-red-200']
+          .forEach(c => section.classList.remove(c));
+        section.classList.add(cfg.bg, cfg.ring);
+
+        // Coloured circle
+        const circle = section.querySelector<HTMLElement>('div.rounded-full.flex-shrink-0');
+        if (circle) {
+          ['bg-emerald-500','bg-yellow-400','bg-orange-500','bg-red-500']
+            .forEach(c => circle.classList.remove(c));
+          circle.classList.add(cfg.dot);
+        }
+
+        // Level heading
+        const heading = section.querySelector<HTMLElement>('h2[data-i18n]');
+        if (heading) {
+          heading.dataset.i18n = cfg.key;
+          ['text-emerald-700','text-yellow-700','text-orange-700','text-red-700']
+            .forEach(c => heading.classList.remove(c));
+          heading.classList.add(cfg.text);
+        }
+
+        // Ship count
+        const countEl = section.querySelector<HTMLElement>('[data-i18n-ships]');
+        if (countEl) countEl.dataset.count = String(count);
+
+        // Ship chips
+        section.querySelector('.flex.flex-wrap.gap-2')?.remove();
+        if (ships.length > 0) {
+          const div = document.createElement('div');
+          div.className = 'flex flex-wrap gap-2';
+          ships.forEach(ship => {
+            const cap = getCapacity(ship);
+            const btn = document.createElement('button');
+            btn.className = 'ship-chip inline-flex items-center gap-1.5 rounded-full bg-white/70 backdrop-blur px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-white transition min-h-[44px]';
+            btn.dataset.ship = ship;
+            btn.dataset.capacity = cap !== null ? String(cap) : '';
+            btn.setAttribute('aria-label', `View details for ${ship}`);
+            const capHtml = cap !== null
+              ? `<span class="text-gray-400 text-xs">· ${(cap / 1000).toFixed(1)}k pax</span>`
+              : '';
+            btn.innerHTML = `<span>🚢</span><span>${ship}</span>${capHtml}`;
+            div.appendChild(btn);
+          });
+          section.appendChild(div);
+        }
+      }
+
+      // Re-apply language so all translated strings update
+      applyLang((localStorage.getItem('lang') as Lang) ?? 'en');
+    })();
   </script>
 </body>
 </html>
