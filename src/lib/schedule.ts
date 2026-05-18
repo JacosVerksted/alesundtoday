@@ -21,7 +21,9 @@ const callMap = new Map<string, CruiseCall>(
 export const generatedAt: string = rawSchedule.generated;
 
 function todayISO(): string {
-  return new Date().toISOString().slice(0, 10);
+  // Use local date (not UTC) so Norwegian users see the correct day
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
 function makeQuiet(date: string, todayStr: string): DayInfo {

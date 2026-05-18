@@ -650,7 +650,8 @@ const dataIsStale = daysSinceUpdate > 14;
     // status card would show the wrong date until a rebuild. This fetches fresh
     // data from schedule.json and patches the DOM if the date has changed.
     (async () => {
-      const todayStr = new Date().toISOString().slice(0, 10);
+      const _d = new Date();
+      const todayStr = `${_d.getFullYear()}-${String(_d.getMonth() + 1).padStart(2, '0')}-${String(_d.getDate()).padStart(2, '0')}`;
       const dateEl = document.querySelector<HTMLElement>('[data-i18n-date-long]');
       if (!dateEl || dateEl.dataset.date === todayStr) return; // already correct
 
