@@ -31,9 +31,8 @@ const levelDot = {
       const bg = levelBg[day.level];
 
       return (
-        <a
-          href={`?date=${day.date}`}
-          class={`flex flex-col items-center rounded-xl border p-3 min-w-[64px] text-center transition hover:scale-105 ${bg} ${isToday ? 'ring-2 ring-gray-800 ring-offset-1' : ''} ${day.isPast ? 'opacity-50' : ''}`}
+        <div
+          class={`flex flex-col items-center rounded-xl border p-3 min-w-[64px] text-center ${bg} ${day.isPast ? 'opacity-50' : ''}`}
           aria-label={`${day.date}: ${day.level}`}
         >
           <span class="text-xs font-medium text-gray-500 uppercase tracking-wide" data-i18n-weekday data-date={day.date}>{dayName}</span>
@@ -44,7 +43,7 @@ const levelDot = {
               <span class="text-[10px] text-gray-500" data-i18n-skipcount data-count={day.count}>{day.count} ships</span>
             )}
           </div>
-        </a>
+        </div>
       );
     })}
   </div>
