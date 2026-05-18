@@ -17,10 +17,10 @@ const firstDay = new Date(Date.UTC(year, month - 1, 1));
 const startPad = (firstDay.getUTCDay() + 6) % 7;
 
 const levelBg: Record<string, string> = {
-  quiet:     'bg-emerald-100 text-emerald-800 hover:bg-emerald-200',
-  moderate:  'bg-yellow-100 text-yellow-800 hover:bg-yellow-200',
-  busy:      'bg-orange-100 text-orange-800 hover:bg-orange-200',
-  'very-busy': 'bg-red-100 text-red-800 hover:bg-red-200',
+  quiet:     'bg-emerald-100 text-emerald-800',
+  moderate:  'bg-yellow-100 text-yellow-800',
+  busy:      'bg-orange-100 text-orange-800',
+  'very-busy': 'bg-red-100 text-red-800',
 };
 
 // English weekday abbreviations — client-side i18n will replace these
@@ -50,16 +50,16 @@ const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
       const isToday = day.isToday;
 
       return (
-        <a
-          href={`?date=${day.date}`}
-          class={`rounded-lg py-1.5 text-sm font-medium transition ${bg} ${isToday ? 'ring-2 ring-gray-800 ring-offset-1' : ''} ${day.isPast ? 'opacity-40' : ''}`}
+        <div
+          data-cal-date={day.date}
+          class={`rounded-lg py-1.5 text-sm font-medium ${bg} ${isToday ? 'ring-2 ring-gray-800 ring-offset-1' : ''} ${day.isPast ? 'opacity-40' : ''}`}
           aria-label={`${day.date}: ${day.level}`}
         >
           {dayNum}
           {day.count > 0 && (
             <div class="text-[8px] leading-none opacity-70 -mt-0.5">{day.count}🚢</div>
           )}
-        </a>
+        </div>
       );
     })}
   </div>

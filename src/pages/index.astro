@@ -729,6 +729,54 @@ const dataIsStale = daysSinceUpdate > 14;
         }
       }
 
+      // Rebuild WeekView strip for the correct 14-day window
+      const weekContainer = document.querySelector<HTMLElement>('.flex.gap-2.pb-2.min-w-max');
+      if (weekContainer) {
+        const wkBg: Record<string, string> = {
+          quiet:      'bg-emerald-100 border-emerald-200',
+          moderate:   'bg-yellow-100 border-yellow-200',
+          busy:       'bg-orange-100 border-orange-200',
+          'very-busy':'bg-red-100 border-red-200',
+        };
+        const wkDot: Record<string, string> = {
+          quiet:      'bg-emerald-500',
+          moderate:   'bg-yellow-400',
+          busy:       'bg-orange-500',
+          'very-busy':'bg-red-500',
+        };
+        weekContainer.innerHTML = '';
+        for (let i = 0; i < 14; i++) {
+          const dd = new Date(_d);
+          dd.setDate(_d.getDate() + i);
+          const iso = `${dd.getFullYear()}-${String(dd.getMonth()+1).padStart(2,'0')}-${String(dd.getDate()).padStart(2,'0')}`;
+          const dc = calls.find(c => c.date === iso);
+          const dc_count = dc?.count ?? 0;
+          const dc_level = dc?.level ?? 'quiet';
+          const bg = wkBg[dc_level] ?? wkBg.quiet;
+          const dot = wkDot[dc_level] ?? wkDot.quiet;
+          const dayNum = dd.getDate();
+          const div = document.createElement('div');
+          div.className = `flex flex-col items-center rounded-xl border p-3 min-w-[64px] text-center ${bg}`;
+          div.innerHTML = `
+            <span class="text-xs font-medium text-gray-500 uppercase tracking-wide" data-i18n-weekday data-date="${iso}"></span>
+            <span class="text-lg font-bold mt-0.5 ${i === 0 ? 'text-gray-900' : 'text-gray-700'}">${dayNum}</span>
+            <div class="flex flex-col items-center gap-1 mt-2">
+              <div class="w-2.5 h-2.5 rounded-full ${dot}"></div>
+              ${dc_count > 0 ? `<span class="text-[10px] text-gray-500" data-i18n-skipcount data-count="${dc_count}"></span>` : ''}
+            </div>`;
+          weekContainer.appendChild(div);
+        }
+      }
+
+      // Update Calendar: move isPast shading and today ring to correct dates
+      document.querySelectorAll<HTMLElement>('[data-cal-date]').forEach(el => {
+        const d = el.dataset.calDate!;
+        el.classList.toggle('opacity-40', d < todayStr);
+        el.classList.toggle('ring-2',        d === todayStr);
+        el.classList.toggle('ring-gray-800', d === todayStr);
+        el.classList.toggle('ring-offset-1', d === todayStr);
+      });
+
       // Re-apply language so all translated strings update
       applyLang((localStorage.getItem('lang') as Lang) ?? 'en');
     })();

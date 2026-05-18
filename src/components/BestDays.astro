@@ -25,10 +25,7 @@ const { days } = Astro.props;
       const badgeText = day.level === 'quiet' ? 'Quiet' : day.level === 'moderate' ? 'Moderate' : 'Busy';
 
       return (
-        <a
-          href={`?date=${day.date}`}
-          class={`flex items-center justify-between rounded-xl border p-3.5 ${levelBg} hover:scale-[1.01] transition`}
-        >
+        <div class={`flex items-center justify-between rounded-xl border p-3.5 ${levelBg}`}>
           <div>
             <p class="font-semibold text-gray-800" data-i18n-date-short data-date={day.date}>{label}</p>
             <p class="text-sm text-gray-500" data-i18n-reason data-count={day.count} data-visitors={day.estimatedVisitors}>{day.reason}</p>
@@ -36,7 +33,7 @@ const { days } = Astro.props;
           <span class={`text-xs font-semibold px-2 py-1 rounded-full ${badge}`} data-i18n-badge data-level={day.level}>
             {badgeText}
           </span>
-        </a>
+        </div>
       );
     })}
   </div>
