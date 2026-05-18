@@ -1,0 +1,96 @@
+---
+// Language switcher: English, Norwegian Bokmål, Norwegian Nynorsk, German, Dutch, French
+---
+
+<div class="relative" id="lang-switcher">
+  <button
+    id="lang-btn"
+    class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-800 px-2 py-1 rounded-lg hover:bg-gray-100 transition"
+    aria-label="Change language"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <span id="lang-flag">🇬🇧</span>
+    <span id="lang-code" class="text-xs font-semibold">EN</span>
+    <span class="text-[10px] text-gray-400">▾</span>
+  </button>
+
+  <div
+    id="lang-menu"
+    class="hidden absolute right-0 top-9 bg-white rounded-xl shadow-lg border border-gray-100 p-1 z-50 min-w-[140px]"
+    role="menu"
+  >
+    <button data-lang="en" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
+      🇬🇧 <span>English</span>
+    </button>
+    <button data-lang="nb" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
+      🇳🇴 <span>Bokmål</span>
+    </button>
+    <button data-lang="nn" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
+      🇳🇴 <span>Nynorsk</span>
+    </button>
+    <button data-lang="de" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
+      🇩🇪 <span>Deutsch</span>
+    </button>
+    <button data-lang="nl" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
+      🇳🇱 <span>Nederlands</span>
+    </button>
+    <button data-lang="fr" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
+      🇫🇷 <span>Français</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('lang-btn')!;
+  const menu = document.getElementById('lang-menu')!;
+  const flagEl = document.getElementById('lang-flag')!;
+  const codeEl = document.getElementById('lang-code')!;
+
+  const META: Record<string, { flag: string; code: string }> = {
+    en: { flag: '🇬🇧', code: 'EN' },
+    nb: { flag: '🇳🇴', code: 'NB' },
+    nn: { flag: '🇳🇴', code: 'NN' },
+    de: { flag: '🇩🇪', code: 'DE' },
+    nl: { flag: '🇳🇱', code: 'NL' },
+    fr: { flag: '🇫🇷', code: 'FR' },
+  };
+
+  function updateBtn(lang: string) {
+    const m = META[lang] ?? META.en;
+    flagEl.textContent = m.flag;
+    codeEl.textContent = m.code;
+  }
+
+  // Reflect current stored language
+  updateBtn(localStorage.getItem('lang') ?? 'en');
+
+  btn.addEventListener('click', () => {
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    btn.setAttribute('aria-expanded', String(!open));
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('#lang-switcher')) {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.querySelectorAll<HTMLElement>('.lang-option').forEach((opt) => {
+    opt.addEventListener('click', () => {
+      const lang = opt.dataset.lang!;
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      updateBtn(lang);
+      window.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
+    });
+  });
+
+  // Keep button in sync if applyLang is called from elsewhere
+  window.addEventListener('langchange', (e) => {
+    updateBtn((e as CustomEvent<{ lang: string }>).detail.lang);
+  });
+</script>

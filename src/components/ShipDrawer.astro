@@ -1,0 +1,117 @@
+---
+// Bottom-sheet drawer for ship details. Toggled by ship chips via inline JS.
+---
+
+<div
+  id="ship-drawer"
+  class="fixed inset-x-0 bottom-0 z-50 translate-y-full transition-transform duration-300 ease-out"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="drawer-ship-name"
+  hidden
+>
+  <div class="bg-white rounded-t-2xl shadow-2xl p-6 pb-safe max-w-lg mx-auto">
+    <div class="flex items-center justify-between mb-4">
+      <h2 id="drawer-ship-name" class="text-xl font-bold text-gray-900">Ship</h2>
+      <button
+        id="drawer-close"
+        class="rounded-full w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition"
+        aria-label="Close"
+      >✕</button>
+    </div>
+    <div class="space-y-3">
+      <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
+        <span class="text-2xl">🚢</span>
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-wide font-medium" data-i18n="drawer_capacity_label">PASSENGER CAPACITY</p>
+          <p id="drawer-capacity" class="text-lg font-semibold text-gray-800">—</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
+        <span class="text-2xl">👥</span>
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-wide font-medium" data-i18n="drawer_visitors_label">ESTIMATED VISITORS ADDED</p>
+          <p id="drawer-visitors" class="text-lg font-semibold text-gray-800">—</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 text-center pt-1" data-i18n="drawer_footnote">
+        Ålesund population: ~50,000 — cruise ships can more than double foot traffic.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Backdrop -->
+<div
+  id="drawer-backdrop"
+  class="fixed inset-0 z-40 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-300"
+></div>
+
+<script>
+  const drawer = document.getElementById('ship-drawer')!;
+  const backdrop = document.getElementById('drawer-backdrop')!;
+  const nameEl = document.getElementById('drawer-ship-name')!;
+  const capacityEl = document.getElementById('drawer-capacity')!;
+  const visitorsEl = document.getElementById('drawer-visitors')!;
+  const closeBtn = document.getElementById('drawer-close')!;
+
+  function getLangStrings() {
+    const lang = localStorage.getItem('lang') ?? 'en';
+    const localeMap: Record<string, string> = {
+      en: 'en-GB', nb: 'nb-NO', nn: 'nb-NO', de: 'de-DE', nl: 'nl-NL', fr: 'fr-FR',
+    };
+    const passengersMap: Record<string, string> = {
+      en: 'passengers', nb: 'passasjerer', nn: 'passasjerar',
+      de: 'Passagiere', nl: 'passagiers', fr: 'passagers',
+    };
+    const visitorsMap: Record<string, string> = {
+      en: 'visitors', nb: 'besøkende', nn: 'vitjande',
+      de: 'Besucher', nl: 'bezoekers', fr: 'visiteurs',
+    };
+    const unknownMap: Record<string, string> = {
+      en: 'Capacity unknown', nb: 'Ukjent kapasitet', nn: 'Ukjend kapasitet',
+      de: 'Kapazität unbekannt', nl: 'Capaciteit onbekend', fr: 'Capacité inconnue',
+    };
+    return {
+      locale:     localeMap[lang]    ?? 'en-GB',
+      passengers: passengersMap[lang] ?? 'passengers',
+      visitors:   visitorsMap[lang]   ?? 'visitors',
+      unknown:    unknownMap[lang]    ?? 'Capacity unknown',
+    };
+  }
+
+  function openDrawer(ship: string, capacity: string) {
+    const { locale, passengers, visitors, unknown } = getLangStrings();
+    nameEl.textContent = ship;
+    const capNum = capacity ? parseInt(capacity, 10) : null;
+    if (capNum) {
+      capacityEl.textContent = capNum.toLocaleString(locale) + ' ' + passengers;
+      visitorsEl.textContent = '~' + (Math.round(capNum * 0.85 / 100) * 100).toLocaleString(locale) + ' ' + visitors;
+    } else {
+      capacityEl.textContent = unknown;
+      visitorsEl.textContent = '~2 100 ' + visitors + ' (est.)';
+    }
+    drawer.hidden = false;
+    requestAnimationFrame(() => {
+      drawer.classList.remove('translate-y-full');
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.add('translate-y-full');
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
+    setTimeout(() => { drawer.hidden = true; }, 300);
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', (e) => {
+    const chip = (e.target as Element).closest('.ship-chip') as HTMLElement | null;
+    if (chip) openDrawer(chip.dataset.ship!, chip.dataset.capacity || '');
+  });
+
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+</script>

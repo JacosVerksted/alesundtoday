@@ -1,0 +1,45 @@
+---
+import type { BestDay } from '../lib/bestDays';
+
+interface Props {
+  days: BestDay[];
+}
+const { days } = Astro.props;
+---
+
+{days.length > 0 ? (
+  <div class="space-y-2">
+    {days.map(day => {
+      const d = new Date(day.date + 'T12:00:00Z');
+      const label = d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+      const levelBg = day.level === 'quiet'
+        ? 'bg-emerald-50 border-emerald-200'
+        : day.level === 'moderate'
+        ? 'bg-yellow-50 border-yellow-200'
+        : 'bg-orange-50 border-orange-200';
+      const badge = day.level === 'quiet'
+        ? 'bg-emerald-100 text-emerald-700'
+        : day.level === 'moderate'
+        ? 'bg-yellow-100 text-yellow-700'
+        : 'bg-orange-100 text-orange-700';
+      const badgeText = day.level === 'quiet' ? 'Quiet' : day.level === 'moderate' ? 'Moderate' : 'Busy';
+
+      return (
+        <a
+          href={`?date=${day.date}`}
+          class={`flex items-center justify-between rounded-xl border p-3.5 ${levelBg} hover:scale-[1.01] transition`}
+        >
+          <div>
+            <p class="font-semibold text-gray-800" data-i18n-date-short data-date={day.date}>{label}</p>
+            <p class="text-sm text-gray-500" data-i18n-reason data-count={day.count} data-visitors={day.estimatedVisitors}>{day.reason}</p>
+          </div>
+          <span class={`text-xs font-semibold px-2 py-1 rounded-full ${badge}`} data-i18n-badge data-level={day.level}>
+            {badgeText}
+          </span>
+        </a>
+      );
+    })}
+  </div>
+) : (
+  <p class="text-gray-400 text-sm" data-i18n="no_quiet_days">No quiet days found in the next 90 days.</p>
+)}

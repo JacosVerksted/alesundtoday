@@ -1,0 +1,66 @@
+---
+import type { DayInfo } from '../lib/schedule';
+
+interface Props {
+  days: DayInfo[];
+  year: number;
+  month: number;
+}
+const { days, year, month } = Astro.props;
+
+const monthLabel = new Date(Date.UTC(year, month - 1, 1)).toLocaleDateString('en-GB', {
+  month: 'long', year: 'numeric',
+});
+
+const firstDay = new Date(Date.UTC(year, month - 1, 1));
+// Monday-first: 0=Mon .. 6=Sun
+const startPad = (firstDay.getUTCDay() + 6) % 7;
+
+const levelBg: Record<string, string> = {
+  quiet:     'bg-emerald-100 text-emerald-800 hover:bg-emerald-200',
+  moderate:  'bg-yellow-100 text-yellow-800 hover:bg-yellow-200',
+  busy:      'bg-orange-100 text-orange-800 hover:bg-orange-200',
+  'very-busy': 'bg-red-100 text-red-800 hover:bg-red-200',
+};
+
+// English weekday abbreviations — client-side i18n will replace these
+const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+---
+
+<div>
+  <h3
+    class="text-base font-semibold text-gray-800 mb-3"
+    data-i18n-month
+    data-year={year}
+    data-month={month}
+  >{monthLabel}</h3>
+
+  <div class="grid grid-cols-7 gap-1 text-center">
+    {weekdays.map((wd, i) => (
+      <div class="text-[11px] font-medium text-gray-400 pb-1" data-i18n-cal-weekday data-wd-index={i}>{wd}</div>
+    ))}
+
+    {Array.from({ length: startPad }, (_, i) => (
+      <div key={`pad-${i}`}></div>
+    ))}
+
+    {days.map(day => {
+      const dayNum = parseInt(day.date.slice(8), 10);
+      const bg = levelBg[day.level];
+      const isToday = day.isToday;
+
+      return (
+        <a
+          href={`?date=${day.date}`}
+          class={`rounded-lg py-1.5 text-sm font-medium transition ${bg} ${isToday ? 'ring-2 ring-gray-800 ring-offset-1' : ''} ${day.isPast ? 'opacity-40' : ''}`}
+          aria-label={`${day.date}: ${day.level}`}
+        >
+          {dayNum}
+          {day.count > 0 && (
+            <div class="text-[8px] leading-none opacity-70 -mt-0.5">{day.count}🚢</div>
+          )}
+        </a>
+      );
+    })}
+  </div>
+</div>

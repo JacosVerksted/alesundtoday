@@ -1,0 +1,647 @@
+---
+import StatusCard from '../components/StatusCard.astro';
+import WeekView from '../components/WeekView.astro';
+import Calendar from '../components/Calendar.astro';
+import BestDays from '../components/BestDays.astro';
+import ShipDrawer from '../components/ShipDrawer.astro';
+import WeatherStrip from '../components/WeatherStrip.astro';
+import LangSwitcher from '../components/LangSwitcher.astro';
+import { getToday, getRange, getMonth, generatedAt } from '../lib/schedule';
+import { getBestDays } from '../lib/bestDays';
+import '../styles/global.css';
+
+const today = getToday();
+const weekDays = getRange(today.date, 14);
+const now = new Date(today.date + 'T12:00:00Z');
+const thisMonth = getMonth(now.getUTCFullYear(), now.getUTCMonth() + 1);
+const nextMonthDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
+const nextMonth = getMonth(nextMonthDate.getUTCFullYear(), nextMonthDate.getUTCMonth() + 1);
+const bestDays = getBestDays(today.date, { count: 5 });
+
+const generatedDate = new Date(generatedAt);
+const daysSinceUpdate = Math.floor((Date.now() - generatedDate.getTime()) / 86400000);
+const dataIsStale = daysSinceUpdate > 14;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Is today a good day to visit Ålesund? Check cruise ship traffic before you go." />
+  <meta name="theme-color" content="#10b981" />
+  <title>Visit Ålesund — Is it busy today?</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen">
+  <div class="max-w-lg mx-auto px-4 py-6 pb-24 space-y-8">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between gap-2">
+      <div class="min-w-0">
+        <h1 class="text-xl font-bold text-gray-900">Visit Ålesund</h1>
+        <p class="text-sm text-gray-500" data-i18n="subtitle">Cruise traffic tracker</p>
+      </div>
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <LangSwitcher />
+        <a
+          href="https://alesund.havn.no/skipstrafikk/webkamera/alesund-havn-syd/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-blue-600 hover:underline flex items-center gap-1"
+          aria-label="Live harbor webcam"
+          data-i18n-webcam
+        >
+          📷 <span data-i18n="webcam">Webcam</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- PWA install bar (hidden until browser signals installability) -->
+    <div
+      id="pwa-install-bar"
+      hidden
+      class="flex items-center justify-between bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3"
+    >
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">📲</span>
+        <div>
+          <p class="text-sm font-semibold text-emerald-800" id="pwa-install-title">Install app</p>
+          <p class="text-xs text-emerald-600" id="pwa-install-hint">Works offline · No app store needed</p>
+        </div>
+      </div>
+      <button
+        id="pwa-install-btn"
+        class="bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-emerald-700 active:scale-95 transition flex-shrink-0"
+      >Install</button>
+    </div>
+
+    <!-- Today's Status -->
+    <section>
+      <StatusCard day={today} />
+    </section>
+
+    <!-- Share button -->
+    <div class="flex justify-end">
+      <button
+        id="share-btn"
+        class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-800 transition"
+      >
+        <span data-i18n="share">Share today's status</span>
+        <span>↗</span>
+      </button>
+    </div>
+
+    <!-- Weather -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3" data-i18n="section_weather">Weather forecast</h2>
+      <WeatherStrip />
+    </section>
+
+    <!-- 14-day strip -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3" data-i18n="section_14days">Next 14 days</h2>
+      <WeekView days={weekDays} />
+    </section>
+
+    <!-- Best days to visit -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3" data-i18n="section_bestdays">Best upcoming days</h2>
+      <BestDays days={bestDays} />
+    </section>
+
+    <!-- Calendar -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3" data-i18n="section_calendar">Calendar</h2>
+      <div class="bg-white rounded-2xl p-4 shadow-sm space-y-6">
+        <Calendar
+          days={thisMonth}
+          year={now.getUTCFullYear()}
+          month={now.getUTCMonth() + 1}
+        />
+        <div class="border-t border-gray-100 pt-4">
+          <Calendar
+            days={nextMonth}
+            year={nextMonthDate.getUTCFullYear()}
+            month={nextMonthDate.getUTCMonth() + 1}
+          />
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-gray-500">
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> <span data-i18n="legend_quiet">Quiet</span></span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block"></span> <span data-i18n="legend_moderate">Moderate (1 ship)</span></span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block"></span> <span data-i18n="legend_busy">Busy (2 ships)</span></span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span> <span data-i18n="legend_very_busy">Very busy (3+)</span></span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center space-y-1 pt-2">
+      <p
+        id="footer-updated"
+        data-days={daysSinceUpdate}
+        data-stale={dataIsStale}
+        class={`text-xs ${dataIsStale ? 'text-orange-500' : 'text-gray-400'}`}
+      >
+        {daysSinceUpdate === 0
+          ? `Schedule updated today${dataIsStale ? ' — may be outdated' : ''}`
+          : `Schedule updated ${daysSinceUpdate} day${daysSinceUpdate > 1 ? 's' : ''} ago${dataIsStale ? ' — may be outdated' : ''}`}
+      </p>
+      <p class="text-xs text-gray-400">
+        <span data-i18n="footer_data">Data:</span>
+        <a href="https://alesund.havn.no/skipstrafikk/mooringplan-cruise/" class="underline hover:text-gray-600 ml-1" target="_blank" rel="noopener">Ålesund Havn</a>
+      </p>
+      <p class="text-xs text-gray-400" data-i18n="footer_credit">Made in Norway 🇳🇴 by JacosVerksted</p>
+    </footer>
+
+  </div>
+
+  <!-- Ship info drawer -->
+  <ShipDrawer />
+
+  <script>
+    // ── Translations ──────────────────────────────────────────────────────────
+    type Lang = 'en' | 'nb' | 'nn' | 'de' | 'nl' | 'fr';
+
+    interface Strings {
+      subtitle: string;
+      webcam: string;
+      share: string;
+      link_copied: string;
+      section_weather: string;
+      section_14days: string;
+      section_bestdays: string;
+      section_calendar: string;
+      legend_quiet: string;
+      legend_moderate: string;
+      legend_busy: string;
+      legend_very_busy: string;
+      footer_updated_today: string;
+      footer_updated_ago: (n: number) => string;
+      footer_stale: string;
+      footer_data: string;
+      footer_credit: string;
+      level_quiet: string;
+      level_moderate: string;
+      level_busy: string;
+      level_very_busy: string;
+      ships_none: string;
+      ships_one: string;
+      ships_many: (n: number) => string;
+      best_quiet: string;
+      best_one: (v: number) => string;
+      best_many: (n: number, v: number) => string;
+      no_quiet_days: string;
+      badge_quiet: string;
+      badge_moderate: string;
+      badge_busy: string;
+      drawer_capacity_label: string;
+      drawer_visitors_label: string;
+      drawer_footnote: string;
+      weekdays: string[];
+      date_locale: string;
+      month_locale: string;
+    }
+
+    const T: Record<Lang, Strings> = {
+      en: {
+        subtitle: 'Cruise traffic tracker',
+        webcam: 'Webcam',
+        share: "Share today's status",
+        link_copied: 'Copied!',
+        section_weather: 'Weather forecast',
+        section_14days: 'Next 14 days',
+        section_bestdays: 'Best upcoming days',
+        section_calendar: 'Calendar',
+        legend_quiet: 'Quiet',
+        legend_moderate: 'Moderate (1 ship)',
+        legend_busy: 'Busy (2 ships)',
+        legend_very_busy: 'Very busy (3+)',
+        footer_updated_today: 'Schedule updated today',
+        footer_updated_ago: (n) => `Schedule updated ${n} day${n > 1 ? 's' : ''} ago`,
+        footer_stale: ' — may be outdated',
+        footer_data: 'Data:',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
+        level_quiet: 'Great time to visit',
+        level_moderate: 'Somewhat busy',
+        level_busy: 'Quite busy',
+        level_very_busy: 'Very crowded',
+        ships_none: 'No cruise ships in port',
+        ships_one: '1 cruise ship in port today',
+        ships_many: (n) => `${n} cruise ships in port today`,
+        best_quiet: 'No cruise ships',
+        best_one: (v) => `1 ship (~${v.toLocaleString('en-GB')} visitors)`,
+        best_many: (n, v) => `${n} ships (~${v.toLocaleString('en-GB')} visitors)`,
+        no_quiet_days: 'No quiet days found in the next 90 days.',
+        badge_quiet: 'Quiet',
+        badge_moderate: 'Moderate',
+        badge_busy: 'Busy',
+        drawer_capacity_label: 'PASSENGER CAPACITY',
+        drawer_visitors_label: 'ESTIMATED VISITORS ADDED',
+        drawer_footnote: 'Ålesund population: ~50,000 — cruise ships can more than double foot traffic.',
+        weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        date_locale: 'en-GB',
+        month_locale: 'en-GB',
+      },
+      nb: {
+        subtitle: 'Cruisetrafikk-sporing',
+        webcam: 'Webkamera',
+        share: 'Del dagens status',
+        link_copied: 'Kopiert!',
+        section_weather: 'Værvarsling',
+        section_14days: 'Neste 14 dager',
+        section_bestdays: 'Beste kommende dager',
+        section_calendar: 'Kalender',
+        legend_quiet: 'Stille',
+        legend_moderate: 'Moderat (1 skip)',
+        legend_busy: 'Travelt (2 skip)',
+        legend_very_busy: 'Veldig travelt (3+)',
+        footer_updated_today: 'Rute oppdatert i dag',
+        footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'er' : ''} siden`,
+        footer_stale: ' — kan være utdatert',
+        footer_data: 'Data:',
+        footer_credit: 'Laget i Norge 🇳🇴 av JacosVerksted',
+        level_quiet: 'Flott tidspunkt å besøke',
+        level_moderate: 'Litt travelt',
+        level_busy: 'Ganske travelt',
+        level_very_busy: 'Veldig folksomt',
+        ships_none: 'Ingen cruiseskip i havn',
+        ships_one: '1 cruiseskip i havn i dag',
+        ships_many: (n) => `${n} cruiseskip i havn i dag`,
+        best_quiet: 'Ingen cruiseskip',
+        best_one: (v) => `1 skip (~${v.toLocaleString('nb-NO')} besøkende)`,
+        best_many: (n, v) => `${n} skip (~${v.toLocaleString('nb-NO')} besøkende)`,
+        no_quiet_days: 'Ingen rolige dager funnet de neste 90 dagene.',
+        badge_quiet: 'Stille',
+        badge_moderate: 'Moderat',
+        badge_busy: 'Travelt',
+        drawer_capacity_label: 'PASSASJERKAPASITET',
+        drawer_visitors_label: 'ESTIMERTE BESØKENDE',
+        drawer_footnote: 'Ålesunds befolkning: ~50 000 – cruiseskip kan mer enn doble fottrafikken.',
+        weekdays: ['Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør', 'Søn'],
+        date_locale: 'nb-NO',
+        month_locale: 'nb-NO',
+      },
+      nn: {
+        subtitle: 'Cruisetrafikk-sporing',
+        webcam: 'Webkamera',
+        share: 'Del dagens status',
+        link_copied: 'Kopiert!',
+        section_weather: 'Vêrvarsel',
+        section_14days: 'Neste 14 dagar',
+        section_bestdays: 'Beste kommande dagar',
+        section_calendar: 'Kalender',
+        legend_quiet: 'Stille',
+        legend_moderate: 'Moderat (1 skip)',
+        legend_busy: 'Travelt (2 skip)',
+        legend_very_busy: 'Svært travelt (3+)',
+        footer_updated_today: 'Rute oppdatert i dag',
+        footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'ar' : ''} sidan`,
+        footer_stale: ' — kan vera utdatert',
+        footer_data: 'Data:',
+        footer_credit: 'Laga i Noreg 🇳🇴 av JacosVerksted',
+        level_quiet: 'Framifrå tidspunkt å vitja',
+        level_moderate: 'Litt travelt',
+        level_busy: 'Ganske travelt',
+        level_very_busy: 'Svært folksomt',
+        ships_none: 'Ingen cruiseskip i hamn',
+        ships_one: '1 cruiseskip i hamn i dag',
+        ships_many: (n) => `${n} cruiseskip i hamn i dag`,
+        best_quiet: 'Ingen cruiseskip',
+        best_one: (v) => `1 skip (~${v.toLocaleString('nb-NO')} vitjande)`,
+        best_many: (n, v) => `${n} skip (~${v.toLocaleString('nb-NO')} vitjande)`,
+        no_quiet_days: 'Ingen rolege dagar funne dei neste 90 dagane.',
+        badge_quiet: 'Stille',
+        badge_moderate: 'Moderat',
+        badge_busy: 'Travelt',
+        drawer_capacity_label: 'PASSASJERKAPASITET',
+        drawer_visitors_label: 'STIPULERTE VITJANDE',
+        drawer_footnote: 'Ålesund-folkesetnaden: ~50 000 – cruiseskip kan meir enn doble fottrafikken.',
+        weekdays: ['Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Laur', 'Sun'],
+        date_locale: 'nb-NO', // nn-NO has limited browser support; nb-NO is close enough
+        month_locale: 'nb-NO',
+      },
+      de: {
+        subtitle: 'Kreuzfahrtverkehr',
+        webcam: 'Webcam',
+        share: 'Status teilen',
+        link_copied: 'Kopiert!',
+        section_weather: 'Wettervorhersage',
+        section_14days: 'Nächste 14 Tage',
+        section_bestdays: 'Beste bevorstehende Tage',
+        section_calendar: 'Kalender',
+        legend_quiet: 'Ruhig',
+        legend_moderate: 'Mäßig (1 Schiff)',
+        legend_busy: 'Belebt (2 Schiffe)',
+        legend_very_busy: 'Sehr belebt (3+)',
+        footer_updated_today: 'Fahrplan heute aktualisiert',
+        footer_updated_ago: (n) => `Fahrplan vor ${n} Tag${n > 1 ? 'en' : ''} aktualisiert`,
+        footer_stale: ' — möglicherweise veraltet',
+        footer_data: 'Daten:',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
+        level_quiet: 'Toller Zeitpunkt für einen Besuch',
+        level_moderate: 'Etwas belebt',
+        level_busy: 'Ziemlich belebt',
+        level_very_busy: 'Sehr belebt',
+        ships_none: 'Keine Kreuzfahrtschiffe im Hafen',
+        ships_one: '1 Kreuzfahrtschiff heute im Hafen',
+        ships_many: (n) => `${n} Kreuzfahrtschiffe heute im Hafen`,
+        best_quiet: 'Keine Kreuzfahrtschiffe',
+        best_one: (v) => `1 Schiff (~${v.toLocaleString('de-DE')} Besucher)`,
+        best_many: (n, v) => `${n} Schiffe (~${v.toLocaleString('de-DE')} Besucher)`,
+        no_quiet_days: 'Keine ruhigen Tage in den nächsten 90 Tagen gefunden.',
+        badge_quiet: 'Ruhig',
+        badge_moderate: 'Mäßig',
+        badge_busy: 'Belebt',
+        drawer_capacity_label: 'PASSAGIERKAPAZITÄT',
+        drawer_visitors_label: 'GESCHÄTZTE ZUSÄTZLICHE BESUCHER',
+        drawer_footnote: 'Einwohner Ålesunds: ~50.000 – Kreuzfahrtschiffe können den Fußgängerverkehr mehr als verdoppeln.',
+        weekdays: ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
+        date_locale: 'de-DE',
+        month_locale: 'de-DE',
+      },
+      nl: {
+        subtitle: 'Cruiseverkeer tracker',
+        webcam: 'Webcam',
+        share: 'Deel de status',
+        link_copied: 'Gekopieerd!',
+        section_weather: 'Weersvoorspelling',
+        section_14days: 'Komende 14 dagen',
+        section_bestdays: 'Beste komende dagen',
+        section_calendar: 'Kalender',
+        legend_quiet: 'Rustig',
+        legend_moderate: 'Matig (1 schip)',
+        legend_busy: 'Druk (2 schepen)',
+        legend_very_busy: 'Zeer druk (3+)',
+        footer_updated_today: 'Schema vandaag bijgewerkt',
+        footer_updated_ago: (n) => `Schema ${n} dag${n > 1 ? 'en' : ''} geleden bijgewerkt`,
+        footer_stale: ' — mogelijk verouderd',
+        footer_data: 'Gegevens:',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
+        level_quiet: 'Geweldig moment om te bezoeken',
+        level_moderate: 'Licht druk',
+        level_busy: 'Behoorlijk druk',
+        level_very_busy: 'Zeer druk',
+        ships_none: 'Geen cruiseschepen in de haven',
+        ships_one: '1 cruiseschip in de haven vandaag',
+        ships_many: (n) => `${n} cruiseschepen in de haven vandaag`,
+        best_quiet: 'Geen cruiseschepen',
+        best_one: (v) => `1 schip (~${v.toLocaleString('nl-NL')} bezoekers)`,
+        best_many: (n, v) => `${n} schepen (~${v.toLocaleString('nl-NL')} bezoekers)`,
+        no_quiet_days: 'Geen rustige dagen gevonden in de komende 90 dagen.',
+        badge_quiet: 'Rustig',
+        badge_moderate: 'Matig',
+        badge_busy: 'Druk',
+        drawer_capacity_label: 'PASSAGIERSCAPACITEIT',
+        drawer_visitors_label: 'GESCHATTE EXTRA BEZOEKERS',
+        drawer_footnote: 'Ålesund heeft ~50.000 inwoners – cruiseschepen kunnen het aantal voetgangers meer dan verdubbelen.',
+        weekdays: ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'],
+        date_locale: 'nl-NL',
+        month_locale: 'nl-NL',
+      },
+      fr: {
+        subtitle: 'Trafic de croisière',
+        webcam: 'Webcam',
+        share: "Partager le statut",
+        link_copied: 'Copié !',
+        section_weather: 'Météo',
+        section_14days: '14 prochains jours',
+        section_bestdays: 'Meilleurs jours à venir',
+        section_calendar: 'Calendrier',
+        legend_quiet: 'Calme',
+        legend_moderate: 'Modéré (1 navire)',
+        legend_busy: 'Chargé (2 navires)',
+        legend_very_busy: 'Très chargé (3+)',
+        footer_updated_today: 'Programme mis à jour aujourd\'hui',
+        footer_updated_ago: (n) => `Programme mis à jour il y a ${n} jour${n > 1 ? 's' : ''}`,
+        footer_stale: ' — peut être obsolète',
+        footer_data: 'Données :',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
+        level_quiet: 'Excellent moment pour visiter',
+        level_moderate: 'Légèrement chargé',
+        level_busy: 'Assez chargé',
+        level_very_busy: 'Très chargé',
+        ships_none: 'Aucun navire de croisière au port',
+        ships_one: '1 navire de croisière au port aujourd\'hui',
+        ships_many: (n) => `${n} navires de croisière au port aujourd'hui`,
+        best_quiet: 'Aucun navire de croisière',
+        best_one: (v) => `1 navire (~${v.toLocaleString('fr-FR')} visiteurs)`,
+        best_many: (n, v) => `${n} navires (~${v.toLocaleString('fr-FR')} visiteurs)`,
+        no_quiet_days: 'Aucun jour calme trouvé dans les 90 prochains jours.',
+        badge_quiet: 'Calme',
+        badge_moderate: 'Modéré',
+        badge_busy: 'Chargé',
+        drawer_capacity_label: 'CAPACITÉ EN PASSAGERS',
+        drawer_visitors_label: 'VISITEURS SUPPLÉMENTAIRES ESTIMÉS',
+        drawer_footnote: 'Ålesund compte ~50 000 habitants — les navires de croisière peuvent plus que doubler le trafic piétonnier.',
+        weekdays: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+        date_locale: 'fr-FR',
+        month_locale: 'fr-FR',
+      },
+    };
+
+    // ── Apply language ────────────────────────────────────────────────────────
+    function applyLang(lang: Lang) {
+      const t = T[lang] ?? T.en;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang === 'en' ? 'en' : 'no';
+
+      // Simple keyed translations
+      const STATIC_KEYS: (keyof Strings)[] = [
+        'subtitle','webcam','share','section_weather','section_14days',
+        'section_bestdays','section_calendar','legend_quiet','legend_moderate',
+        'legend_busy','legend_very_busy','footer_data','footer_credit',
+        'level_quiet','level_moderate','level_busy','level_very_busy',
+        'no_quiet_days','drawer_capacity_label','drawer_visitors_label','drawer_footnote',
+        'badge_quiet','badge_moderate','badge_busy',
+      ];
+      STATIC_KEYS.forEach((key) => {
+        document.querySelectorAll<HTMLElement>(`[data-i18n="${key}"]`).forEach((el) => {
+          const val = t[key];
+          if (typeof val === 'string') el.textContent = val;
+        });
+      });
+
+      // Ships-in-port count
+      document.querySelectorAll<HTMLElement>('[data-i18n-ships]').forEach((el) => {
+        const n = parseInt(el.dataset.count ?? '0', 10);
+        el.textContent = n === 0 ? t.ships_none : n === 1 ? t.ships_one : t.ships_many(n);
+      });
+
+      // Long date (StatusCard header)
+      document.querySelectorAll<HTMLElement>('[data-i18n-date-long]').forEach((el) => {
+        const d = new Date((el.dataset.date ?? '') + 'T12:00:00Z');
+        el.textContent = d.toLocaleDateString(t.date_locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+      });
+
+      // Short date (BestDays rows)
+      document.querySelectorAll<HTMLElement>('[data-i18n-date-short]').forEach((el) => {
+        const d = new Date((el.dataset.date ?? '') + 'T12:00:00Z');
+        el.textContent = d.toLocaleDateString(t.date_locale, { weekday: 'short', day: 'numeric', month: 'short' });
+      });
+
+      // Weekday abbreviations in WeekView
+      document.querySelectorAll<HTMLElement>('[data-i18n-weekday]').forEach((el) => {
+        const d = new Date((el.dataset.date ?? '') + 'T12:00:00Z');
+        el.textContent = d.toLocaleDateString(t.date_locale, { weekday: 'short' });
+      });
+
+      // Calendar weekday headers (Mon–Sun)
+      document.querySelectorAll<HTMLElement>('[data-i18n-cal-weekday]').forEach((el) => {
+        const idx = parseInt(el.dataset.wdIndex ?? '0', 10);
+        el.textContent = t.weekdays[idx] ?? '';
+      });
+
+      // Calendar month labels
+      document.querySelectorAll<HTMLElement>('[data-i18n-month]').forEach((el) => {
+        const y = parseInt(el.dataset.year ?? '2026', 10);
+        const m = parseInt(el.dataset.month ?? '1', 10);
+        const d = new Date(Date.UTC(y, m - 1, 1));
+        el.textContent = d.toLocaleDateString(t.month_locale, { month: 'long', year: 'numeric' });
+      });
+
+      // Ship count label in WeekView strips
+      const shipWord: Record<Lang, (n: number) => string> = {
+        en: (n) => `${n} ${n === 1 ? 'ship' : 'ships'}`,
+        nb: (n) => `${n} skip`,
+        nn: (n) => `${n} skip`,
+        de: (n) => `${n} ${n === 1 ? 'Schiff' : 'Schiffe'}`,
+        nl: (n) => `${n} ${n === 1 ? 'schip' : 'schepen'}`,
+        fr: (n) => `${n} ${n === 1 ? 'navire' : 'navires'}`,
+      };
+      document.querySelectorAll<HTMLElement>('[data-i18n-skipcount]').forEach((el) => {
+        const n = parseInt(el.dataset.count ?? '0', 10);
+        el.textContent = shipWord[lang](n);
+      });
+
+      // BestDays reason strings
+      document.querySelectorAll<HTMLElement>('[data-i18n-reason]').forEach((el) => {
+        const n = parseInt(el.dataset.count ?? '0', 10);
+        const v = parseInt(el.dataset.visitors ?? '0', 10);
+        el.textContent = n === 0 ? t.best_quiet : n === 1 ? t.best_one(v) : t.best_many(n, v);
+      });
+
+      // BestDays badges
+      document.querySelectorAll<HTMLElement>('[data-i18n-badge]').forEach((el) => {
+        const level = el.dataset.level ?? '';
+        el.textContent = level === 'quiet' ? t.badge_quiet : level === 'moderate' ? t.badge_moderate : t.badge_busy;
+      });
+
+      // Footer update timestamp
+      const footerEl = document.getElementById('footer-updated');
+      if (footerEl) {
+        const days = parseInt(footerEl.dataset.days ?? '0', 10);
+        const stale = footerEl.dataset.stale === 'true';
+        const base = days === 0 ? t.footer_updated_today : t.footer_updated_ago(days);
+        footerEl.textContent = base + (stale ? t.footer_stale : '');
+      }
+    }
+
+    // ── Boot ──────────────────────────────────────────────────────────────────
+    const initLang = (localStorage.getItem('lang') as Lang) ?? 'en';
+    applyLang(initLang);
+
+    window.addEventListener('langchange', (e) => {
+      applyLang((e as CustomEvent<{ lang: Lang }>).detail.lang);
+    });
+
+    // ── Service worker ────────────────────────────────────────────────────────
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+
+    // ── Share button ──────────────────────────────────────────────────────────
+    const shareBtn = document.getElementById('share-btn');
+    shareBtn?.addEventListener('click', async () => {
+      const url = location.href;
+      const lang = (localStorage.getItem('lang') as Lang) ?? 'en';
+      const t = T[lang] ?? T.en;
+      const shareSpan = shareBtn.querySelector<HTMLElement>('[data-i18n="share"]');
+      if (navigator.share) {
+        try { await navigator.share({ title: 'Visit Ålesund', url }); return; } catch {}
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        if (shareSpan) {
+          const orig = shareSpan.textContent ?? '';
+          shareSpan.textContent = t.link_copied;
+          setTimeout(() => { shareSpan.textContent = orig; }, 2000);
+        }
+      } catch {}
+    });
+
+    // ── Deep link ─────────────────────────────────────────────────────────────
+    const dateParam = new URLSearchParams(location.search).get('date');
+    if (dateParam) {
+      const el = document.querySelector(`a[href="?date=${dateParam}"]`);
+      if (el) {
+        el.classList.add('ring-2', 'ring-blue-500', 'ring-offset-1');
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+      }
+    }
+
+    // ── PWA install ───────────────────────────────────────────────────────────
+    const INSTALL_I18N: Record<string, { title: string; hint: string; btn: string }> = {
+      en: { title: 'Install app',        hint: 'Works offline · No app store needed',       btn: 'Install'     },
+      nb: { title: 'Installer app',      hint: 'Fungerer uten nett · Ingen app-butikk',     btn: 'Installer'   },
+      nn: { title: 'Installer app',      hint: 'Fungerer utan nett · Ingen app-butikk',     btn: 'Installer'   },
+      de: { title: 'App installieren',   hint: 'Offline nutzbar · Kein App Store nötig',    btn: 'Installieren'},
+      nl: { title: 'App installeren',    hint: 'Werkt offline · Geen app store nodig',      btn: 'Installeren' },
+      fr: { title: "Installer l'appli",  hint: 'Fonctionne hors ligne · Sans app store',    btn: 'Installer'   },
+    };
+
+    const installBar   = document.getElementById('pwa-install-bar')!;
+    const installBtn   = document.getElementById('pwa-install-btn') as HTMLButtonElement;
+    const installTitle = document.getElementById('pwa-install-title')!;
+    const installHint  = document.getElementById('pwa-install-hint')!;
+
+    function setInstallStrings(lang: string) {
+      const s = INSTALL_I18N[lang] ?? INSTALL_I18N.en;
+      installTitle.textContent = s.title;
+      installHint.textContent  = s.hint;
+      installBtn.textContent   = s.btn;
+    }
+    setInstallStrings(initLang);
+    window.addEventListener('langchange', (e) =>
+      setInstallStrings((e as CustomEvent<{ lang: string }>).detail.lang)
+    );
+
+    // iOS: no beforeinstallprompt — show Share sheet guidance instead
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+      || (navigator as any).standalone === true;
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !isStandalone;
+    if (isIOS) {
+      installBar.hidden = false;
+      installTitle.textContent = 'Add to Home Screen';
+      installHint.textContent  = 'Tap Share  →  Add to Home Screen';
+      installBtn.style.display = 'none';
+    }
+
+    // Chrome / Android / Edge: capture the native prompt
+    let deferredPrompt: (Event & { prompt(): void; userChoice: Promise<{ outcome: string }> }) | null = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e as any;
+      installBar.hidden = false;
+      setInstallStrings(localStorage.getItem('lang') ?? 'en');
+    });
+
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      if (outcome === 'accepted') installBar.hidden = true;
+    });
+
+    window.addEventListener('appinstalled', () => {
+      installBar.hidden = true;
+      deferredPrompt = null;
+    });
+  </script>
+</body>
+</html>

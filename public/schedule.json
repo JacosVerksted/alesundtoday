@@ -1,0 +1,3783 @@
+{
+  "generated": "2026-05-18T21:12:56.336Z",
+  "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
+  "calls": [
+    {
+      "date": "2023-09-18",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-10-02",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-10-03",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-10-04",
+      "ships": [
+        "AIDAnova",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2023-10-05",
+      "ships": [
+        "AIDAperla",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2023-10-08",
+      "ships": [
+        "Silver Dawn"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-10-23",
+      "ships": [
+        "AIDAsol"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-10-24",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-10-25",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-10-29",
+      "ships": [
+        "HANSEATIC NATURE",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2023-10-30",
+      "ships": [
+        "Queen Victoria",
+        "Otto Sverdrup"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2023-11-04",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-11-13",
+      "ships": [
+        "Hanseatic Nature",
+        "Otto Sverdrup"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2023-11-15",
+      "ships": [
+        "Queen Victoria",
+        "Ambition"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2023-11-22",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-11-27",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2023-11-28",
+      "ships": [
+        "Hanseatic Nature",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2023-12-02",
+      "ships": [
+        "Arcadia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-03-03",
+      "ships": [
+        "Renaissance",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-03-04",
+      "ships": [
+        "Ambition",
+        "Otto Sverdrup"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-03-07",
+      "ships": [
+        "AIDAsol"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-03-08",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-03-14",
+      "ships": [
+        "Spirit of Discovery"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-03-17",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-03-18",
+      "ships": [
+        "Renaissance",
+        "Otto Sverdrup"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-03-19",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-03-21",
+      "ships": [
+        "AIDAsol",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-03-26",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-01",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-04",
+      "ships": [
+        "AIDAsol"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-10",
+      "ships": [
+        "AIDAnova",
+        "Iona"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-04-14",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-15",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-20",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-22",
+      "ships": [
+        "Arcadia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-24",
+      "ships": [
+        "AIDAnova",
+        "Iona"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-04-26",
+      "ships": [
+        "AIDAsol"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-29",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-04-30",
+      "ships": [
+        "Sky Princess"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-01",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-06",
+      "ships": [
+        "Balmoral",
+        "AIDAperla"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-05-07",
+      "ships": [
+        "MSC Euribia",
+        "AIDAsol"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-05-08",
+      "ships": [
+        "Iona",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-05-09",
+      "ships": [
+        "Celebrity Silhouette"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-13",
+      "ships": [
+        "Mein Schiff 4"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-15",
+      "ships": [
+        "Iona",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-05-16",
+      "ships": [
+        "Renaissance"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-17",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-18",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-20",
+      "ships": [
+        "Nieuw Statendam",
+        "Celebrity Apex"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-05-21",
+      "ships": [
+        "Mein Schiff 1",
+        "Costa Diadema"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-05-22",
+      "ships": [
+        "MSC Euribia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-23",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-24",
+      "ships": [
+        "Norwegian Star",
+        "MSC Preziosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-05-25",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-26",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-27",
+      "ships": [
+        "Sky Princess"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-05-28",
+      "ships": [
+        "Norwegian Prima",
+        "Rotterdam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-02",
+      "ships": [
+        "Seabourn Venture",
+        "Arcadia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-04",
+      "ships": [
+        "Bolette",
+        "Costa Favolosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-05",
+      "ships": [
+        "MSC Euribia",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-06",
+      "ships": [
+        "Jewel Of The Sea"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-06-08",
+      "ships": [
+        "Mein Schiff 4",
+        "Norwegian Prima",
+        "Silver Dawn"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-06-10",
+      "ships": [
+        "Balmoral",
+        "Rotterdam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-12",
+      "ships": [
+        "AIDAnova",
+        "Mein Schiff 4",
+        "Silver Explorer",
+        "Clio"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-06-13",
+      "ships": [
+        "Arcadia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-06-14",
+      "ships": [
+        "Balmoral",
+        "Trollfjord",
+        "World Navigator"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-06-15",
+      "ships": [
+        "AIDAperla",
+        "MSC Preziosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-16",
+      "ships": [
+        "Star Pride"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-06-17",
+      "ships": [
+        "Norwegian Prima",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-18",
+      "ships": [
+        "WORLD VOYAGER",
+        "Iona"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-19",
+      "ships": [
+        "MSC Euribia",
+        "Seven Seas Navigator"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-20",
+      "ships": [
+        "Clio",
+        "World Navigator"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-21",
+      "ships": [
+        "Celebrity Silhouette",
+        "Sirena",
+        "Amera"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-06-23",
+      "ships": [
+        "Le Champlain"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-06-24",
+      "ships": [
+        "AIDAperla",
+        "Amadea"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-25",
+      "ships": [
+        "Sky Princess",
+        "Rotterdam",
+        "Costa Favolosa",
+        "Silver Dawn"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-06-26",
+      "ships": [
+        "AIDAnova",
+        "Aurora"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-27",
+      "ships": [
+        "Norwegian Star",
+        "Ambience"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-06-28",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-06-29",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-06-30",
+      "ships": [
+        "Mein Schiff 4",
+        "Artania"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-01",
+      "ships": [
+        "Ambition",
+        "Nieuw Statendam",
+        "Zuiderdam"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-07-02",
+      "ships": [
+        "Balmoral",
+        "Silver Dawn"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-03",
+      "ships": [
+        "Europa 2",
+        "MSC Euribia",
+        "AIDAprima"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-07-04",
+      "ships": [
+        "Sky Princess",
+        "Amera"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-05",
+      "ships": [
+        "Le Champlain",
+        "Mein Schiff 7",
+        "AIDAperla"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-07-07",
+      "ships": [
+        "Corinthian",
+        "Vasco Da Gama",
+        "Le Champlain"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-07-09",
+      "ships": [
+        "Norwegian Prima",
+        "Mein Schiff 7",
+        "Europa"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-07-10",
+      "ships": [
+        "AIDAnova",
+        "Marina"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-11",
+      "ships": [
+        "Mein Schiff 4",
+        "Aurora"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-12",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-13",
+      "ships": [
+        "Jewel Of The Seas",
+        "Hamburg"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-14",
+      "ships": [
+        "MSC Preziosa"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-15",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-16",
+      "ships": [
+        "Costa Diadema",
+        "Anthem of the Seas"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-17",
+      "ships": [
+        "AIDAprima",
+        "MSC Euribia",
+        "World Navigator"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-07-18",
+      "ships": [
+        "Azamara Onward",
+        "Queen Mary 2"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-19",
+      "ships": [
+        "Le Champlain"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-20",
+      "ships": [
+        "Norwegian Prima",
+        "Hebridean Sky"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-21",
+      "ships": [
+        "AIDAsol",
+        "Le Champlain"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-22",
+      "ships": [
+        "Mein Schiff 4"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-23",
+      "ships": [
+        "Deutschland",
+        "Amera"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-24",
+      "ships": [
+        "AIDAnova",
+        "AIDAperla"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-25",
+      "ships": [
+        "Aurora"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-26",
+      "ships": [
+        "Silver Dawn",
+        "Mein Schiff 4",
+        "Trollfjord",
+        "NY"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-07-27",
+      "ships": [
+        "Odyssey"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-28",
+      "ships": [
+        "Disney Dream"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-07-29",
+      "ships": [
+        "Viking Venus",
+        "Norwegian Prima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-30",
+      "ships": [
+        "AIDAluna",
+        "Amadea"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-07-31",
+      "ships": [
+        "AIDAprima",
+        "Seven Seas Splendor"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-01",
+      "ships": [
+        "Celebrity Silhouette"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-02",
+      "ships": [
+        "Le Champlain"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-03",
+      "ships": [
+        "Sirena"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-05",
+      "ships": [
+        "Mein Schiff 7",
+        "AIDAperla",
+        "Silver Dawn"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-08-06",
+      "ships": [
+        "Costa Diadema"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-07",
+      "ships": [
+        "AIDAnova",
+        "Seven Seas Mariner"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-08",
+      "ships": [
+        "Disney Dream"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-09",
+      "ships": [
+        "Queen Mary 2",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-10",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-11",
+      "ships": [
+        "Arcadia",
+        "Clio",
+        "Mein Schiff 1"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-08-12",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-13",
+      "ships": [
+        "Mein Schiff 4",
+        "Sirena",
+        "Amadea"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-08-14",
+      "ships": [
+        "MSC Euribia",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-16",
+      "ships": [
+        "World Navigator",
+        "Viking Venus",
+        "Serenade of the Seas"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-08-17",
+      "ships": [
+        "Mein Schiff 4"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-19",
+      "ships": [
+        "Bolette",
+        "Clio",
+        "Arcadia"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-08-21",
+      "ships": [
+        "AIDAnova",
+        "MSC Preziosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-22",
+      "ships": [
+        "AIDAperla",
+        "Mein Schiff 1"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-23",
+      "ships": [
+        "Artania",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-26",
+      "ships": [
+        "Corinthian",
+        "Nieuw Statendam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-27",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-28",
+      "ships": [
+        "MSC Euribia",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-08-29",
+      "ships": [
+        "Mein Schiff 4",
+        "Viking Saturn",
+        "Silver Dawn"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2024-08-30",
+      "ships": [
+        "Seven Seas Splendor"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-08-31",
+      "ships": [
+        "Norwegian Prima",
+        "Vasco Da Gama"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-09-01",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-09-03",
+      "ships": [
+        "MSC Virtuosa"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-09-04",
+      "ships": [
+        "AIDAnova",
+        "Costa Favolosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-09-06",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-09-07",
+      "ships": [
+        "Mein Schiff 4",
+        "Seven Seas Splendor"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-09-09",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-09-10",
+      "ships": [
+        "MSC Euribia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-09-11",
+      "ships": [
+        "AIDAprima",
+        "Iona"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-09-12",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-09-14",
+      "ships": [
+        "Borealis"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-10-02",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-10-05",
+      "ships": [
+        "Caribbean Princess",
+        "Silver Dawn"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-10-09",
+      "ships": [
+        "AIDAprima",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-10-10",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-10-11",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-10-14",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-10-15",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-10-16",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-10-18",
+      "ships": [
+        "Queen Anne",
+        "Balmoral"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-10-22",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-10-23",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-10-28",
+      "ships": [
+        "Balmoral",
+        "Otto Sverdrup"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-10-30",
+      "ships": [
+        "AIDAnova"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-11-04",
+      "ships": [
+        "Ambience"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-11-07",
+      "ships": [
+        "Balmora"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-11-10",
+      "ships": [
+        "Queen Mary 2",
+        "Ambition"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-11-11",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-11-13",
+      "ships": [
+        "Le Commandant Charcot"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-11-17",
+      "ships": [
+        "Balmoral",
+        "Hanseatic Spirit"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2024-11-25",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-11-27",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-12-02",
+      "ships": [
+        "Hanseatic Spirit"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-12-09",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-12-10",
+      "ships": [
+        "Borealis"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-12-13",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-12-23",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2024-12-31",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-01-02",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-01-06",
+      "ships": [
+        "Trollfjord",
+        "Otto Sverdrup"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-01-20",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-01-21",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-01-23",
+      "ships": [
+        "Hanseatic Spirit"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-01-24",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-01-30",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-02-03",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-02-04",
+      "ships": [
+        "Borealis"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-02-07",
+      "ships": [
+        "Hanseatic Spirit",
+        "Ny"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-02-11",
+      "ships": [
+        "Gann"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-02-17",
+      "ships": [
+        "Trollfjord",
+        "Otto Sverdrup"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-02-22",
+      "ships": [
+        "Hanseatic Spirit",
+        "Ny"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-02-23",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-02-26",
+      "ships": [
+        "Ambition"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-02-27",
+      "ships": [
+        "Spirit of Discovery"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-03",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-04",
+      "ships": [
+        "Renaissance"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-09",
+      "ships": [
+        "Hanseatic Spirit"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-10",
+      "ships": [
+        "Viking Vela"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-13",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-17",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-19",
+      "ships": [
+        "Renaissance",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-03-23",
+      "ships": [
+        "Borealis"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-25",
+      "ships": [
+        "Ambience"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-03-31",
+      "ships": [
+        "Otto Sverdrup"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-02",
+      "ships": [
+        "Borealis"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-06",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-09",
+      "ships": [
+        "Queen Mary 2"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-12",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-16",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-18",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-23",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-28",
+      "ships": [
+        "Aurora"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-29",
+      "ships": [
+        "Bolette"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-04-30",
+      "ships": [
+        "AIDAnova",
+        "Iona",
+        "Trollfjord"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-05-06",
+      "ships": [
+        "Iona",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-05-07",
+      "ships": [
+        "MSC Euribia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-08",
+      "ships": [
+        "MV Serenissima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-09",
+      "ships": [
+        "MSC Preziosa"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-13",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-14",
+      "ships": [
+        "AIDAnova",
+        "Queen Anne"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-05-15",
+      "ships": [
+        "Renaissance"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-17",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-19",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-20",
+      "ships": [
+        "Iona",
+        "Nieuw Statendam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-05-21",
+      "ships": [
+        "MSC Euribia",
+        "AIDAperla"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-05-23",
+      "ships": [
+        "Mein Schiff 2"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-25",
+      "ships": [
+        "Costa Favolosa"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-26",
+      "ships": [
+        "Aurora",
+        "Norwegian Prima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-05-27",
+      "ships": [
+        "Rotterdam",
+        "Mein Schiff 7"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-05-29",
+      "ships": [
+        "Silver Endeavour"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-05-31",
+      "ships": [
+        "MSC Preziosa"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-02",
+      "ships": [
+        "AIDAbella",
+        "Trollfjord",
+        "Queen Mary 2"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-03",
+      "ships": [
+        "Arcadia",
+        "AIDAperla"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-06-04",
+      "ships": [
+        "MSC Euribia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-05",
+      "ships": [
+        "Norwegian Star",
+        "Exploris One",
+        "Viking Vela"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-06",
+      "ships": [
+        "Le Boreal"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-07",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-08",
+      "ships": [
+        "Emerald Princess",
+        "AIDAprima",
+        "Amera"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-09",
+      "ships": [
+        "Le Bellot"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-10",
+      "ships": [
+        "Sirena"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-11",
+      "ships": [
+        "Norwegian Star",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-06-13",
+      "ships": [
+        "Seven Seas",
+        "Navigator"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-06-14",
+      "ships": [
+        "Celebrity Apex"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-15",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-16",
+      "ships": [
+        "Mein Schiff 2",
+        "Norwegian Prima",
+        "Trollfjord"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-17",
+      "ships": [
+        "Queen Anne",
+        "MSC Virtuosa",
+        "Silver Dawn"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-18",
+      "ships": [
+        "MSC Euribia",
+        "AIDAperla",
+        "Azamara Journey"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-19",
+      "ships": [
+        "Le Bellot",
+        "Costa Favolosa",
+        "Europa 2"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-20",
+      "ships": [
+        "Seadream II"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-06-21",
+      "ships": [
+        "Hamburg",
+        "Vista",
+        "Artania"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-22",
+      "ships": [
+        "MSC Preziosa",
+        "Viking Vela"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-06-23",
+      "ships": [
+        "Le Bellot",
+        "Corinthian"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-06-24",
+      "ships": [
+        "Europa",
+        "MSC Virtuosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-06-25",
+      "ships": [
+        "AIDAnova",
+        "Sky Princess"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-06-27",
+      "ships": [
+        "Mein Schiff 7",
+        "AIDAprima",
+        "WORLD VOYAGER"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-28",
+      "ships": [
+        "Norwegian Prima",
+        "Mein Schiff 2",
+        "Seadream II"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-06-30",
+      "ships": [
+        "Star Pride",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-01",
+      "ships": [
+        "Britannia",
+        "Le Bellot"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-02",
+      "ships": [
+        "MSC Euribia",
+        "AIDAperla",
+        "World Explorer"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-07-03",
+      "ships": [
+        "Corinthian",
+        "Sky Princess"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-04",
+      "ships": [
+        "Silver Dawn"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-06",
+      "ships": [
+        "Marina",
+        "Silver Dawn"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-07",
+      "ships": [
+        "AIDAprima",
+        "Norwegian Prima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-08",
+      "ships": [
+        "Clio"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-09",
+      "ships": [
+        "AIDAnova",
+        "Arcadia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-10",
+      "ships": [
+        "Mein Schiff 2"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-11",
+      "ships": [
+        "Seven Seas Voyager"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-12",
+      "ships": [
+        "Sirena"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-14",
+      "ships": [
+        "Rotterdam",
+        "Silver Spirit",
+        "Trollfjord"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-07-15",
+      "ships": [
+        "MSC Euribia",
+        "Aurora",
+        "World Traveller"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-07-16",
+      "ships": [
+        "Renaissance",
+        "AIDAprima",
+        "Clio"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-07-17",
+      "ships": [
+        "MSC Preziosa"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-18",
+      "ships": [
+        "Silver Dawn"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-19",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-21",
+      "ships": [
+        "Queen Mary 2"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-22",
+      "ships": [
+        "Mein Schiff 2",
+        "Vasco Da Gama"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-23",
+      "ships": [
+        "AIDAnova",
+        "Silver Dawn"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-27",
+      "ships": [
+        "Gann"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-07-28",
+      "ships": [
+        "Trollfjord",
+        "Norwegian Prima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-29",
+      "ships": [
+        "Mein Schiff 3",
+        "Celebrity Eclipse"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-07-30",
+      "ships": [
+        "MSC Euribia",
+        "Seadream II",
+        "AIDAprima",
+        "NY"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-07-31",
+      "ships": [
+        "Rotterdam",
+        "Azamara Journey"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-01",
+      "ships": [
+        "Silver Dawn"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-02",
+      "ships": [
+        "Corinthian"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-03",
+      "ships": [
+        "Mein Schiff 2"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-04",
+      "ships": [
+        "Aurora",
+        "Seadream II"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-05",
+      "ships": [
+        "Mein Schiff 7"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-06",
+      "ships": [
+        "AIDAnova",
+        "Scenic Eclipse"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-07",
+      "ships": [
+        "Ambience",
+        "AIDAluna"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-09",
+      "ships": [
+        "Norwegian Prima",
+        "Silver Spirit"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-10",
+      "ships": [
+        "Ilma",
+        "Silver Shadow"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-11",
+      "ships": [
+        "Mein Schiff 4",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-12",
+      "ships": [
+        "Corinthian",
+        "Nieuw Statendam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-13",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-15",
+      "ships": [
+        "Mein Schiff 2",
+        "Silver Dawn"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-17",
+      "ships": [
+        "Silver Dawn"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-18",
+      "ships": [
+        "AIDAprima",
+        "Norwegian Prima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-19",
+      "ships": [
+        "Arcadia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-20",
+      "ships": [
+        "AIDAnova",
+        "Mein Schiff 4"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-21",
+      "ships": [
+        "Viking Jupiter",
+        "Queen Mary 2"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-22",
+      "ships": [
+        "Mein Schiff 7"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-24",
+      "ships": [
+        "Seven Seas Navigator"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-25",
+      "ships": [
+        "Clio",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-26",
+      "ships": [
+        "Arcadia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-27",
+      "ships": [
+        "MSC Euribia",
+        "AIDAperla"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-08-28",
+      "ships": [
+        "Viking Saturn",
+        "Celebrity Apex",
+        "AIDAprima"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-08-29",
+      "ships": [
+        "Sirena"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-30",
+      "ships": [
+        "Norwegian Prima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-08-31",
+      "ships": [
+        "Ambition"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-02",
+      "ships": [
+        "Mein Schiff 2",
+        "Britannia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-03",
+      "ships": [
+        "Deutschland",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-04",
+      "ships": [
+        "Queen Anne"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-06",
+      "ships": [
+        "MSC Preziosa",
+        "Mein Schiff 4"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-07",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-08",
+      "ships": [
+        "Trollfjord",
+        "Norwegian Prima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-09",
+      "ships": [
+        "MSC Euribia- Rotterdam",
+        "Scenic Eclipse"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-10",
+      "ships": [
+        "AIDAperla",
+        "Iona"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-11",
+      "ships": [
+        "Norwegian Star",
+        "Balmoral"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-13",
+      "ships": [
+        "Seven Seas Mariner"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-14",
+      "ships": [
+        "Viking Saturn"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-15",
+      "ships": [
+        "Amera"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-16",
+      "ships": [
+        "Britannia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-17",
+      "ships": [
+        "AIDAnova"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-18",
+      "ships": [
+        "Mein Schiff 4"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-19",
+      "ships": [
+        "Disney Fantasy",
+        "Norwegian Star"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-20",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-09-22",
+      "ships": [
+        "Trollfjord",
+        "Finnmarken"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-24",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-09-29",
+      "ships": [
+        "Queen Anne",
+        "MSC Preziosa",
+        "Trollfjord"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-09-30",
+      "ships": [
+        "AIDAnova"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-01",
+      "ships": [
+        "MSC Euribia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-06",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-07",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-08",
+      "ships": [
+        "AIDAperla",
+        "Emerald Princess"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-10-10",
+      "ships": [
+        "Vasco Da Gama"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-13",
+      "ships": [
+        "Borealis",
+        "Norwegian Star",
+        "Trollfjord"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2025-10-15",
+      "ships": [
+        "AIDAnova"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-16",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-20",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-21",
+      "ships": [
+        "Mein Schiff 3",
+        "Ambition"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-10-22",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-24",
+      "ships": [
+        "HANSEATIC NATURE"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-27",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-29",
+      "ships": [
+        "AIDAnova"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-30",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-10-31",
+      "ships": [
+        "Ambience"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-03",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-06",
+      "ships": [
+        "Bolette"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-08",
+      "ships": [
+        "HANSEATIC NATURE"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-10",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-15",
+      "ships": [
+        "Queen Mary 2 NY"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-17",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-18",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-23",
+      "ships": [
+        "HANSEATIC NATURE"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-11-24",
+      "ships": [
+        "Balmoral",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-11-25",
+      "ships": [
+        "Queen Victoria"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-12-01",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-12-08",
+      "ships": [
+        "HANSEATIC NATURE",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2025-12-09",
+      "ships": [
+        "Spirit of Discovery"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-12-15",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-12-22",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2025-12-29",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-01-03",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-01-05",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-01-07",
+      "ships": [
+        "Borealis"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-01-08",
+      "ships": [
+        "HANSEATIC NATURE"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-01-12",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-01-19",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-01-26",
+      "ships": [
+        "Balmoral- Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-02-02",
+      "ships": [
+        "Balmoral",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-02-09",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-02-16",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-02-23",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-02-27",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-01",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-02",
+      "ships": [
+        "Trollfjord",
+        "MS Nordstjernen"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-03-07",
+      "ships": [
+        "Spirit of Discovery"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-09",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-11",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-13",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-14",
+      "ships": [
+        "Ambience"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-16",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-21",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-23",
+      "ships": [
+        "Finnmarken"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-27",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-30",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-03-31",
+      "ships": [
+        "Renaissance",
+        "Balmoral"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-04-01",
+      "ships": [
+        "Queen Victoria",
+        "Ambition"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-04-02",
+      "ships": [
+        "Arvia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-04",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-06",
+      "ships": [
+        "Le Laperouse",
+        "Finnmarken"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-04-08",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-09",
+      "ships": [
+        "Arvia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-13",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-14",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-15",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-16",
+      "ships": [
+        "AIDAprima",
+        "Aurora"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-04-21",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-22",
+      "ships": [
+        "Iona    AIDAnova"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-25",
+      "ships": [
+        "AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-27",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-04-28",
+      "ships": [
+        "Britannia",
+        "MSC Preziosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-04-29",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-05-01",
+      "ships": [
+        "Renaissance"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-05-04",
+      "ships": [
+        "Queen Anne"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-05-05",
+      "ships": [
+        "Iona"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-05-06",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-12",
+      "ships": [
+        "Iona",
+        "Mein Schiff 3"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-15",
+      "ships": [
+        "Renaissance"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-05-16",
+      "ships": [
+        "Norwegian Star"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-05-18",
+      "ships": [
+        "Europa 2",
+        "Nieuw Statendam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-19",
+      "ships": [
+        "World Navigator",
+        "Iona",
+        "Mein Schiff 3"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-05-20",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-21",
+      "ships": [
+        "SANTA MARIA MANUELA"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-05-25",
+      "ships": [
+        "AIDAprima",
+        "Trollfjord",
+        "Star Pride"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-05-26",
+      "ships": [
+        "Britannia",
+        "Costa Diadema"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-27",
+      "ships": [
+        "MSC Euribia",
+        "AIDAperla"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-28",
+      "ships": [
+        "Mein Schiff Relax",
+        "Rotterdam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-29",
+      "ships": [
+        "SANTA MARIA MANUELA",
+        "Seadream II"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-05-30",
+      "ships": [
+        "Bolette",
+        "Seadream II"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-01",
+      "ships": [
+        "Midnatsol",
+        "Britannia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-02",
+      "ships": [
+        "Costa Diadema",
+        "Queen Anne",
+        "Sea Spirit"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-06-03",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-04",
+      "ships": [
+        "Aqua Lares"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-05",
+      "ships": [
+        "Le Laperouse"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-06",
+      "ships": [
+        "Norwegian Star",
+        "Aurora",
+        "Artania"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-06-07",
+      "ships": [
+        "WORLD VOYAGER",
+        "Seadream II"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-08",
+      "ships": [
+        "Costa Favolosa",
+        "Trollfjord"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-09",
+      "ships": [
+        "Costa Diadema"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-10",
+      "ships": [
+        "MSC Euribia"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-12",
+      "ships": [
+        "Mein Schiff 7",
+        "Costa Favolosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-14",
+      "ships": [
+        "Silver Dawn"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-15",
+      "ships": [
+        "Midnatsol- Havila Castor",
+        "Europa",
+        "AIDAprima",
+        "Norwegian Star"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-06-16",
+      "ships": [
+        "Costa Diadema",
+        "Celebrity Apex"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-17",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova",
+        "Le Laperouse"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-06-18",
+      "ships": [
+        "AIDAbella",
+        "Celebrity Eclipse"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-19",
+      "ships": [
+        "Aurora",
+        "Le Laperouse"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-20",
+      "ships": [
+        "Majestic Princess",
+        "Seadream II"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-22",
+      "ships": [
+        "Trollfjord -Mein Schiff 1"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-23",
+      "ships": [
+        "Rotterdam"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-24",
+      "ships": [
+        "MSC Euribia",
+        "Mein Schiff 3",
+        "Silver Dawn"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-06-25",
+      "ships": [
+        "AIDAperla",
+        "Corinthian"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-06-27",
+      "ships": [
+        "Norwegian Star"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-28",
+      "ships": [
+        "Costa Favolosa"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-06-29",
+      "ships": [
+        "AIDAprima",
+        "Seadream II",
+        "WORLD VOYAGER",
+        "Midnatsol"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-06-30",
+      "ships": [
+        "Le Laperouse",
+        "Costa Diadema",
+        "Britannia"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    }
+  ]
+}

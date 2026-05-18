@@ -1,0 +1,47 @@
+name: Refresh cruise schedule
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday 06:00 UTC
+  workflow_dispatch:       # Allow manual trigger
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Run scraper
+        run: node scraper/scrape.mjs
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet public/schedule.json \
+            && echo "changed=false" >> $GITHUB_OUTPUT \
+            || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated schedule
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "schedule-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add public/schedule.json
+          git commit -m "chore: refresh cruise schedule $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Trigger Netlify deploy
+        if: steps.diff.outputs.changed == 'true' && env.NETLIFY_BUILD_HOOK != ''
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: curl -s -X POST "$NETLIFY_BUILD_HOOK"

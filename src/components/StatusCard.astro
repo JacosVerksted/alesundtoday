@@ -1,0 +1,65 @@
+---
+import type { DayInfo } from '../lib/schedule';
+import { getCapacity } from '../lib/ships';
+
+interface Props {
+  day: DayInfo;
+}
+const { day } = Astro.props;
+
+const levelConfig = {
+  quiet:     { label: 'Great time to visit',  color: 'bg-emerald-500', ring: 'ring-emerald-200', text: 'text-emerald-700', bg: 'bg-emerald-50', key: 'level_quiet' },
+  moderate:  { label: 'Somewhat busy',        color: 'bg-yellow-400',  ring: 'ring-yellow-200',  text: 'text-yellow-700', bg: 'bg-yellow-50',  key: 'level_moderate' },
+  busy:      { label: 'Quite busy',           color: 'bg-orange-500',  ring: 'ring-orange-200',  text: 'text-orange-700', bg: 'bg-orange-50',  key: 'level_busy' },
+  'very-busy': { label: 'Very crowded',       color: 'bg-red-500',     ring: 'ring-red-200',     text: 'text-red-700',    bg: 'bg-red-50',     key: 'level_very_busy' },
+};
+
+const cfg = levelConfig[day.level];
+
+const shipsText =
+  day.count === 0 ? 'No cruise ships in port'
+  : day.count === 1 ? '1 cruise ship in port today'
+  : `${day.count} cruise ships in port today`;
+---
+
+<section class={`rounded-2xl p-6 ${cfg.bg} ring-2 ${cfg.ring}`}>
+  <p
+    class="text-sm font-medium text-gray-500 mb-1"
+    data-i18n-date-long
+    data-date={day.date}
+  >
+    {new Date(day.date + 'T12:00:00Z').toLocaleDateString('en-GB', {
+      weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+    })}
+  </p>
+
+  <div class="flex items-center gap-4 mb-4">
+    <div class={`w-14 h-14 rounded-full ${cfg.color} flex-shrink-0 shadow-md`}></div>
+    <div>
+      <h2 class={`text-2xl font-bold ${cfg.text}`} data-i18n={cfg.key}>{cfg.label}</h2>
+      <p class="text-gray-600 text-sm" data-i18n-ships data-count={day.count}>{shipsText}</p>
+    </div>
+  </div>
+
+  {day.ships.length > 0 && (
+    <div class="flex flex-wrap gap-2">
+      {day.ships.map(ship => {
+        const cap = getCapacity(ship);
+        return (
+          <button
+            class="ship-chip inline-flex items-center gap-1.5 rounded-full bg-white/70 backdrop-blur px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-white transition min-h-[44px]"
+            data-ship={ship}
+            data-capacity={cap !== null ? String(cap) : ''}
+            aria-label={`View details for ${ship}`}
+          >
+            <span>🚢</span>
+            <span>{ship}</span>
+            {cap !== null && (
+              <span class="text-gray-400 text-xs">·&nbsp;{(cap/1000).toFixed(1)}k pax</span>
+            )}
+          </button>
+        );
+      })}
+    </div>
+  )}
+</section>
