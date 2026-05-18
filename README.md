@@ -1,43 +1,23 @@
-# Astro Starter Kit: Minimal
+# Visit Ålesund
 
-```sh
-npm create astro@latest -- --template minimal
-```
+**Is today a good day to visit Ålesund?**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Ålesund is one of Norway's most beautiful cities — but on busy cruise ship days, the narrow streets and harbour front can be packed with thousands of extra visitors. A single large ship can bring more than 4,000 passengers into a city of 50,000 people.
 
-## 🚀 Project Structure
+This app helps you plan your visit. Check any date to see how many cruise ships are in port, how crowded it's likely to be, and which upcoming days are the quietest.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Features
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Today's busyness at a glance — colour-coded from quiet (green) to very busy (red)
+- 14-day overview and full calendar view
+- Best upcoming days to visit, ranked by expected crowds
+- Live webcam of the cruise ship terminal
+- 5-day weather forecast
+- Works offline — installable as an app on your phone
+- Available in English, Norwegian (Bokmål & Nynorsk), German, Dutch and French
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Data is sourced from the official mooring plan published by [Ålesund Havn](https://alesund.havn.no) and updated weekly.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+---
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Made in Norway 🇳🇴 by [JacosVerksted](https://github.com/JacosVerksted)
