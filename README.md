@@ -13,7 +13,7 @@ This app helps you plan your visit. Check any date to see how many cruise ships 
 - Best upcoming days to visit, ranked by expected crowds
 - Live webcam of the cruise ship terminal
 - 5-day weather forecast
-- Works offline — installable as an app on your phone
+- Installable as an app on your phone
 - Available in English, Norwegian (Bokmål & Nynorsk), German, Dutch and French
 
 Data is sourced from the official mooring plan published by [Ålesund Havn](https://alesund.havn.no) and updated weekly.
