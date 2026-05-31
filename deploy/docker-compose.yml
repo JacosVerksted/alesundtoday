@@ -1,0 +1,20 @@
+services:
+  alesundtoday:
+    image: nginx:alpine
+    container_name: alesundtoday
+    restart: unless-stopped
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+    networks:
+      - pangolin
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alesundtoday.rule=Host(`alesundtoday.jacosverksted.no`)"
+      - "traefik.http.routers.alesundtoday.entrypoints=websecure"
+      - "traefik.http.routers.alesundtoday.tls=true"
+      - "traefik.http.routers.alesundtoday.tls.certresolver=letsencrypt"
+      - "traefik.http.services.alesundtoday.loadbalancer.server.port=80"
+
+networks:
+  pangolin:
+    external: true

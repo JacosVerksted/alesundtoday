@@ -40,8 +40,22 @@ jobs:
           git commit -m "chore: refresh cruise schedule $(date -u +%Y-%m-%d)"
           git push
 
-      - name: Trigger Netlify deploy
-        if: steps.diff.outputs.changed == 'true' && env.NETLIFY_BUILD_HOOK != ''
+      - name: Build site
+        if: steps.diff.outputs.changed == 'true'
+        run: npm run build
+
+      - name: Deploy to VPS
+        if: steps.diff.outputs.changed == 'true'
         env:
-          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
-        run: curl -s -X POST "$NETLIFY_BUILD_HOOK"
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$VPS_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/deploy_key" \
+            dist/ \
+            "$VPS_USER@$VPS_HOST:/home/$VPS_USER/docker/alesundtoday/dist/"
