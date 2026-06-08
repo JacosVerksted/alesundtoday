@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-01T21:03:36.396Z",
+  "generated": "2026-06-08T17:36:16.150Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -3778,6 +3778,268 @@
       ],
       "count": 3,
       "level": "very-busy"
+    },
+    {
+      "date": "2026-07-01",
+      "ships": [
+        "AIDAnova",
+        "MSC Euribia",
+        "Star Pride"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-02",
+      "ships": [
+        "Sky Princess",
+        "Queen Anne",
+        "Azamara Quest"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-03",
+      "ships": [
+        "Marina",
+        "Costa Favolosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-04",
+      "ships": [
+        "Arcadia",
+        "Mein Schiff 1",
+        "Viking Mira",
+        "Corinthian"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-05",
+      "ships": [
+        "Amera"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-06",
+      "ships": [
+        "Aurora",
+        "AIDAprima",
+        "Trollfjord",
+        "Europa 2"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-08",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-09",
+      "ships": [
+        "Rotterdam",
+        "Queen Anne"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-10",
+      "ships": [
+        "Mein Schiff 3",
+        "Sirena"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-12",
+      "ships": [
+        "Seadream II"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-13",
+      "ships": [
+        "Midnatsol",
+        "Vasco Da Gama",
+        "Seadream II",
+        "MSC Virtuosa"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-14",
+      "ships": [
+        "AIDAnova"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-15",
+      "ships": [
+        "MSC Euribia",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-16",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-17",
+      "ships": [
+        "Hebridean Sky"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-18",
+      "ships": [
+        "Norwegian Star",
+        "Mein Schiff 1",
+        "MS Nordstjernen",
+        "Silver Dawn"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-19",
+      "ships": [
+        "Celebrity Apex"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-20",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-21",
+      "ships": [
+        "Seadream II"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-22",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-23",
+      "ships": [
+        "Mein Schiff 3"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-24",
+      "ships": [
+        "Scenic Eclipse"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-25",
+      "ships": [
+        "Star Legend"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-26",
+      "ships": [
+        "Mein Schiff 1"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-07-27",
+      "ships": [
+        "AIDAprima",
+        "Vista",
+        "Hebridean Sky",
+        "Midnatsol"
+      ],
+      "count": 4,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-28",
+      "ships": [
+        "Costa Diadema",
+        "Viking Saturn",
+        "Silver Dawn"
+      ],
+      "count": 3,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-07-29",
+      "ships": [
+        "AIDAnova",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-30",
+      "ships": [
+        "Celebrity Eclipse",
+        "Mein Schiff Relax"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-07-31",
+      "ships": [
+        "Disney Dream",
+        "Costa Favolosa"
+      ],
+      "count": 2,
+      "level": "busy"
     }
   ]
 }
