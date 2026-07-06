@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-29T10:27:37.370Z",
+  "generated": "2026-07-06T10:00:24.005Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -4040,6 +4040,231 @@
       ],
       "count": 2,
       "level": "busy"
+    },
+    {
+      "date": "2026-08-01",
+      "ships": [
+        "Seadream II"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-03",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-04",
+      "ships": [
+        "Evrima",
+        "Corinthian"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-05",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-06",
+      "ships": [
+        "Vasco Da Gama",
+        "Seadream II"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-07",
+      "ships": [
+        "Disney Dream",
+        "Mein Schiff 1"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-08",
+      "ships": [
+        "Seven Seas Grandeur"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-10",
+      "ships": [
+        "Midnatsol",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-11",
+      "ships": [
+        "AIDAnova",
+        "Aurora"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-12",
+      "ships": [
+        "MSC Euribia",
+        "Rotterdam"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-14",
+      "ships": [
+        "Corinthian",
+        "Viking Saturn"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-15",
+      "ships": [
+        "Seadream II"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-17",
+      "ships": [
+        "Trollfjord AIDAprima"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-18",
+      "ships": [
+        "Mein Schiff Relax",
+        "Celebrity Apex"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-19",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-20",
+      "ships": [
+        "Insignia",
+        "Costa Favolosa"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-21",
+      "ships": [
+        "Mein Schiff 1",
+        "Silver Dawn"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-22",
+      "ships": [
+        "Bolette",
+        "Viking Mira"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-24",
+      "ships": [
+        "Midnatsol"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-25",
+      "ships": [
+        "Mein Schiff Relax"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-26",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-27",
+      "ships": [
+        "Vasco Da Gama"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-28",
+      "ships": [
+        "Arcadia",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "level": "busy"
+    },
+    {
+      "date": "2026-08-29",
+      "ships": [
+        "Norwegian Star"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-30",
+      "ships": [
+        "Balmoral"
+      ],
+      "count": 1,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-08-31",
+      "ships": [
+        "Queen Mary 2",
+        "Silver Dawn",
+        "Trollfjord"
+      ],
+      "count": 3,
+      "level": "very-busy"
     }
   ]
 }
