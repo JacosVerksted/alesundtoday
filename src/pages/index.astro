@@ -133,9 +133,9 @@ const dataIsStale = daysSinceUpdate > 14;
       <!-- Legend -->
       <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-gray-500">
         <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> <span data-i18n="legend_quiet">Quiet</span></span>
-        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block"></span> <span data-i18n="legend_moderate">Moderate (1 ship)</span></span>
-        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block"></span> <span data-i18n="legend_busy">Busy (2 ships)</span></span>
-        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span> <span data-i18n="legend_very_busy">Very busy (3+)</span></span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block"></span> <span data-i18n="legend_moderate">Moderate (&lt;3k pax)</span></span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block"></span> <span data-i18n="legend_busy">Busy (3–6k pax)</span></span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span> <span data-i18n="legend_very_busy">Very busy (6k+ pax)</span></span>
       </div>
     </section>
 
@@ -222,9 +222,9 @@ const dataIsStale = daysSinceUpdate > 14;
         section_bestdays: 'Best upcoming days',
         section_calendar: 'Calendar',
         legend_quiet: 'Quiet',
-        legend_moderate: 'Moderate (1 ship)',
-        legend_busy: 'Busy (2 ships)',
-        legend_very_busy: 'Very busy (3+)',
+        legend_moderate: 'Moderate (<3k pax)',
+        legend_busy: 'Busy (3–6k pax)',
+        legend_very_busy: 'Very busy (6k+ pax)',
         footer_updated_today: 'Schedule updated today',
         footer_updated_ago: (n) => `Schedule updated ${n} day${n > 1 ? 's' : ''} ago`,
         footer_stale: ' — may be outdated',
@@ -263,9 +263,9 @@ const dataIsStale = daysSinceUpdate > 14;
         section_bestdays: 'Beste kommende dager',
         section_calendar: 'Kalender',
         legend_quiet: 'Stille',
-        legend_moderate: 'Moderat (1 skip)',
-        legend_busy: 'Travelt (2 skip)',
-        legend_very_busy: 'Veldig travelt (3+)',
+        legend_moderate: 'Moderat (<3k pax)',
+        legend_busy: 'Travelt (3–6k pax)',
+        legend_very_busy: 'Veldig travelt (6k+ pax)',
         footer_updated_today: 'Rute oppdatert i dag',
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'er' : ''} siden`,
         footer_stale: ' — kan være utdatert',
@@ -304,9 +304,9 @@ const dataIsStale = daysSinceUpdate > 14;
         section_bestdays: 'Beste kommande dagar',
         section_calendar: 'Kalender',
         legend_quiet: 'Stille',
-        legend_moderate: 'Moderat (1 skip)',
-        legend_busy: 'Travelt (2 skip)',
-        legend_very_busy: 'Svært travelt (3+)',
+        legend_moderate: 'Moderat (<3k pax)',
+        legend_busy: 'Travelt (3–6k pax)',
+        legend_very_busy: 'Svært travelt (6k+ pax)',
         footer_updated_today: 'Rute oppdatert i dag',
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'ar' : ''} sidan`,
         footer_stale: ' — kan vera utdatert',
@@ -345,9 +345,9 @@ const dataIsStale = daysSinceUpdate > 14;
         section_bestdays: 'Beste bevorstehende Tage',
         section_calendar: 'Kalender',
         legend_quiet: 'Ruhig',
-        legend_moderate: 'Mäßig (1 Schiff)',
-        legend_busy: 'Belebt (2 Schiffe)',
-        legend_very_busy: 'Sehr belebt (3+)',
+        legend_moderate: 'Mäßig (<3k pax)',
+        legend_busy: 'Belebt (3–6k pax)',
+        legend_very_busy: 'Sehr belebt (6k+ pax)',
         footer_updated_today: 'Fahrplan heute aktualisiert',
         footer_updated_ago: (n) => `Fahrplan vor ${n} Tag${n > 1 ? 'en' : ''} aktualisiert`,
         footer_stale: ' — möglicherweise veraltet',
@@ -386,9 +386,9 @@ const dataIsStale = daysSinceUpdate > 14;
         section_bestdays: 'Beste komende dagen',
         section_calendar: 'Kalender',
         legend_quiet: 'Rustig',
-        legend_moderate: 'Matig (1 schip)',
-        legend_busy: 'Druk (2 schepen)',
-        legend_very_busy: 'Zeer druk (3+)',
+        legend_moderate: 'Matig (<3k pax)',
+        legend_busy: 'Druk (3–6k pax)',
+        legend_very_busy: 'Zeer druk (6k+ pax)',
         footer_updated_today: 'Schema vandaag bijgewerkt',
         footer_updated_ago: (n) => `Schema ${n} dag${n > 1 ? 'en' : ''} geleden bijgewerkt`,
         footer_stale: ' — mogelijk verouderd',
@@ -427,9 +427,9 @@ const dataIsStale = daysSinceUpdate > 14;
         section_bestdays: 'Meilleurs jours à venir',
         section_calendar: 'Calendrier',
         legend_quiet: 'Calme',
-        legend_moderate: 'Modéré (1 navire)',
-        legend_busy: 'Chargé (2 navires)',
-        legend_very_busy: 'Très chargé (3+)',
+        legend_moderate: 'Modéré (<3k pax)',
+        legend_busy: 'Chargé (3–6k pax)',
+        legend_very_busy: 'Très chargé (6k+ pax)',
         footer_updated_today: 'Programme mis à jour aujourd\'hui',
         footer_updated_ago: (n) => `Programme mis à jour il y a ${n} jour${n > 1 ? 's' : ''}`,
         footer_stale: ' — peut être obsolète',

@@ -26,8 +26,10 @@ export function getBestDays(
       (sum, ship) => sum + estimateCapacity(ship),
       0
     );
+    // Rank primarily by total passengers in port (PAX) — consistent with the
+    // busyness level — with a tiny recency bonus so sooner days edge ahead.
     const recencyBonus = idx * 0.01;
-    const score = day.count * 1000 + estimatedVisitors / 100 + recencyBonus;
+    const score = estimatedVisitors + recencyBonus;
     return { day, score, estimatedVisitors };
   });
 

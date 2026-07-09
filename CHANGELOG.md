@@ -2,6 +2,25 @@
 
 All notable changes to Visit Ålesund are documented here.
 
+## 2026-07-09 (busyness model)
+
+### Changed
+- **Busyness level is now based on total passengers in port (PAX), not the number
+  of ships.** A single mega-ship (e.g. MSC Euribia, 6,762 pax) now reads as "Very
+  busy", while several small Hurtigruten/expedition ships can still be "Moderate"
+  — so a day with 4 small ships is no longer automatically "very busy". The ship
+  count is still shown everywhere as before.
+  - Thresholds (total PAX): Moderate `<3,000`, Busy `3,000–5,999`, Very busy
+    `≥6,000`. Days with no ships are Quiet.
+  - **Fallback:** if any ship in port has an unknown capacity, that day's total
+    PAX is treated as unknown and the level falls back to the original ship-count
+    rule (1 → moderate, 2 → busy, 3+ → very busy).
+  - Capacity data + the level logic now live in one shared module
+    (`src/lib/capacities.mjs`), used by both the app and the build-time scraper,
+    and `pax` is stored per day in `schedule.json`.
+  - The calendar legend now shows PAX ranges (e.g. "Busy (3–6k pax)") instead of
+    ship counts, and "Best upcoming days" ranks by PAX for consistency.
+
 ## 2026-07-09 (later)
 
 ### Fixed

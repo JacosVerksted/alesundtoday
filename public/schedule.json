@@ -8,7 +8,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2023-10-02",
@@ -16,6 +17,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -24,6 +26,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -33,7 +36,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2023-10-05",
@@ -42,6 +46,7 @@
         "Trollfjord"
       ],
       "count": 2,
+      "pax": 5776,
       "level": "busy"
     },
     {
@@ -50,6 +55,7 @@
         "Silver Dawn"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -58,6 +64,7 @@
         "AIDAsol"
       ],
       "count": 1,
+      "pax": 2686,
       "level": "moderate"
     },
     {
@@ -66,6 +73,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -74,7 +82,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2023-10-29",
@@ -83,7 +92,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1052,
+      "level": "moderate"
     },
     {
       "date": "2023-10-30",
@@ -92,7 +102,8 @@
         "Otto Sverdrup"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 2490,
+      "level": "moderate"
     },
     {
       "date": "2023-11-04",
@@ -100,6 +111,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -109,7 +121,8 @@
         "Otto Sverdrup"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 730,
+      "level": "moderate"
     },
     {
       "date": "2023-11-15",
@@ -118,6 +131,7 @@
         "Ambition"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -126,6 +140,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -134,6 +149,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -143,7 +159,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1052,
+      "level": "moderate"
     },
     {
       "date": "2023-12-02",
@@ -151,6 +168,7 @@
         "Arcadia"
       ],
       "count": 1,
+      "pax": 1952,
       "level": "moderate"
     },
     {
@@ -160,7 +178,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1522,
+      "level": "moderate"
     },
     {
       "date": "2024-03-04",
@@ -169,6 +188,7 @@
         "Otto Sverdrup"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -177,6 +197,7 @@
         "AIDAsol"
       ],
       "count": 1,
+      "pax": 2686,
       "level": "moderate"
     },
     {
@@ -185,6 +206,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -193,6 +215,7 @@
         "Spirit of Discovery"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -201,6 +224,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -210,7 +234,8 @@
         "Otto Sverdrup"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1200,
+      "level": "moderate"
     },
     {
       "date": "2024-03-19",
@@ -218,6 +243,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -227,6 +253,7 @@
         "Trollfjord"
       ],
       "count": 2,
+      "pax": 3508,
       "level": "busy"
     },
     {
@@ -235,6 +262,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -243,6 +271,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -251,6 +280,7 @@
         "AIDAsol"
       ],
       "count": 1,
+      "pax": 2686,
       "level": "moderate"
     },
     {
@@ -260,7 +290,8 @@
         "Iona"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11126,
+      "level": "very-busy"
     },
     {
       "date": "2024-04-14",
@@ -268,6 +299,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -276,6 +308,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -284,6 +317,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -292,6 +326,7 @@
         "Arcadia"
       ],
       "count": 1,
+      "pax": 1952,
       "level": "moderate"
     },
     {
@@ -301,7 +336,8 @@
         "Iona"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11126,
+      "level": "very-busy"
     },
     {
       "date": "2024-04-26",
@@ -309,6 +345,7 @@
         "AIDAsol"
       ],
       "count": 1,
+      "pax": 2686,
       "level": "moderate"
     },
     {
@@ -317,6 +354,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -325,6 +363,7 @@
         "Sky Princess"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -333,7 +372,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2024-05-06",
@@ -342,7 +382,8 @@
         "AIDAperla"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6304,
+      "level": "very-busy"
     },
     {
       "date": "2024-05-07",
@@ -351,7 +392,8 @@
         "AIDAsol"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 9448,
+      "level": "very-busy"
     },
     {
       "date": "2024-05-08",
@@ -360,7 +402,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11126,
+      "level": "very-busy"
     },
     {
       "date": "2024-05-09",
@@ -368,6 +411,7 @@
         "Celebrity Silhouette"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -376,6 +420,7 @@
         "Mein Schiff 4"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -385,7 +430,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11126,
+      "level": "very-busy"
     },
     {
       "date": "2024-05-16",
@@ -393,6 +439,7 @@
         "Renaissance"
       ],
       "count": 1,
+      "pax": 700,
       "level": "moderate"
     },
     {
@@ -401,6 +448,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -409,7 +457,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2024-05-20",
@@ -418,6 +467,7 @@
         "Celebrity Apex"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -427,7 +477,8 @@
         "Costa Diadema"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7447,
+      "level": "very-busy"
     },
     {
       "date": "2024-05-22",
@@ -435,7 +486,8 @@
         "MSC Euribia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 6762,
+      "level": "very-busy"
     },
     {
       "date": "2024-05-23",
@@ -443,7 +495,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2024-05-24",
@@ -452,6 +505,7 @@
         "MSC Preziosa"
       ],
       "count": 2,
+      "pax": 5850,
       "level": "busy"
     },
     {
@@ -460,6 +514,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -468,7 +523,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2024-05-27",
@@ -476,6 +532,7 @@
         "Sky Princess"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -485,6 +542,7 @@
         "Rotterdam"
       ],
       "count": 2,
+      "pax": 5767,
       "level": "busy"
     },
     {
@@ -494,6 +552,7 @@
         "Arcadia"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -503,6 +562,7 @@
         "Costa Favolosa"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -512,7 +572,8 @@
         "AIDAprima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2024-06-06",
@@ -520,6 +581,7 @@
         "Jewel Of The Sea"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -530,6 +592,7 @@
         "Silver Dawn"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -539,6 +602,7 @@
         "Rotterdam"
       ],
       "count": 2,
+      "pax": 4018,
       "level": "busy"
     },
     {
@@ -550,6 +614,7 @@
         "Clio"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -558,6 +623,7 @@
         "Arcadia"
       ],
       "count": 1,
+      "pax": 1952,
       "level": "moderate"
     },
     {
@@ -568,7 +634,8 @@
         "World Navigator"
       ],
       "count": 3,
-      "level": "very-busy"
+      "pax": 2372,
+      "level": "moderate"
     },
     {
       "date": "2024-06-15",
@@ -577,7 +644,8 @@
         "MSC Preziosa"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8456,
+      "level": "very-busy"
     },
     {
       "date": "2024-06-16",
@@ -585,6 +653,7 @@
         "Star Pride"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -594,7 +663,8 @@
         "AIDAprima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8053,
+      "level": "very-busy"
     },
     {
       "date": "2024-06-18",
@@ -603,6 +673,7 @@
         "Iona"
       ],
       "count": 2,
+      "pax": 5400,
       "level": "busy"
     },
     {
@@ -612,6 +683,7 @@
         "Seven Seas Navigator"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -621,6 +693,7 @@
         "World Navigator"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -631,6 +704,7 @@
         "Amera"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -639,6 +713,7 @@
         "Le Champlain"
       ],
       "count": 1,
+      "pax": 184,
       "level": "moderate"
     },
     {
@@ -648,6 +723,7 @@
         "Amadea"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -659,6 +735,7 @@
         "Silver Dawn"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -668,7 +745,8 @@
         "Aurora"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7796,
+      "level": "very-busy"
     },
     {
       "date": "2024-06-27",
@@ -677,6 +755,7 @@
         "Ambience"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -685,6 +764,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -693,7 +773,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2024-06-30",
@@ -702,6 +783,7 @@
         "Artania"
       ],
       "count": 2,
+      "pax": 3701,
       "level": "busy"
     },
     {
@@ -712,6 +794,7 @@
         "Zuiderdam"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -721,6 +804,7 @@
         "Silver Dawn"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -731,6 +815,7 @@
         "AIDAprima"
       ],
       "count": 3,
+      "pax": 12232,
       "level": "very-busy"
     },
     {
@@ -740,6 +825,7 @@
         "Amera"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -750,6 +836,7 @@
         "AIDAperla"
       ],
       "count": 3,
+      "pax": 9238,
       "level": "very-busy"
     },
     {
@@ -760,6 +847,7 @@
         "Le Champlain"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -770,6 +858,7 @@
         "Europa"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -779,6 +868,7 @@
         "Marina"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -788,6 +878,7 @@
         "Aurora"
       ],
       "count": 2,
+      "pax": 4371,
       "level": "busy"
     },
     {
@@ -796,6 +887,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -805,6 +897,7 @@
         "Hamburg"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -813,7 +906,8 @@
         "MSC Preziosa"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3502,
+      "level": "busy"
     },
     {
       "date": "2024-07-15",
@@ -821,7 +915,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2024-07-16",
@@ -830,6 +925,7 @@
         "Anthem of the Seas"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -840,6 +936,7 @@
         "World Navigator"
       ],
       "count": 3,
+      "pax": 11916,
       "level": "very-busy"
     },
     {
@@ -849,6 +946,7 @@
         "Queen Mary 2"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -857,6 +955,7 @@
         "Le Champlain"
       ],
       "count": 1,
+      "pax": 184,
       "level": "moderate"
     },
     {
@@ -866,6 +965,7 @@
         "Hebridean Sky"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -875,7 +975,8 @@
         "Le Champlain"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 2870,
+      "level": "moderate"
     },
     {
       "date": "2024-07-22",
@@ -883,6 +984,7 @@
         "Mein Schiff 4"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -892,6 +994,7 @@
         "Amera"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -901,7 +1004,8 @@
         "AIDAperla"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 10880,
+      "level": "very-busy"
     },
     {
       "date": "2024-07-25",
@@ -909,6 +1013,7 @@
         "Aurora"
       ],
       "count": 1,
+      "pax": 1870,
       "level": "moderate"
     },
     {
@@ -920,6 +1025,7 @@
         "NY"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -928,6 +1034,7 @@
         "Odyssey"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -936,6 +1043,7 @@
         "Disney Dream"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -945,6 +1053,7 @@
         "Norwegian Prima"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -954,6 +1063,7 @@
         "Amadea"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -963,6 +1073,7 @@
         "Seven Seas Splendor"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -971,6 +1082,7 @@
         "Celebrity Silhouette"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -979,6 +1091,7 @@
         "Le Champlain"
       ],
       "count": 1,
+      "pax": 184,
       "level": "moderate"
     },
     {
@@ -987,6 +1100,7 @@
         "Sirena"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -997,6 +1111,7 @@
         "Silver Dawn"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1005,7 +1120,8 @@
         "Costa Diadema"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4947,
+      "level": "busy"
     },
     {
       "date": "2024-08-07",
@@ -1014,6 +1130,7 @@
         "Seven Seas Mariner"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1022,6 +1139,7 @@
         "Disney Dream"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1031,6 +1149,7 @@
         "Trollfjord"
       ],
       "count": 2,
+      "pax": 3513,
       "level": "busy"
     },
     {
@@ -1039,7 +1158,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2024-08-11",
@@ -1049,6 +1169,7 @@
         "Mein Schiff 1"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1057,7 +1178,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2024-08-13",
@@ -1067,6 +1189,7 @@
         "Amadea"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1076,7 +1199,8 @@
         "AIDAprima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2024-08-16",
@@ -1086,6 +1210,7 @@
         "Serenade of the Seas"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1094,6 +1219,7 @@
         "Mein Schiff 4"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -1104,6 +1230,7 @@
         "Arcadia"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1113,7 +1240,8 @@
         "MSC Preziosa"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 9428,
+      "level": "very-busy"
     },
     {
       "date": "2024-08-22",
@@ -1122,7 +1250,8 @@
         "Mein Schiff 1"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7454,
+      "level": "very-busy"
     },
     {
       "date": "2024-08-23",
@@ -1131,7 +1260,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 2022,
+      "level": "moderate"
     },
     {
       "date": "2024-08-26",
@@ -1140,6 +1270,7 @@
         "Nieuw Statendam"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1148,6 +1279,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -1157,7 +1289,8 @@
         "AIDAprima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2024-08-29",
@@ -1167,6 +1300,7 @@
         "Silver Dawn"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1175,6 +1309,7 @@
         "Seven Seas Splendor"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1184,6 +1319,7 @@
         "Vasco Da Gama"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1192,7 +1328,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2024-09-03",
@@ -1200,6 +1337,7 @@
         "MSC Virtuosa"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1209,7 +1347,8 @@
         "Costa Favolosa"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 9706,
+      "level": "very-busy"
     },
     {
       "date": "2024-09-06",
@@ -1217,6 +1356,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1226,6 +1366,7 @@
         "Seven Seas Splendor"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1234,7 +1375,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2024-09-10",
@@ -1242,7 +1384,8 @@
         "MSC Euribia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 6762,
+      "level": "very-busy"
     },
     {
       "date": "2024-09-11",
@@ -1251,7 +1394,8 @@
         "Iona"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 10154,
+      "level": "very-busy"
     },
     {
       "date": "2024-09-12",
@@ -1259,6 +1403,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -1267,6 +1412,7 @@
         "Borealis"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1276,7 +1422,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2024-10-05",
@@ -1285,6 +1432,7 @@
         "Silver Dawn"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1294,7 +1442,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2024-10-10",
@@ -1302,7 +1451,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2024-10-11",
@@ -1310,6 +1460,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -1318,6 +1469,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1326,6 +1478,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -1335,7 +1488,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2024-10-18",
@@ -1344,6 +1498,7 @@
         "Balmoral"
       ],
       "count": 2,
+      "pax": 4346,
       "level": "busy"
     },
     {
@@ -1352,6 +1507,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -1360,7 +1516,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2024-10-28",
@@ -1369,7 +1526,8 @@
         "Otto Sverdrup"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1850,
+      "level": "moderate"
     },
     {
       "date": "2024-10-30",
@@ -1377,7 +1535,8 @@
         "AIDAnova"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5926,
+      "level": "busy"
     },
     {
       "date": "2024-11-04",
@@ -1385,6 +1544,7 @@
         "Ambience"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1393,6 +1553,7 @@
         "Balmora"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1402,6 +1563,7 @@
         "Ambition"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1410,6 +1572,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1418,6 +1581,7 @@
         "Le Commandant Charcot"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1427,7 +1591,8 @@
         "Hanseatic Spirit"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1580,
+      "level": "moderate"
     },
     {
       "date": "2024-11-25",
@@ -1435,6 +1600,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1443,6 +1609,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -1451,6 +1618,7 @@
         "Hanseatic Spirit"
       ],
       "count": 1,
+      "pax": 230,
       "level": "moderate"
     },
     {
@@ -1459,6 +1627,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1467,6 +1636,7 @@
         "Borealis"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1475,6 +1645,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1483,6 +1654,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1491,6 +1663,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1499,6 +1672,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -1508,7 +1682,8 @@
         "Otto Sverdrup"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1322,
+      "level": "moderate"
     },
     {
       "date": "2025-01-20",
@@ -1516,6 +1691,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1524,6 +1700,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -1532,6 +1709,7 @@
         "Hanseatic Spirit"
       ],
       "count": 1,
+      "pax": 230,
       "level": "moderate"
     },
     {
@@ -1540,6 +1718,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1548,6 +1727,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1556,6 +1736,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1564,6 +1745,7 @@
         "Borealis"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1573,6 +1755,7 @@
         "Ny"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1581,6 +1764,7 @@
         "Gann"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1590,7 +1774,8 @@
         "Otto Sverdrup"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1322,
+      "level": "moderate"
     },
     {
       "date": "2025-02-22",
@@ -1599,6 +1784,7 @@
         "Ny"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -1607,6 +1793,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1615,6 +1802,7 @@
         "Ambition"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1623,6 +1811,7 @@
         "Spirit of Discovery"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1631,6 +1820,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1639,6 +1829,7 @@
         "Renaissance"
       ],
       "count": 1,
+      "pax": 700,
       "level": "moderate"
     },
     {
@@ -1647,6 +1838,7 @@
         "Hanseatic Spirit"
       ],
       "count": 1,
+      "pax": 230,
       "level": "moderate"
     },
     {
@@ -1655,6 +1847,7 @@
         "Viking Vela"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1663,6 +1856,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1671,6 +1865,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1680,7 +1875,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1522,
+      "level": "moderate"
     },
     {
       "date": "2025-03-23",
@@ -1688,6 +1884,7 @@
         "Borealis"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1696,6 +1893,7 @@
         "Ambience"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1704,6 +1902,7 @@
         "Otto Sverdrup"
       ],
       "count": 1,
+      "pax": 500,
       "level": "moderate"
     },
     {
@@ -1712,6 +1911,7 @@
         "Borealis"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1720,6 +1920,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1728,6 +1929,7 @@
         "Queen Mary 2"
       ],
       "count": 1,
+      "pax": 2691,
       "level": "moderate"
     },
     {
@@ -1736,6 +1938,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -1744,7 +1947,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2025-04-18",
@@ -1752,7 +1956,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-04-23",
@@ -1760,7 +1965,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2025-04-28",
@@ -1768,6 +1974,7 @@
         "Aurora"
       ],
       "count": 1,
+      "pax": 1870,
       "level": "moderate"
     },
     {
@@ -1776,6 +1983,7 @@
         "Bolette"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1786,6 +1994,7 @@
         "Trollfjord"
       ],
       "count": 3,
+      "pax": 11948,
       "level": "very-busy"
     },
     {
@@ -1795,7 +2004,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6022,
+      "level": "very-busy"
     },
     {
       "date": "2025-05-07",
@@ -1803,7 +2013,8 @@
         "MSC Euribia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 6762,
+      "level": "very-busy"
     },
     {
       "date": "2025-05-08",
@@ -1811,6 +2022,7 @@
         "MV Serenissima"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -1819,7 +2031,8 @@
         "MSC Preziosa"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3502,
+      "level": "busy"
     },
     {
       "date": "2025-05-13",
@@ -1827,7 +2040,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2025-05-14",
@@ -1836,7 +2050,8 @@
         "Queen Anne"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8922,
+      "level": "very-busy"
     },
     {
       "date": "2025-05-15",
@@ -1844,6 +2059,7 @@
         "Renaissance"
       ],
       "count": 1,
+      "pax": 700,
       "level": "moderate"
     },
     {
@@ -1852,7 +2068,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2025-05-19",
@@ -1860,7 +2077,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-05-20",
@@ -1869,7 +2087,8 @@
         "Nieuw Statendam"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7866,
+      "level": "very-busy"
     },
     {
       "date": "2025-05-21",
@@ -1878,7 +2097,8 @@
         "AIDAperla"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2025-05-23",
@@ -1886,6 +2106,7 @@
         "Mein Schiff 2"
       ],
       "count": 1,
+      "pax": 2500,
       "level": "moderate"
     },
     {
@@ -1894,7 +2115,8 @@
         "Costa Favolosa"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3780,
+      "level": "busy"
     },
     {
       "date": "2025-05-26",
@@ -1903,6 +2125,7 @@
         "Norwegian Prima"
       ],
       "count": 2,
+      "pax": 4969,
       "level": "busy"
     },
     {
@@ -1912,7 +2135,8 @@
         "Mein Schiff 7"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6768,
+      "level": "very-busy"
     },
     {
       "date": "2025-05-29",
@@ -1920,6 +2144,7 @@
         "Silver Endeavour"
       ],
       "count": 1,
+      "pax": 200,
       "level": "moderate"
     },
     {
@@ -1928,7 +2153,8 @@
         "MSC Preziosa"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3502,
+      "level": "busy"
     },
     {
       "date": "2025-06-02",
@@ -1938,6 +2164,7 @@
         "Queen Mary 2"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1947,7 +2174,8 @@
         "AIDAperla"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6906,
+      "level": "very-busy"
     },
     {
       "date": "2025-06-04",
@@ -1955,7 +2183,8 @@
         "MSC Euribia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 6762,
+      "level": "very-busy"
     },
     {
       "date": "2025-06-05",
@@ -1965,6 +2194,7 @@
         "Viking Vela"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1973,6 +2203,7 @@
         "Le Boreal"
       ],
       "count": 1,
+      "pax": 264,
       "level": "moderate"
     },
     {
@@ -1981,7 +2212,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2025-06-08",
@@ -1991,6 +2223,7 @@
         "Amera"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -1999,6 +2232,7 @@
         "Le Bellot"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2007,6 +2241,7 @@
         "Sirena"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2016,7 +2251,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8274,
+      "level": "very-busy"
     },
     {
       "date": "2025-06-13",
@@ -2025,6 +2261,7 @@
         "Navigator"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2033,6 +2270,7 @@
         "Celebrity Apex"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2041,7 +2279,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-06-16",
@@ -2051,6 +2290,7 @@
         "Trollfjord"
       ],
       "count": 3,
+      "pax": 6421,
       "level": "very-busy"
     },
     {
@@ -2061,6 +2301,7 @@
         "Silver Dawn"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2071,6 +2312,7 @@
         "Azamara Journey"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2081,6 +2323,7 @@
         "Europa 2"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2089,6 +2332,7 @@
         "Seadream II"
       ],
       "count": 1,
+      "pax": 112,
       "level": "moderate"
     },
     {
@@ -2099,6 +2343,7 @@
         "Artania"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2108,6 +2353,7 @@
         "Viking Vela"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2117,6 +2363,7 @@
         "Corinthian"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2126,6 +2373,7 @@
         "MSC Virtuosa"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2135,6 +2383,7 @@
         "Sky Princess"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2145,6 +2394,7 @@
         "WORLD VOYAGER"
       ],
       "count": 3,
+      "pax": 9254,
       "level": "very-busy"
     },
     {
@@ -2155,7 +2405,8 @@
         "Seadream II"
       ],
       "count": 3,
-      "level": "very-busy"
+      "pax": 5711,
+      "level": "busy"
     },
     {
       "date": "2025-06-30",
@@ -2164,6 +2415,7 @@
         "Trollfjord"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2173,6 +2425,7 @@
         "Le Bellot"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2183,6 +2436,7 @@
         "World Explorer"
       ],
       "count": 3,
+      "pax": 11916,
       "level": "very-busy"
     },
     {
@@ -2192,6 +2446,7 @@
         "Sky Princess"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2200,6 +2455,7 @@
         "Silver Dawn"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2209,6 +2465,7 @@
         "Silver Dawn"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2218,7 +2475,8 @@
         "Norwegian Prima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8053,
+      "level": "very-busy"
     },
     {
       "date": "2025-07-08",
@@ -2226,6 +2484,7 @@
         "Clio"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2235,7 +2494,8 @@
         "Arcadia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7878,
+      "level": "very-busy"
     },
     {
       "date": "2025-07-10",
@@ -2243,6 +2503,7 @@
         "Mein Schiff 2"
       ],
       "count": 1,
+      "pax": 2500,
       "level": "moderate"
     },
     {
@@ -2251,6 +2512,7 @@
         "Seven Seas Voyager"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2259,6 +2521,7 @@
         "Sirena"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2269,6 +2532,7 @@
         "Trollfjord"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2279,6 +2543,7 @@
         "World Traveller"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2289,6 +2554,7 @@
         "Clio"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2297,7 +2563,8 @@
         "MSC Preziosa"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3502,
+      "level": "busy"
     },
     {
       "date": "2025-07-18",
@@ -2305,6 +2572,7 @@
         "Silver Dawn"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2313,7 +2581,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2025-07-21",
@@ -2321,6 +2590,7 @@
         "Queen Mary 2"
       ],
       "count": 1,
+      "pax": 2691,
       "level": "moderate"
     },
     {
@@ -2330,6 +2600,7 @@
         "Vasco Da Gama"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2339,6 +2610,7 @@
         "Silver Dawn"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2347,6 +2619,7 @@
         "Gann"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2356,6 +2629,7 @@
         "Norwegian Prima"
       ],
       "count": 2,
+      "pax": 3921,
       "level": "busy"
     },
     {
@@ -2365,6 +2639,7 @@
         "Celebrity Eclipse"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2376,6 +2651,7 @@
         "NY"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2385,6 +2661,7 @@
         "Azamara Journey"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2393,6 +2670,7 @@
         "Silver Dawn"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2401,6 +2679,7 @@
         "Corinthian"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2409,6 +2688,7 @@
         "Mein Schiff 2"
       ],
       "count": 1,
+      "pax": 2500,
       "level": "moderate"
     },
     {
@@ -2418,7 +2698,8 @@
         "Seadream II"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1982,
+      "level": "moderate"
     },
     {
       "date": "2025-08-05",
@@ -2426,7 +2707,8 @@
         "Mein Schiff 7"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4100,
+      "level": "busy"
     },
     {
       "date": "2025-08-06",
@@ -2435,7 +2717,8 @@
         "Scenic Eclipse"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6154,
+      "level": "very-busy"
     },
     {
       "date": "2025-08-07",
@@ -2444,6 +2727,7 @@
         "AIDAluna"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2453,6 +2737,7 @@
         "Silver Spirit"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2462,6 +2747,7 @@
         "Silver Shadow"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2471,6 +2757,7 @@
         "Trollfjord"
       ],
       "count": 2,
+      "pax": 3323,
       "level": "busy"
     },
     {
@@ -2480,6 +2767,7 @@
         "Nieuw Statendam"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2489,7 +2777,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2025-08-15",
@@ -2498,6 +2787,7 @@
         "Silver Dawn"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2506,6 +2796,7 @@
         "Silver Dawn"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2515,7 +2806,8 @@
         "Norwegian Prima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8053,
+      "level": "very-busy"
     },
     {
       "date": "2025-08-19",
@@ -2523,6 +2815,7 @@
         "Arcadia"
       ],
       "count": 1,
+      "pax": 1952,
       "level": "moderate"
     },
     {
@@ -2532,7 +2825,8 @@
         "Mein Schiff 4"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8427,
+      "level": "very-busy"
     },
     {
       "date": "2025-08-21",
@@ -2541,6 +2835,7 @@
         "Queen Mary 2"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2549,7 +2844,8 @@
         "Mein Schiff 7"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4100,
+      "level": "busy"
     },
     {
       "date": "2025-08-24",
@@ -2557,6 +2853,7 @@
         "Seven Seas Navigator"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2566,6 +2863,7 @@
         "Trollfjord"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2574,6 +2872,7 @@
         "Arcadia"
       ],
       "count": 1,
+      "pax": 1952,
       "level": "moderate"
     },
     {
@@ -2583,7 +2882,8 @@
         "AIDAperla"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2025-08-28",
@@ -2593,6 +2893,7 @@
         "AIDAprima"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2601,6 +2902,7 @@
         "Sirena"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2609,7 +2911,8 @@
         "Norwegian Prima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3099,
+      "level": "busy"
     },
     {
       "date": "2025-08-31",
@@ -2617,6 +2920,7 @@
         "Ambition"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2626,7 +2930,8 @@
         "Britannia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6147,
+      "level": "very-busy"
     },
     {
       "date": "2025-09-03",
@@ -2635,7 +2940,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6446,
+      "level": "very-busy"
     },
     {
       "date": "2025-09-04",
@@ -2643,6 +2949,7 @@
         "Queen Anne"
       ],
       "count": 1,
+      "pax": 2996,
       "level": "moderate"
     },
     {
@@ -2652,7 +2959,8 @@
         "Mein Schiff 4"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6003,
+      "level": "very-busy"
     },
     {
       "date": "2025-09-07",
@@ -2660,7 +2968,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-09-08",
@@ -2669,6 +2978,7 @@
         "Norwegian Prima"
       ],
       "count": 2,
+      "pax": 3921,
       "level": "busy"
     },
     {
@@ -2678,6 +2988,7 @@
         "Scenic Eclipse"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2687,7 +2998,8 @@
         "Iona"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 10154,
+      "level": "very-busy"
     },
     {
       "date": "2025-09-11",
@@ -2696,6 +3008,7 @@
         "Balmoral"
       ],
       "count": 2,
+      "pax": 3698,
       "level": "busy"
     },
     {
@@ -2704,6 +3017,7 @@
         "Seven Seas Mariner"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2712,6 +3026,7 @@
         "Viking Saturn"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2720,6 +3035,7 @@
         "Amera"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2728,7 +3044,8 @@
         "Britannia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3647,
+      "level": "busy"
     },
     {
       "date": "2025-09-17",
@@ -2736,7 +3053,8 @@
         "AIDAnova"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5926,
+      "level": "busy"
     },
     {
       "date": "2025-09-18",
@@ -2744,6 +3062,7 @@
         "Mein Schiff 4"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -2753,6 +3072,7 @@
         "Norwegian Star"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2761,7 +3081,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-09-22",
@@ -2770,7 +3091,8 @@
         "Finnmarken"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1822,
+      "level": "moderate"
     },
     {
       "date": "2025-09-24",
@@ -2779,7 +3101,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2025-09-29",
@@ -2789,6 +3112,7 @@
         "Trollfjord"
       ],
       "count": 3,
+      "pax": 7320,
       "level": "very-busy"
     },
     {
@@ -2797,7 +3121,8 @@
         "AIDAnova"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5926,
+      "level": "busy"
     },
     {
       "date": "2025-10-01",
@@ -2805,7 +3130,8 @@
         "MSC Euribia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 6762,
+      "level": "very-busy"
     },
     {
       "date": "2025-10-06",
@@ -2813,6 +3139,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -2821,7 +3148,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-10-08",
@@ -2830,6 +3158,7 @@
         "Emerald Princess"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2838,6 +3167,7 @@
         "Vasco Da Gama"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2848,6 +3178,7 @@
         "Trollfjord"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -2856,7 +3187,8 @@
         "AIDAnova"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5926,
+      "level": "busy"
     },
     {
       "date": "2025-10-16",
@@ -2864,7 +3196,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-10-20",
@@ -2872,6 +3205,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -2881,6 +3215,7 @@
         "Ambition"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -2889,7 +3224,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-10-24",
@@ -2897,6 +3233,7 @@
         "HANSEATIC NATURE"
       ],
       "count": 1,
+      "pax": 230,
       "level": "moderate"
     },
     {
@@ -2905,6 +3242,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -2913,7 +3251,8 @@
         "AIDAnova"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5926,
+      "level": "busy"
     },
     {
       "date": "2025-10-30",
@@ -2921,7 +3260,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2025-10-31",
@@ -2929,6 +3269,7 @@
         "Ambience"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2937,6 +3278,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -2945,6 +3287,7 @@
         "Bolette"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2953,6 +3296,7 @@
         "HANSEATIC NATURE"
       ],
       "count": 1,
+      "pax": 230,
       "level": "moderate"
     },
     {
@@ -2961,6 +3305,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -2969,6 +3314,7 @@
         "Queen Mary 2 NY"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -2977,6 +3323,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -2985,6 +3332,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -2993,6 +3341,7 @@
         "HANSEATIC NATURE"
       ],
       "count": 1,
+      "pax": 230,
       "level": "moderate"
     },
     {
@@ -3002,7 +3351,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 2172,
+      "level": "moderate"
     },
     {
       "date": "2025-11-25",
@@ -3010,6 +3360,7 @@
         "Queen Victoria"
       ],
       "count": 1,
+      "pax": 1990,
       "level": "moderate"
     },
     {
@@ -3018,6 +3369,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3027,7 +3379,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1052,
+      "level": "moderate"
     },
     {
       "date": "2025-12-09",
@@ -3035,6 +3388,7 @@
         "Spirit of Discovery"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3043,6 +3397,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3051,6 +3406,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3059,6 +3415,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3067,6 +3424,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -3075,6 +3433,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3083,6 +3442,7 @@
         "Borealis"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3091,6 +3451,7 @@
         "HANSEATIC NATURE"
       ],
       "count": 1,
+      "pax": 230,
       "level": "moderate"
     },
     {
@@ -3099,6 +3460,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3107,6 +3469,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3115,6 +3478,7 @@
         "Balmoral- Finnmarken"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3124,7 +3488,8 @@
         "Trollfjord"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 2172,
+      "level": "moderate"
     },
     {
       "date": "2026-02-09",
@@ -3132,6 +3497,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3140,6 +3506,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3148,6 +3515,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3156,6 +3524,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -3164,6 +3533,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -3173,6 +3543,7 @@
         "MS Nordstjernen"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3181,6 +3552,7 @@
         "Spirit of Discovery"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3189,6 +3561,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3197,6 +3570,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -3205,6 +3579,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -3213,6 +3588,7 @@
         "Ambience"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3221,6 +3597,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3229,6 +3606,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -3237,6 +3615,7 @@
         "Finnmarken"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -3245,6 +3624,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -3253,6 +3633,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3262,7 +3643,8 @@
         "Balmoral"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 2050,
+      "level": "moderate"
     },
     {
       "date": "2026-04-01",
@@ -3271,6 +3653,7 @@
         "Ambition"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3279,7 +3662,8 @@
         "Arvia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2026-04-04",
@@ -3287,7 +3671,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2026-04-06",
@@ -3296,7 +3681,8 @@
         "Finnmarken"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 1184,
+      "level": "moderate"
     },
     {
       "date": "2026-04-08",
@@ -3304,7 +3690,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2026-04-09",
@@ -3312,7 +3699,8 @@
         "Arvia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2026-04-13",
@@ -3320,6 +3708,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3328,7 +3717,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2026-04-15",
@@ -3336,7 +3726,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2026-04-16",
@@ -3345,7 +3736,8 @@
         "Aurora"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6824,
+      "level": "very-busy"
     },
     {
       "date": "2026-04-21",
@@ -3353,6 +3745,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -3361,6 +3754,7 @@
         "Iona    AIDAnova"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3369,7 +3763,8 @@
         "AIDAprima"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2026-04-27",
@@ -3377,6 +3772,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3386,7 +3782,8 @@
         "MSC Preziosa"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7149,
+      "level": "very-busy"
     },
     {
       "date": "2026-04-29",
@@ -3394,7 +3791,8 @@
         "AIDAperla"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4954,
+      "level": "busy"
     },
     {
       "date": "2026-05-01",
@@ -3402,6 +3800,7 @@
         "Renaissance"
       ],
       "count": 1,
+      "pax": 700,
       "level": "moderate"
     },
     {
@@ -3410,6 +3809,7 @@
         "Queen Anne"
       ],
       "count": 1,
+      "pax": 2996,
       "level": "moderate"
     },
     {
@@ -3418,7 +3818,8 @@
         "Iona"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5200,
+      "level": "busy"
     },
     {
       "date": "2026-05-06",
@@ -3427,7 +3828,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2026-05-12",
@@ -3436,7 +3838,8 @@
         "Mein Schiff 3"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7701,
+      "level": "very-busy"
     },
     {
       "date": "2026-05-15",
@@ -3444,6 +3847,7 @@
         "Renaissance"
       ],
       "count": 1,
+      "pax": 700,
       "level": "moderate"
     },
     {
@@ -3452,6 +3856,7 @@
         "Norwegian Star"
       ],
       "count": 1,
+      "pax": 2348,
       "level": "moderate"
     },
     {
@@ -3461,6 +3866,7 @@
         "Nieuw Statendam"
       ],
       "count": 2,
+      "pax": 3182,
       "level": "busy"
     },
     {
@@ -3471,6 +3877,7 @@
         "Mein Schiff 3"
       ],
       "count": 3,
+      "pax": 7901,
       "level": "very-busy"
     },
     {
@@ -3480,7 +3887,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2026-05-21",
@@ -3488,6 +3896,7 @@
         "SANTA MARIA MANUELA"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3498,6 +3907,7 @@
         "Star Pride"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3507,7 +3917,8 @@
         "Costa Diadema"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 8594,
+      "level": "very-busy"
     },
     {
       "date": "2026-05-27",
@@ -3516,7 +3927,8 @@
         "AIDAperla"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2026-05-28",
@@ -3525,6 +3937,7 @@
         "Rotterdam"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3534,6 +3947,7 @@
         "Seadream II"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3543,6 +3957,7 @@
         "Seadream II"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3552,6 +3967,7 @@
         "Britannia"
       ],
       "count": 2,
+      "pax": 4647,
       "level": "busy"
     },
     {
@@ -3562,6 +3978,7 @@
         "Sea Spirit"
       ],
       "count": 3,
+      "pax": 8057,
       "level": "very-busy"
     },
     {
@@ -3571,7 +3988,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2026-06-04",
@@ -3579,6 +3997,7 @@
         "Aqua Lares"
       ],
       "count": 1,
+      "pax": 150,
       "level": "moderate"
     },
     {
@@ -3587,6 +4006,7 @@
         "Le Laperouse"
       ],
       "count": 1,
+      "pax": 184,
       "level": "moderate"
     },
     {
@@ -3597,7 +4017,8 @@
         "Artania"
       ],
       "count": 3,
-      "level": "very-busy"
+      "pax": 5418,
+      "level": "busy"
     },
     {
       "date": "2026-06-07",
@@ -3606,7 +4027,8 @@
         "Seadream II"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 312,
+      "level": "moderate"
     },
     {
       "date": "2026-06-08",
@@ -3615,6 +4037,7 @@
         "Trollfjord"
       ],
       "count": 2,
+      "pax": 4602,
       "level": "busy"
     },
     {
@@ -3623,7 +4046,8 @@
         "Costa Diadema"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 4947,
+      "level": "busy"
     },
     {
       "date": "2026-06-10",
@@ -3631,7 +4055,8 @@
         "MSC Euribia"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 6762,
+      "level": "very-busy"
     },
     {
       "date": "2026-06-12",
@@ -3640,7 +4065,8 @@
         "Costa Favolosa"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7880,
+      "level": "very-busy"
     },
     {
       "date": "2026-06-14",
@@ -3648,6 +4074,7 @@
         "Silver Dawn"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3659,6 +4086,7 @@
         "Norwegian Star"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3668,6 +4096,7 @@
         "Celebrity Apex"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3678,6 +4107,7 @@
         "Le Laperouse"
       ],
       "count": 3,
+      "pax": 12872,
       "level": "very-busy"
     },
     {
@@ -3687,6 +4117,7 @@
         "Celebrity Eclipse"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3696,7 +4127,8 @@
         "Le Laperouse"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 2054,
+      "level": "moderate"
     },
     {
       "date": "2026-06-20",
@@ -3705,6 +4137,7 @@
         "Seadream II"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3713,6 +4146,7 @@
         "Trollfjord -Mein Schiff 1"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3721,6 +4155,7 @@
         "Rotterdam"
       ],
       "count": 1,
+      "pax": 2668,
       "level": "moderate"
     },
     {
@@ -3731,6 +4166,7 @@
         "Silver Dawn"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3740,6 +4176,7 @@
         "Corinthian"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3748,6 +4185,7 @@
         "Norwegian Star"
       ],
       "count": 1,
+      "pax": 2348,
       "level": "moderate"
     },
     {
@@ -3756,7 +4194,8 @@
         "Costa Favolosa"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 3780,
+      "level": "busy"
     },
     {
       "date": "2026-06-29",
@@ -3767,6 +4206,7 @@
         "Midnatsol"
       ],
       "count": 4,
+      "pax": 6266,
       "level": "very-busy"
     },
     {
@@ -3777,6 +4217,7 @@
         "Britannia"
       ],
       "count": 3,
+      "pax": 8778,
       "level": "very-busy"
     },
     {
@@ -3787,6 +4228,7 @@
         "Star Pride"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3797,6 +4239,7 @@
         "Azamara Quest"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3806,6 +4249,7 @@
         "Costa Favolosa"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3817,6 +4261,7 @@
         "Corinthian"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3825,6 +4270,7 @@
         "Amera"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3836,6 +4282,7 @@
         "Europa 2"
       ],
       "count": 4,
+      "pax": 8162,
       "level": "very-busy"
     },
     {
@@ -3845,7 +4292,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2026-07-09",
@@ -3854,6 +4302,7 @@
         "Queen Anne"
       ],
       "count": 2,
+      "pax": 5664,
       "level": "busy"
     },
     {
@@ -3863,6 +4312,7 @@
         "Sirena"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -3871,6 +4321,7 @@
         "Seadream II"
       ],
       "count": 1,
+      "pax": 112,
       "level": "moderate"
     },
     {
@@ -3882,6 +4333,7 @@
         "MSC Virtuosa"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3890,7 +4342,8 @@
         "AIDAnova"
       ],
       "count": 1,
-      "level": "moderate"
+      "pax": 5926,
+      "level": "busy"
     },
     {
       "date": "2026-07-15",
@@ -3899,7 +4352,8 @@
         "AIDAprima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2026-07-16",
@@ -3907,6 +4361,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -3915,6 +4370,7 @@
         "Hebridean Sky"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3926,6 +4382,7 @@
         "Silver Dawn"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -3934,6 +4391,7 @@
         "Celebrity Apex"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3942,6 +4400,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -3950,6 +4409,7 @@
         "Seadream II"
       ],
       "count": 1,
+      "pax": 112,
       "level": "moderate"
     },
     {
@@ -3959,7 +4419,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2026-07-23",
@@ -3967,6 +4428,7 @@
         "Mein Schiff 3"
       ],
       "count": 1,
+      "pax": 2501,
       "level": "moderate"
     },
     {
@@ -3975,6 +4437,7 @@
         "Scenic Eclipse"
       ],
       "count": 1,
+      "pax": 228,
       "level": "moderate"
     },
     {
@@ -3983,6 +4446,7 @@
         "Star Legend"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -3991,6 +4455,7 @@
         "Mein Schiff 1"
       ],
       "count": 1,
+      "pax": 2500,
       "level": "moderate"
     },
     {
@@ -4002,6 +4467,7 @@
         "Midnatsol"
       ],
       "count": 4,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -4012,6 +4478,7 @@
         "Silver Dawn"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
@@ -4021,7 +4488,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2026-07-30",
@@ -4030,6 +4498,7 @@
         "Mein Schiff Relax"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4039,6 +4508,7 @@
         "Costa Favolosa"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4047,6 +4517,7 @@
         "Seadream II"
       ],
       "count": 1,
+      "pax": 112,
       "level": "moderate"
     },
     {
@@ -4055,6 +4526,7 @@
         "Trollfjord"
       ],
       "count": 1,
+      "pax": 822,
       "level": "moderate"
     },
     {
@@ -4064,6 +4536,7 @@
         "Corinthian"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4073,7 +4546,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2026-08-06",
@@ -4082,6 +4556,7 @@
         "Seadream II"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4091,6 +4566,7 @@
         "Mein Schiff 1"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4099,6 +4575,7 @@
         "Seven Seas Grandeur"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -4108,6 +4585,7 @@
         "AIDAprima"
       ],
       "count": 2,
+      "pax": 5954,
       "level": "busy"
     },
     {
@@ -4117,7 +4595,8 @@
         "Aurora"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 7796,
+      "level": "very-busy"
     },
     {
       "date": "2026-08-12",
@@ -4126,7 +4605,8 @@
         "Rotterdam"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 9430,
+      "level": "very-busy"
     },
     {
       "date": "2026-08-14",
@@ -4135,6 +4615,7 @@
         "Viking Saturn"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4143,6 +4624,7 @@
         "Seadream II"
       ],
       "count": 1,
+      "pax": 112,
       "level": "moderate"
     },
     {
@@ -4151,6 +4633,7 @@
         "Trollfjord AIDAprima"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -4160,6 +4643,7 @@
         "Celebrity Apex"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4169,7 +4653,8 @@
         "MSC Euribia"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 11716,
+      "level": "very-busy"
     },
     {
       "date": "2026-08-20",
@@ -4178,6 +4663,7 @@
         "Costa Favolosa"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4187,6 +4673,7 @@
         "Silver Dawn"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4196,6 +4683,7 @@
         "Viking Mira"
       ],
       "count": 2,
+      "pax": null,
       "level": "busy"
     },
     {
@@ -4204,6 +4692,7 @@
         "Midnatsol"
       ],
       "count": 1,
+      "pax": 1000,
       "level": "moderate"
     },
     {
@@ -4212,6 +4701,7 @@
         "Mein Schiff Relax"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -4221,7 +4711,8 @@
         "AIDAnova"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 12688,
+      "level": "very-busy"
     },
     {
       "date": "2026-08-27",
@@ -4229,6 +4720,7 @@
         "Vasco Da Gama"
       ],
       "count": 1,
+      "pax": null,
       "level": "moderate"
     },
     {
@@ -4238,7 +4730,8 @@
         "AIDAprima"
       ],
       "count": 2,
-      "level": "busy"
+      "pax": 6906,
+      "level": "very-busy"
     },
     {
       "date": "2026-08-29",
@@ -4246,6 +4739,7 @@
         "Norwegian Star"
       ],
       "count": 1,
+      "pax": 2348,
       "level": "moderate"
     },
     {
@@ -4254,6 +4748,7 @@
         "Balmoral"
       ],
       "count": 1,
+      "pax": 1350,
       "level": "moderate"
     },
     {
@@ -4264,6 +4759,7 @@
         "Trollfjord"
       ],
       "count": 3,
+      "pax": null,
       "level": "very-busy"
     }
   ]

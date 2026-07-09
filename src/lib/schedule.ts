@@ -6,6 +6,8 @@ export interface CruiseCall {
   date: string;
   ships: string[];
   count: number;
+  /** Total passenger capacity in port; null when any ship's PAX is unknown. */
+  pax: number | null;
   level: BusynessLevel;
 }
 
@@ -31,6 +33,7 @@ function makeQuiet(date: string, todayStr: string): DayInfo {
     date,
     ships: [],
     count: 0,
+    pax: 0,
     level: 'quiet',
     isToday: date === todayStr,
     isPast: date < todayStr,

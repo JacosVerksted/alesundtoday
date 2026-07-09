@@ -1,4 +1,5 @@
 import { parse } from 'node-html-parser';
+import { dayLevel } from '../src/lib/capacities.mjs';
 
 const DATE_RE = /^(\d{2})\.(\d{2})\.(\d{4})\s*-\s*/;
 // Matches (PDF, 174 kB), (PNG, 233 kB), etc.
@@ -9,17 +10,10 @@ function toISO(dd, mm, yyyy) {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-function levelFor(count) {
-  if (count === 0) return 'quiet';
-  if (count === 1) return 'moderate';
-  if (count === 2) return 'busy';
-  return 'very-busy';
-}
-
 /**
  * Parse the mooringplan HTML page and return cruise call entries.
  * @param {string} html
- * @returns {{ date: string; ships: string[]; count: number; level: string }[]}
+ * @returns {{ date: string; ships: string[]; count: number; pax: number | null; level: string }[]}
  */
 export function parseMooringplan(html) {
   const root = parse(html);
@@ -68,7 +62,10 @@ export function parseMooringplan(html) {
   for (const [date, shipSet] of byDate) {
     const ships = [...shipSet];
     const count = ships.length;
-    calls.push({ date, ships, count, level: levelFor(count) });
+    // Busyness is driven by total passengers in port (PAX); when any ship's
+    // capacity is unknown it falls back to the ship-count rule.
+    const { pax, level } = dayLevel(ships);
+    calls.push({ date, ships, count, pax, level });
   }
 
   calls.sort((a, b) => a.date.localeCompare(b.date));
