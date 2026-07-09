@@ -2,6 +2,13 @@
 
 All notable changes to Visit Ålesund are documented here.
 
+## 2026-07-09 (intro)
+
+### Added
+- A short, plain-language intro line at the top of the screen explaining what the
+  app is for ("Big cruise ships can crowd Ålesund… Tap any day to see how busy it
+  will be before you go."), translated into all six languages.
+
 ## 2026-07-09 (busyness model)
 
 ### Changed

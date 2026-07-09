@@ -59,6 +59,11 @@ const dataIsStale = daysSinceUpdate > 14;
       </div>
     </header>
 
+    <!-- Intro: one-line, plain-language explanation of the app -->
+    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="intro">
+      Big cruise ships can crowd Ålesund with thousands of visitors. Tap any day to see how busy it will be before you go.
+    </p>
+
     <!-- PWA install bar (hidden until browser signals installability) -->
     <div
       id="pwa-install-bar"
@@ -171,6 +176,7 @@ const dataIsStale = daysSinceUpdate > 14;
 
     interface Strings {
       subtitle: string;
+      intro: string;
       webcam: string;
       share: string;
       link_copied: string;
@@ -214,6 +220,7 @@ const dataIsStale = daysSinceUpdate > 14;
     const T: Record<Lang, Strings> = {
       en: {
         subtitle: 'Cruise traffic tracker',
+        intro: 'Big cruise ships can crowd Ålesund with thousands of visitors. Tap any day to see how busy it will be before you go.',
         webcam: 'Webcam',
         share: "Share today's status",
         link_copied: 'Copied!',
@@ -255,6 +262,7 @@ const dataIsStale = daysSinceUpdate > 14;
       },
       nb: {
         subtitle: 'Cruisetrafikk-sporing',
+        intro: 'Store cruiseskip kan fylle Ålesund med tusenvis av besøkende. Trykk på en dag for å se hvor travelt det blir før du drar.',
         webcam: 'Webkamera',
         share: 'Del dagens status',
         link_copied: 'Kopiert!',
@@ -296,6 +304,7 @@ const dataIsStale = daysSinceUpdate > 14;
       },
       nn: {
         subtitle: 'Cruisetrafikk-sporing',
+        intro: 'Store cruiseskip kan fylle Ålesund med tusenvis av besøkande. Trykk på ein dag for å sjå kor travelt det blir før du reiser.',
         webcam: 'Webkamera',
         share: 'Del dagens status',
         link_copied: 'Kopiert!',
@@ -337,6 +346,7 @@ const dataIsStale = daysSinceUpdate > 14;
       },
       de: {
         subtitle: 'Kreuzfahrtverkehr',
+        intro: 'Große Kreuzfahrtschiffe können Ålesund mit Tausenden Besuchern füllen. Tippe auf einen Tag, um zu sehen, wie voll es wird, bevor du kommst.',
         webcam: 'Webcam',
         share: 'Status teilen',
         link_copied: 'Kopiert!',
@@ -378,6 +388,7 @@ const dataIsStale = daysSinceUpdate > 14;
       },
       nl: {
         subtitle: 'Cruiseverkeer tracker',
+        intro: 'Grote cruiseschepen kunnen Ålesund vullen met duizenden bezoekers. Tik op een dag om te zien hoe druk het wordt voordat je gaat.',
         webcam: 'Webcam',
         share: 'Deel de status',
         link_copied: 'Gekopieerd!',
@@ -419,6 +430,7 @@ const dataIsStale = daysSinceUpdate > 14;
       },
       fr: {
         subtitle: 'Trafic de croisière',
+        intro: 'Les grands navires de croisière peuvent remplir Ålesund de milliers de visiteurs. Touchez un jour pour voir à quel point ce sera chargé avant de partir.',
         webcam: 'Webcam',
         share: "Partager le statut",
         link_copied: 'Copié !',
@@ -468,7 +480,7 @@ const dataIsStale = daysSinceUpdate > 14;
 
       // Simple keyed translations
       const STATIC_KEYS: (keyof Strings)[] = [
-        'subtitle','webcam','share','section_weather','section_14days',
+        'subtitle','intro','webcam','share','section_weather','section_14days',
         'section_bestdays','section_calendar','legend_quiet','legend_moderate',
         'legend_busy','legend_very_busy','footer_data','footer_credit',
         'level_quiet','level_moderate','level_busy','level_very_busy',
