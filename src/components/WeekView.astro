@@ -22,7 +22,7 @@ const levelDot = {
 ---
 
 <div class="overflow-x-auto -mx-4 px-4">
-  <div class="flex gap-2 pb-2 min-w-max">
+  <div id="weekview-strip" class="flex gap-2 pb-2 min-w-max">
     {days.map(day => {
       const d = new Date(day.date + 'T12:00:00Z');
       const dayName = d.toLocaleDateString('en-GB', { weekday: 'short' });
@@ -32,7 +32,10 @@ const levelDot = {
 
       return (
         <div
-          class={`flex flex-col items-center rounded-xl border p-3 min-w-[64px] text-center ${bg} ${day.isPast ? 'opacity-50' : ''}`}
+          data-day-select={day.date}
+          role="button"
+          tabindex="0"
+          class={`flex flex-col items-center rounded-xl border p-3 min-w-[64px] text-center cursor-pointer ${bg} ${day.isPast ? 'opacity-50' : ''}`}
           aria-label={`${day.date}: ${day.level}`}
         >
           <span class="text-xs font-medium text-gray-500 uppercase tracking-wide" data-i18n-weekday data-date={day.date}>{dayName}</span>

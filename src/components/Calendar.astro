@@ -52,7 +52,10 @@ const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
       return (
         <div
           data-cal-date={day.date}
-          class={`rounded-lg py-1.5 text-sm font-medium ${bg} ${isToday ? 'ring-2 ring-gray-800 ring-offset-1' : ''} ${day.isPast ? 'opacity-40' : ''}`}
+          data-day-select={day.date}
+          role="button"
+          tabindex="0"
+          class={`rounded-lg py-1.5 text-sm font-medium cursor-pointer ${bg} ${isToday ? 'ring-2 ring-gray-800 ring-offset-1' : ''} ${day.isPast ? 'opacity-40' : ''}`}
           aria-label={`${day.date}: ${day.level}`}
         >
           {dayNum}

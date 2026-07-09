@@ -194,6 +194,8 @@ const dataIsStale = daysSinceUpdate > 14;
       ships_none: string;
       ships_one: string;
       ships_many: (n: number) => string;
+      will_be: string;
+      back_to_today: string;
       best_quiet: string;
       best_one: (v: number) => string;
       best_many: (n: number, v: number) => string;
@@ -233,8 +235,10 @@ const dataIsStale = daysSinceUpdate > 14;
         level_busy: 'Quite busy',
         level_very_busy: 'Very crowded',
         ships_none: 'No cruise ships in port',
-        ships_one: '1 cruise ship in port today',
-        ships_many: (n) => `${n} cruise ships in port today`,
+        ships_one: '1 cruise ship in port',
+        ships_many: (n) => `${n} cruise ships in port`,
+        will_be: 'It will be',
+        back_to_today: '← Today',
         best_quiet: 'No cruise ships',
         best_one: (v) => `1 ship (~${v.toLocaleString('en-GB')} visitors)`,
         best_many: (n, v) => `${n} ships (~${v.toLocaleString('en-GB')} visitors)`,
@@ -272,8 +276,10 @@ const dataIsStale = daysSinceUpdate > 14;
         level_busy: 'Ganske travelt',
         level_very_busy: 'Veldig folksomt',
         ships_none: 'Ingen cruiseskip i havn',
-        ships_one: '1 cruiseskip i havn i dag',
-        ships_many: (n) => `${n} cruiseskip i havn i dag`,
+        ships_one: '1 cruiseskip i havn',
+        ships_many: (n) => `${n} cruiseskip i havn`,
+        will_be: 'Det blir',
+        back_to_today: '← I dag',
         best_quiet: 'Ingen cruiseskip',
         best_one: (v) => `1 skip (~${v.toLocaleString('nb-NO')} besøkende)`,
         best_many: (n, v) => `${n} skip (~${v.toLocaleString('nb-NO')} besøkende)`,
@@ -311,8 +317,10 @@ const dataIsStale = daysSinceUpdate > 14;
         level_busy: 'Ganske travelt',
         level_very_busy: 'Svært folksomt',
         ships_none: 'Ingen cruiseskip i hamn',
-        ships_one: '1 cruiseskip i hamn i dag',
-        ships_many: (n) => `${n} cruiseskip i hamn i dag`,
+        ships_one: '1 cruiseskip i hamn',
+        ships_many: (n) => `${n} cruiseskip i hamn`,
+        will_be: 'Det blir',
+        back_to_today: '← I dag',
         best_quiet: 'Ingen cruiseskip',
         best_one: (v) => `1 skip (~${v.toLocaleString('nb-NO')} vitjande)`,
         best_many: (n, v) => `${n} skip (~${v.toLocaleString('nb-NO')} vitjande)`,
@@ -350,8 +358,10 @@ const dataIsStale = daysSinceUpdate > 14;
         level_busy: 'Ziemlich belebt',
         level_very_busy: 'Sehr belebt',
         ships_none: 'Keine Kreuzfahrtschiffe im Hafen',
-        ships_one: '1 Kreuzfahrtschiff heute im Hafen',
-        ships_many: (n) => `${n} Kreuzfahrtschiffe heute im Hafen`,
+        ships_one: '1 Kreuzfahrtschiff im Hafen',
+        ships_many: (n) => `${n} Kreuzfahrtschiffe im Hafen`,
+        will_be: 'Es wird',
+        back_to_today: '← Heute',
         best_quiet: 'Keine Kreuzfahrtschiffe',
         best_one: (v) => `1 Schiff (~${v.toLocaleString('de-DE')} Besucher)`,
         best_many: (n, v) => `${n} Schiffe (~${v.toLocaleString('de-DE')} Besucher)`,
@@ -389,8 +399,10 @@ const dataIsStale = daysSinceUpdate > 14;
         level_busy: 'Behoorlijk druk',
         level_very_busy: 'Zeer druk',
         ships_none: 'Geen cruiseschepen in de haven',
-        ships_one: '1 cruiseschip in de haven vandaag',
-        ships_many: (n) => `${n} cruiseschepen in de haven vandaag`,
+        ships_one: '1 cruiseschip in de haven',
+        ships_many: (n) => `${n} cruiseschepen in de haven`,
+        will_be: 'Het wordt',
+        back_to_today: '← Vandaag',
         best_quiet: 'Geen cruiseschepen',
         best_one: (v) => `1 schip (~${v.toLocaleString('nl-NL')} bezoekers)`,
         best_many: (n, v) => `${n} schepen (~${v.toLocaleString('nl-NL')} bezoekers)`,
@@ -428,8 +440,10 @@ const dataIsStale = daysSinceUpdate > 14;
         level_busy: 'Assez chargé',
         level_very_busy: 'Très chargé',
         ships_none: 'Aucun navire de croisière au port',
-        ships_one: '1 navire de croisière au port aujourd\'hui',
-        ships_many: (n) => `${n} navires de croisière au port aujourd'hui`,
+        ships_one: '1 navire de croisière au port',
+        ships_many: (n) => `${n} navires de croisière au port`,
+        will_be: 'Ce sera',
+        back_to_today: '← Aujourd\'hui',
         best_quiet: 'Aucun navire de croisière',
         best_one: (v) => `1 navire (~${v.toLocaleString('fr-FR')} visiteurs)`,
         best_many: (n, v) => `${n} navires (~${v.toLocaleString('fr-FR')} visiteurs)`,
@@ -459,7 +473,7 @@ const dataIsStale = daysSinceUpdate > 14;
         'legend_busy','legend_very_busy','footer_data','footer_credit',
         'level_quiet','level_moderate','level_busy','level_very_busy',
         'no_quiet_days','drawer_capacity_label','drawer_visitors_label','drawer_footnote',
-        'badge_quiet','badge_moderate','badge_busy',
+        'badge_quiet','badge_moderate','badge_busy','will_be','back_to_today',
       ];
       STATIC_KEYS.forEach((key) => {
         document.querySelectorAll<HTMLElement>(`[data-i18n="${key}"]`).forEach((el) => {
@@ -645,92 +659,146 @@ const dataIsStale = daysSinceUpdate > 14;
       deferredPrompt = null;
     });
 
-    // ── Live date refresh ─────────────────────────────────────────────────────
-    // The static build captures "today" at deploy time. On subsequent days the
-    // status card would show the wrong date until a rebuild. This fetches fresh
-    // data from schedule.json and patches the DOM if the date has changed.
-    (async () => {
-      const _d = new Date();
-      const todayStr = `${_d.getFullYear()}-${String(_d.getMonth() + 1).padStart(2, '0')}-${String(_d.getDate()).padStart(2, '0')}`;
-      const dateEl = document.querySelector<HTMLElement>('[data-i18n-date-long]');
-      if (!dateEl || dateEl.dataset.date === todayStr) return; // already correct
-
-      let calls: Array<{ date: string; ships: string[]; count: number; level: string }> = [];
+    // ── Day selection + live date refresh ─────────────────────────────────────
+    // Below: a shared schedule cache and a status-card renderer, reused for
+    // both day selection and the daily date-rollover repaint of the top card.
+    // Shared schedule cache + status-card renderer (used by day selection and
+    // the date-rollover refresh below).
+    type Call = { date: string; ships: string[]; count: number; level: string };
+    let scheduleCache: Call[] | null = null;
+    async function loadSchedule(): Promise<Call[]> {
+      if (scheduleCache) return scheduleCache;
       try {
         const res = await fetch('/schedule.json');
         const data = await res.json();
-        calls = data.calls ?? [];
-      } catch { return; }
+        scheduleCache = (data.calls ?? []) as Call[];
+      } catch {
+        scheduleCache = [];
+      }
+      return scheduleCache;
+    }
 
-      const call = calls.find(c => c.date === todayStr);
-      const ships   = call?.ships ?? [];
-      const count   = call?.count ?? 0;
-      const level   = (call?.level ?? 'quiet') as 'quiet' | 'moderate' | 'busy' | 'very-busy';
+    function localTodayISO(): string {
+      const d = new Date();
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
 
-      const levelCfg = {
-        quiet:       { bg: 'bg-emerald-50', ring: 'ring-emerald-200', dot: 'bg-emerald-500', text: 'text-emerald-700', key: 'level_quiet' },
-        moderate:    { bg: 'bg-yellow-50',  ring: 'ring-yellow-200',  dot: 'bg-yellow-400',  text: 'text-yellow-700',  key: 'level_moderate' },
-        busy:        { bg: 'bg-orange-50',  ring: 'ring-orange-200',  dot: 'bg-orange-500',  text: 'text-orange-700',  key: 'level_busy' },
-        'very-busy': { bg: 'bg-red-50',     ring: 'ring-red-200',     dot: 'bg-red-500',     text: 'text-red-700',     key: 'level_very_busy' },
-      } as const;
-      const cfg = levelCfg[level];
+    type Level = 'quiet' | 'moderate' | 'busy' | 'very-busy';
+    const LEVEL_CFG: Record<Level, { bg: string; ring: string; dot: string; text: string; key: string }> = {
+      quiet:       { bg: 'bg-emerald-50', ring: 'ring-emerald-200', dot: 'bg-emerald-500', text: 'text-emerald-700', key: 'level_quiet' },
+      moderate:    { bg: 'bg-yellow-50',  ring: 'ring-yellow-200',  dot: 'bg-yellow-400',  text: 'text-yellow-700',  key: 'level_moderate' },
+      busy:        { bg: 'bg-orange-50',  ring: 'ring-orange-200',  dot: 'bg-orange-500',  text: 'text-orange-700',  key: 'level_busy' },
+      'very-busy': { bg: 'bg-red-50',     ring: 'ring-red-200',     dot: 'bg-red-500',     text: 'text-red-700',     key: 'level_very_busy' },
+    };
+    const ALL_BG   = ['bg-emerald-50','bg-yellow-50','bg-orange-50','bg-red-50'];
+    const ALL_RING = ['ring-emerald-200','ring-yellow-200','ring-orange-200','ring-red-200'];
+    const ALL_DOT  = ['bg-emerald-500','bg-yellow-400','bg-orange-500','bg-red-500'];
+    const ALL_TEXT = ['text-emerald-700','text-yellow-700','text-orange-700','text-red-700'];
 
-      // Update date attribute (applyLang re-renders the formatted text)
-      dateEl.dataset.date = todayStr;
+    // Repaint the top status card for an arbitrary date. When the date is not
+    // today, an "It will be" eyebrow and a "back to today" button appear so it's
+    // clear you're previewing a different day.
+    function renderStatusCard(dateStr: string, calls: Call[], isToday: boolean) {
+      const call  = calls.find(c => c.date === dateStr);
+      const ships = call?.ships ?? [];
+      const count = call?.count ?? 0;
+      const level = (call?.level ?? 'quiet') as Level;
+      const cfg   = LEVEL_CFG[level];
 
       const section = document.querySelector<HTMLElement>('section.rounded-2xl');
-      if (section) {
-        // Background + ring
-        ['bg-emerald-50','bg-yellow-50','bg-orange-50','bg-red-50',
-         'ring-emerald-200','ring-yellow-200','ring-orange-200','ring-red-200']
-          .forEach(c => section.classList.remove(c));
-        section.classList.add(cfg.bg, cfg.ring);
+      if (!section) return;
 
-        // Coloured circle
-        const circle = section.querySelector<HTMLElement>('div.rounded-full.flex-shrink-0');
-        if (circle) {
-          ['bg-emerald-500','bg-yellow-400','bg-orange-500','bg-red-500']
-            .forEach(c => circle.classList.remove(c));
-          circle.classList.add(cfg.dot);
-        }
+      const dateEl = section.querySelector<HTMLElement>('[data-i18n-date-long]');
+      if (dateEl) dateEl.dataset.date = dateStr;
 
-        // Level heading
-        const heading = section.querySelector<HTMLElement>('h2[data-i18n]');
-        if (heading) {
-          heading.dataset.i18n = cfg.key;
-          ['text-emerald-700','text-yellow-700','text-orange-700','text-red-700']
-            .forEach(c => heading.classList.remove(c));
-          heading.classList.add(cfg.text);
-        }
+      [...ALL_BG, ...ALL_RING].forEach(c => section.classList.remove(c));
+      section.classList.add(cfg.bg, cfg.ring);
 
-        // Ship count
-        const countEl = section.querySelector<HTMLElement>('[data-i18n-ships]');
-        if (countEl) countEl.dataset.count = String(count);
-
-        // Ship chips
-        section.querySelector('.flex.flex-wrap.gap-2')?.remove();
-        if (ships.length > 0) {
-          const div = document.createElement('div');
-          div.className = 'flex flex-wrap gap-2';
-          ships.forEach(ship => {
-            const cap = getCapacity(ship);
-            const btn = document.createElement('button');
-            btn.className = 'ship-chip inline-flex items-center gap-1.5 rounded-full bg-white/70 backdrop-blur px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-white transition min-h-[44px]';
-            btn.dataset.ship = ship;
-            btn.dataset.capacity = cap !== null ? String(cap) : '';
-            btn.setAttribute('aria-label', `View details for ${ship}`);
-            const capHtml = cap !== null
-              ? `<span class="text-gray-400 text-xs">· ${(cap / 1000).toFixed(1)}k pax</span>`
-              : '';
-            btn.innerHTML = `<span>🚢</span><span>${ship}</span>${capHtml}`;
-            div.appendChild(btn);
-          });
-          section.appendChild(div);
-        }
+      const circle = section.querySelector<HTMLElement>('div.rounded-full.flex-shrink-0');
+      if (circle) {
+        ALL_DOT.forEach(c => circle.classList.remove(c));
+        circle.classList.add(cfg.dot);
       }
 
+      const heading = section.querySelector<HTMLElement>('h2[data-i18n]');
+      if (heading) {
+        heading.dataset.i18n = cfg.key;
+        ALL_TEXT.forEach(c => heading.classList.remove(c));
+        heading.classList.add(cfg.text);
+      }
+
+      const countEl = section.querySelector<HTMLElement>('[data-i18n-ships]');
+      if (countEl) countEl.dataset.count = String(count);
+
+      section.querySelector('.flex.flex-wrap.gap-2')?.remove();
+      if (ships.length > 0) {
+        const div = document.createElement('div');
+        div.className = 'flex flex-wrap gap-2';
+        ships.forEach(ship => {
+          const cap = getCapacity(ship);
+          const btn = document.createElement('button');
+          btn.className = 'ship-chip inline-flex items-center gap-1.5 rounded-full bg-white/70 backdrop-blur px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-white transition min-h-[44px]';
+          btn.dataset.ship = ship;
+          btn.dataset.capacity = cap !== null ? String(cap) : '';
+          btn.setAttribute('aria-label', `View details for ${ship}`);
+          const capHtml = cap !== null
+            ? `<span class="text-gray-400 text-xs">&middot; ${(cap / 1000).toFixed(1)}k pax</span>`
+            : '';
+          btn.innerHTML = `<span>&#128674;</span><span>${ship}</span>${capHtml}`;
+          div.appendChild(btn);
+        });
+        section.appendChild(div);
+      }
+
+      const eyebrow = document.getElementById('status-eyebrow');
+      const backBtn = document.getElementById('back-to-today');
+      if (eyebrow) eyebrow.hidden = isToday;
+      if (backBtn) backBtn.hidden = isToday;
+
+      applyLang((localStorage.getItem('lang') as Lang) ?? 'en');
+    }
+
+    // Day selection: clicking any day in the calendar or the 14-day strip
+    // repaints the top status card. A blue outline marks the chosen day
+    // (distinct from the box-ring that marks today).
+    function highlightSelectedDay(dateStr: string, isToday: boolean) {
+      document.querySelectorAll<HTMLElement>('[data-day-select]').forEach(el => {
+        el.classList.toggle('selected-day', !isToday && el.dataset.daySelect === dateStr);
+      });
+    }
+
+    async function selectDay(dateStr: string) {
+      const calls = await loadSchedule();
+      const isToday = dateStr === localTodayISO();
+      renderStatusCard(dateStr, calls, isToday);
+      highlightSelectedDay(dateStr, isToday);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Delegated so it keeps working after the 14-day strip is rebuilt below
+    document.addEventListener('click', (e) => {
+      const el = (e.target as Element).closest<HTMLElement>('[data-day-select]');
+      if (el?.dataset.daySelect) selectDay(el.dataset.daySelect);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const el = (e.target as Element).closest<HTMLElement>('[data-day-select]');
+      if (el?.dataset.daySelect) { e.preventDefault(); selectDay(el.dataset.daySelect); }
+    });
+    document.getElementById('back-to-today')?.addEventListener('click', () => selectDay(localTodayISO()));
+
+    (async () => {
+      const todayStr = localTodayISO();
+      const dateEl = document.querySelector<HTMLElement>('[data-i18n-date-long]');
+      if (!dateEl || dateEl.dataset.date === todayStr) return; // already correct
+
+      const calls = await loadSchedule();
+
+      // Repaint the status card for the real today
+      renderStatusCard(todayStr, calls, true);
+
       // Rebuild WeekView strip for the correct 14-day window
-      const weekContainer = document.querySelector<HTMLElement>('.flex.gap-2.pb-2.min-w-max');
+      const weekContainer = document.getElementById('weekview-strip');
       if (weekContainer) {
         const wkBg: Record<string, string> = {
           quiet:      'bg-emerald-100 border-emerald-200',
@@ -744,6 +812,7 @@ const dataIsStale = daysSinceUpdate > 14;
           busy:       'bg-orange-500',
           'very-busy':'bg-red-500',
         };
+        const _d = new Date();
         weekContainer.innerHTML = '';
         for (let i = 0; i < 14; i++) {
           const dd = new Date(_d);
@@ -756,7 +825,10 @@ const dataIsStale = daysSinceUpdate > 14;
           const dot = wkDot[dc_level] ?? wkDot.quiet;
           const dayNum = dd.getDate();
           const div = document.createElement('div');
-          div.className = `flex flex-col items-center rounded-xl border p-3 min-w-[64px] text-center ${bg}`;
+          div.className = `flex flex-col items-center rounded-xl border p-3 min-w-[64px] text-center cursor-pointer ${bg}`;
+          div.dataset.daySelect = iso;
+          div.setAttribute('role', 'button');
+          div.setAttribute('tabindex', '0');
           div.innerHTML = `
             <span class="text-xs font-medium text-gray-500 uppercase tracking-wide" data-i18n-weekday data-date="${iso}"></span>
             <span class="text-lg font-bold mt-0.5 ${i === 0 ? 'text-gray-900' : 'text-gray-700'}">${dayNum}</span>

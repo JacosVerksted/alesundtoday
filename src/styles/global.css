@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+/* Day picked in the calendar / 14-day strip (blue outline avoids clashing
+   with the box-shadow ring marking "today") */
+.selected-day {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
