@@ -1,4 +1,4 @@
-const CACHE = 'visit-alesund-v2';
+const CACHE = 'visit-alesund-v3';
 
 self.addEventListener('install', (e) => {
   e.waitUntil(self.skipWaiting());
@@ -22,12 +22,18 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // Hashed static assets (_astro/*.js, _astro/*.css) — safe to cache forever
+  // Hashed static assets (_astro/*.js, _astro/*.css) — safe to cache forever.
+  // Cache-first, but ONLY store a successful response: a transient 404/403 during
+  // a redeploy must never be cached, or that asset URL breaks until the cache is
+  // manually cleared.
   if (url.pathname.startsWith('/_astro/')) {
     e.respondWith(
       caches.match(e.request).then(
         (cached) => cached || fetch(e.request).then((res) => {
-          caches.open(CACHE).then((c) => c.put(e.request, res.clone()));
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(CACHE).then((c) => c.put(e.request, copy));
+          }
           return res;
         })
       )
@@ -35,11 +41,15 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // HTML pages and schedule.json — network-first so updates reach the user
+  // HTML pages and schedule.json — network-first so updates reach the user.
+  // Only cache OK responses; fall back to cache when offline.
   e.respondWith(
     fetch(e.request)
       .then((res) => {
-        caches.open(CACHE).then((c) => c.put(e.request, res.clone()));
+        if (res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(e.request, copy));
+        }
         return res;
       })
       .catch(() => caches.match(e.request))

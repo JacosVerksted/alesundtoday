@@ -2,6 +2,18 @@
 
 All notable changes to Visit Ålesund are documented here.
 
+## 2026-07-09 (later)
+
+### Fixed
+- **Stale/broken page for returning visitors after a deploy.** The service worker
+  cached *every* `/_astro/` asset response cache-first-forever, including error
+  responses. If a returning browser fetched a new hashed asset during the redeploy
+  window and hit a transient 404/403, that error got cached permanently and the
+  page stayed broken until the cache was cleared. The SW now (a) only caches
+  successful (`res.ok`) responses, so a transient error can never poison the
+  cache, and (b) bumps the cache name `visit-alesund-v2` → `v3`, which makes every
+  returning browser purge the old (possibly poisoned) cache on next load.
+
 ## 2026-07-09
 
 ### Added
