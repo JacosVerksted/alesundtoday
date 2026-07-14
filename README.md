@@ -1,3 +1,5 @@
+https://alesundtoday.jacosverksted.no/
+
 # Visit Ålesund
 
 **Is today a good day to visit Ålesund?**
