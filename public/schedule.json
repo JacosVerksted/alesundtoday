@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T09:28:25.848Z",
+  "generated": "2026-08-10T07:15:25.191Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -4760,6 +4760,201 @@
       ],
       "count": 3,
       "pax": null,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-01",
+      "ships": [
+        "Costa Diadema",
+        "Celebrity Apex"
+      ],
+      "count": 2,
+      "pax": null,
+      "level": "busy"
+    },
+    {
+      "date": "2026-09-02",
+      "ships": [
+        "AIDAperla",
+        "MSC Virtuosa"
+      ],
+      "count": 2,
+      "pax": null,
+      "level": "busy"
+    },
+    {
+      "date": "2026-09-03",
+      "ships": [
+        "Mein Schiff Relax"
+      ],
+      "count": 1,
+      "pax": null,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-09-07",
+      "ships": [
+        "Costa Favolosa",
+        "Norwegian Star",
+        "Midnatsol"
+      ],
+      "count": 3,
+      "pax": 7128,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-08",
+      "ships": [
+        "Iona    AIDAprima"
+      ],
+      "count": 1,
+      "pax": null,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-09-09",
+      "ships": [
+        "MSC Euribia",
+        "AIDAnova"
+      ],
+      "count": 2,
+      "pax": 12688,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-10",
+      "ships": [
+        "Nieuw Statendam",
+        "Rotterdam"
+      ],
+      "count": 2,
+      "pax": 5334,
+      "level": "busy"
+    },
+    {
+      "date": "2026-09-11",
+      "ships": [
+        "Mein Schiff 7"
+      ],
+      "count": 1,
+      "pax": 4100,
+      "level": "busy"
+    },
+    {
+      "date": "2026-09-13",
+      "ships": [
+        "Seven Seas Grandeur"
+      ],
+      "count": 1,
+      "pax": null,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-09-14",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "pax": 822,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-09-15",
+      "ships": [
+        "Britannia",
+        "Iona"
+      ],
+      "count": 2,
+      "pax": 8847,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-16",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "pax": 11716,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-17",
+      "ships": [
+        "Mein Schiff 3",
+        "AIDAprima"
+      ],
+      "count": 2,
+      "pax": 7455,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-18",
+      "ships": [
+        "MSC Preziosa"
+      ],
+      "count": 1,
+      "pax": 3502,
+      "level": "busy"
+    },
+    {
+      "date": "2026-09-21",
+      "ships": [
+        "Midnatsol",
+        "Finnmarken"
+      ],
+      "count": 2,
+      "pax": 2000,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-09-22",
+      "ships": [
+        "AIDAnova",
+        "Iona"
+      ],
+      "count": 2,
+      "pax": 11126,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-23",
+      "ships": [
+        "MSC Euribia",
+        "Nieuw Statendam"
+      ],
+      "count": 2,
+      "pax": 9428,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-28",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "pax": 822,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-09-29",
+      "ships": [
+        "Mein Schiff 3",
+        "Rotterdam",
+        "Midnatsol"
+      ],
+      "count": 3,
+      "pax": 6169,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-09-30",
+      "ships": [
+        "AIDAperla",
+        "MSC Euribia"
+      ],
+      "count": 2,
+      "pax": 11716,
       "level": "very-busy"
     }
   ]
