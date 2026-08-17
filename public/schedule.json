@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-10T07:15:25.191Z",
+  "generated": "2026-08-17T06:37:06.135Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -4612,11 +4612,12 @@
       "date": "2026-08-14",
       "ships": [
         "Corinthian",
+        "15.08. 2026",
         "Viking Saturn"
       ],
-      "count": 2,
+      "count": 3,
       "pax": null,
-      "level": "busy"
+      "level": "very-busy"
     },
     {
       "date": "2026-08-15",
