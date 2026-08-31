@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T06:39:54.551Z",
+  "generated": "2026-08-31T12:18:14.780Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -4796,8 +4796,8 @@
       "date": "2026-09-07",
       "ships": [
         "Costa Favolosa",
-        "Norwegian Star",
-        "Midnatsol"
+        "Midnatsol",
+        "Norwegian Star"
       ],
       "count": 3,
       "pax": 7128,
