@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T12:18:14.780Z",
+  "generated": "2026-09-07T11:11:20.470Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -4957,6 +4957,174 @@
       "count": 2,
       "pax": 11716,
       "level": "very-busy"
+    },
+    {
+      "date": "2026-10-01",
+      "ships": [
+        "Costa Favolosa"
+      ],
+      "count": 1,
+      "pax": 3780,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-05",
+      "ships": [
+        "Rotterdam",
+        "Finnmarken"
+      ],
+      "count": 2,
+      "pax": 3668,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-06",
+      "ships": [
+        "AIDAnova",
+        "Mein Schiff 3"
+      ],
+      "count": 2,
+      "pax": 8427,
+      "level": "very-busy"
+    },
+    {
+      "date": "2026-10-07",
+      "ships": [
+        "MSC Euribia",
+        "Vasco Da Gama"
+      ],
+      "count": 2,
+      "pax": null,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-08",
+      "ships": [
+        "Britannia"
+      ],
+      "count": 1,
+      "pax": 3647,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-12",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "pax": 822,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-13",
+      "ships": [
+        "Midnatsol"
+      ],
+      "count": 1,
+      "pax": 1000,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-14",
+      "ships": [
+        "AIDAperla",
+        "HANSEATIC NATURE"
+      ],
+      "count": 2,
+      "pax": 5184,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-15",
+      "ships": [
+        "Aurora"
+      ],
+      "count": 1,
+      "pax": 1870,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-16",
+      "ships": [
+        "Queen Anne"
+      ],
+      "count": 1,
+      "pax": 2996,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-19",
+      "ships": [
+        "Nieuw Statendam",
+        "Finnmarken"
+      ],
+      "count": 2,
+      "pax": 3666,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-20",
+      "ships": [
+        "Ambition"
+      ],
+      "count": 1,
+      "pax": null,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-21",
+      "ships": [
+        "AIDAnova",
+        "Sky Princess"
+      ],
+      "count": 2,
+      "pax": null,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-22",
+      "ships": [
+        "Regatta"
+      ],
+      "count": 1,
+      "pax": null,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-26",
+      "ships": [
+        "Trollfjord"
+      ],
+      "count": 1,
+      "pax": 822,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-27",
+      "ships": [
+        "Midnatsol"
+      ],
+      "count": 1,
+      "pax": 1000,
+      "level": "moderate"
+    },
+    {
+      "date": "2026-10-28",
+      "ships": [
+        "AIDAperla"
+      ],
+      "count": 1,
+      "pax": 4954,
+      "level": "busy"
+    },
+    {
+      "date": "2026-10-29",
+      "ships": [
+        "HANSEATIC NATURE"
+      ],
+      "count": 1,
+      "pax": 230,
+      "level": "moderate"
     }
   ]
 }
