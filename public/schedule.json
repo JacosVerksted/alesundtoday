@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T11:11:20.470Z",
+  "generated": "2026-09-14T11:21:39.955Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -4863,10 +4863,11 @@
       "date": "2026-09-15",
       "ships": [
         "Britannia",
-        "Iona"
+        "Iona",
+        "OBS, OBS NY!!!"
       ],
-      "count": 2,
-      "pax": 8847,
+      "count": 3,
+      "pax": null,
       "level": "very-busy"
     },
     {
