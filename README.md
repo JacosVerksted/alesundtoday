@@ -108,9 +108,10 @@ The site is plain static files in an `nginx:alpine` container on a self-hosted s
   - *Rate limiting per visitor* (10 requests/s, burst 40, 16 connections; answers `429`). nginx sits behind a reverse proxy, so the real client address is restored from `X-Forwarded-For` for requests coming from Docker's private ranges.
   - *No access log:* visitor IP addresses are personal data and nothing needs them.
   - *Security headers:* strict Content-Security-Policy (the page has no inline scripts or styles), HSTS (without `includeSubDomains`), Permissions-Policy, `nosniff`, `Referrer-Policy: no-referrer`, `X-Frame-Options`. If you add something that loads from another origin or uses inline code, the CSP must be updated too.
-  - *Also:* gzip with `Vary`, bot and scanner blocking, only `GET`/`HEAD` allowed.
+  - *Scanner probes* (WordPress, `.env`, `.git`, `phpinfo`, admin and login paths, ...) all get the same plain `404` and are throttled much harder than visitors (`429` once a short allowance is used). Dotfiles answer `404` too, not `403`, so nothing hints that it exists. The rules match whole path segments; if a real page ever needs one of those names (`/news/`, `/admin/`), remove that name from the list in `nginx.conf`.
+  - *Also:* gzip with `Vary`, blocking of known scanner user-agents, only `GET`/`HEAD` allowed.
 - **Changing the nginx config:** the server mounts its own copy of this file. Overwrite it in place (`cat new > nginx.conf`; a `mv` would leave the container looking at the old file), check with `docker exec <container> nginx -t`, then `docker exec <container> nginx -s reload` — a reload drops no connections.
-- The site runs as a plain `nginx:alpine` container with `dist/` and `nginx.conf` mounted read-only. TLS, the domain, routing and any access restrictions are handled by a reverse proxy on the server and are not part of this repository.
+- The site runs as a plain `nginx:alpine` container with `dist/` and `nginx.conf` mounted read-only. TLS, the domain and routing are handled by a reverse proxy on the server and are not part of this repository. The site is open to visitors from any country.
 - **Service worker (`public/sw.js`):** hashed `/_astro/` assets are cache-first (only successful responses are cached); HTML and `schedule.json` are network-first. Bump the cache name on any deploy that changes assets in a way that must purge old caches.
 - There are no GitHub Actions workflows: deploying and refreshing the schedule happen only on the server.
 

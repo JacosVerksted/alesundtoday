@@ -4,6 +4,19 @@ All notable changes to Visit Ålesund are documented here.
 
 Newest first. Entries on the same date are grouped by theme.
 
+## 2026-10-11 (open access and scanner blocking)
+
+### Changed
+- **The country restriction was removed from the site**, so visitors from abroad (most
+  cruise passengers) can use it. In the logs, far more addresses were being refused than
+  got in. The restriction on other services on the same proxy is unchanged. The privacy
+  page no longer mentions it.
+- **WordPress, admin and scanner probes** (`wp-*`, `.env`, `.git`, `phpinfo`, `_ignition`,
+  admin/login paths, `/?rest_route=` and more) now all get the same plain `404`, and are
+  throttled harder than normal visitors (`429` after a short allowance). Dotfiles used to
+  answer `403`, which hints that something exists; they answer `404` now. These probes
+  used to be turned away by the country block before reaching the web server.
+
 ## 2026-10-11 (privacy notice)
 
 ### Added
