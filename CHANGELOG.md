@@ -4,6 +4,29 @@ All notable changes to Visit Ålesund are documented here.
 
 Newest first. Entries on the same date are grouped by theme.
 
+## 2026-10-11 (web server)
+
+### Changed
+- **Rate limits now apply per visitor.** nginx sits behind a reverse proxy and used to
+  see every request as coming from the proxy, so all visitors shared a single limit
+  (all of the last 399 logged requests came from one address). The real client address
+  is now restored from `X-Forwarded-For`; limits are 10 requests/s with a burst of 40
+  per visitor and answer `429`. Verified with a burst test: excess requests are refused
+  and normal traffic recovers within seconds.
+- **No access log**, since visitor IP addresses are personal data and nothing uses them.
+- **Caching:** HTML and `schedule.json` were cached by browsers for 24 h / 1 h, so a
+  returning visitor could see yesterday's page after the daily rebuild (and the service
+  worker's "network-first" fetches were served from that cache). They are now revalidated
+  on every visit. Cache headers are set once per path and only on successful responses —
+  before, a missing hashed asset returned a 404 marked "cache for a year".
+- `Vary: Accept-Encoding` is sent with compressed responses; JavaScript is compressed.
+
+### Added
+- **Security headers:** a strict Content-Security-Policy (verified against the live page
+  with language switching, day selection, the ship drawer and the service worker: no
+  violations), HSTS (6 months, without `includeSubDomains`) and a Permissions-Policy.
+- A `LICENSE` file: all rights reserved (the source is public to read, not licensed for reuse).
+
 ## 2026-10-11 (arrival times and berths)
 
 ### Added

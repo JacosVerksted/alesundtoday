@@ -101,7 +101,13 @@ The site is plain static files in an `nginx:alpine` container on a self-hosted s
 - **`deploy/vps-rebuild.sh`** does everything: pulls `main`, scrapes, builds inside a throwaway `node:22-alpine` container (no Node on the host, memory capped), and publishes into the folder nginx serves — adding new files before deleting old ones so assets are never missing. If the scrape fails it publishes the last good schedule. It is wrapped in a function so its own `git reset` cannot corrupt a running run.
 - **Schedule:** run daily from cron, for example `30 4 * * * /bin/bash <path>/deploy/vps-rebuild.sh`. A `git push` does **not** deploy by itself — run the script (or wait for the next cron run) to publish a change.
 - **Configuration** (environment or a `rebuild.env` next to the script's base folder): `BASE` (working folder, holds `src/`, `dist/`, `rebuild.log`, `schedule.last-good.json`), `DIST_DIR` (publish somewhere else for a dry run), `KUMA_PUSH_URL` (optional Uptime Kuma push monitor, pinged on success or failure).
-- **`deploy/nginx.conf`**: cache headers per path (hashed assets immutable, `sw.js` never cached, `schedule.json` hourly), rate limiting, bot blocking, security headers.
+- **`deploy/nginx.conf`**:
+  - *Caching:* hashed assets are cached for a year; `sw.js` is never cached; HTML, `schedule.json` and everything else is revalidated on each visit (cheap `304` replies via ETag). The header is only added to successful responses, so a 404 can never be cached as "immutable".
+  - *Rate limiting per visitor* (10 requests/s, burst 40, 16 connections; answers `429`). nginx sits behind a reverse proxy, so the real client address is restored from `X-Forwarded-For` for requests coming from Docker's private ranges.
+  - *No access log:* visitor IP addresses are personal data and nothing needs them.
+  - *Security headers:* strict Content-Security-Policy (the page has no inline scripts or styles), HSTS (without `includeSubDomains`), Permissions-Policy, `nosniff`, `Referrer-Policy: no-referrer`, `X-Frame-Options`. If you add something that loads from another origin or uses inline code, the CSP must be updated too.
+  - *Also:* gzip with `Vary`, bot and scanner blocking, only `GET`/`HEAD` allowed.
+- **Changing the nginx config:** the server mounts its own copy of this file. Overwrite it in place (`cat new > nginx.conf`; a `mv` would leave the container looking at the old file), check with `docker exec <container> nginx -t`, then `docker exec <container> nginx -s reload` — a reload drops no connections.
 - The site runs as a plain `nginx:alpine` container with `dist/` and `nginx.conf` mounted read-only. TLS, the domain, routing and any access restrictions are handled by a reverse proxy on the server and are not part of this repository.
 - **Service worker (`public/sw.js`):** hashed `/_astro/` assets are cache-first (only successful responses are cached); HTML and `schedule.json` are network-first. Bump the cache name on any deploy that changes assets in a way that must purge old caches.
 - There are no GitHub Actions workflows: deploying and refreshing the schedule happen only on the server.
@@ -111,6 +117,10 @@ The site is plain static files in an `nginx:alpine` container on a self-hosted s
 - Cruise schedule and mooring plans: [Ålesund Havn](https://alesund.havn.no/skipstrafikk/mooringplan-cruise/) — public information, read once a day with an identifying user-agent; the site links back to the source.
 - Weather: [MET Norway](https://www.met.no/en) Locationforecast, used under MET Norway's open data licence (credit required, shown in the footer).
 - Unofficial and independent: not affiliated with, or endorsed by, Ålesund kommune or Ålesund Havn.
+
+## Licence
+
+Copyright © 2026 JacosVerksted. All rights reserved. The source is public so it can be read, but it is not licensed for reuse — see [LICENSE](LICENSE).
 
 ## Changelog
 
