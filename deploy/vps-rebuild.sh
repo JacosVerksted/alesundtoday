@@ -11,7 +11,7 @@
 # Optional ~/docker/alesundtoday/rebuild.env:  KUMA_PUSH_URL=https://…/api/push/<token>
 set -euo pipefail
 
-BASE="${BASE:-/home/rick/docker/alesundtoday}"
+BASE="${BASE:-$HOME/docker/alesundtoday}"
 SRC="$BASE/src"
 DIST_DIR="${DIST_DIR:-$BASE/dist}"          # bind-mounted into nginx
 LAST_GOOD="$BASE/schedule.last-good.json"

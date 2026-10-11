@@ -1,3 +1,9 @@
+# Reference for how the site is served: nginx serving the built files read-only.
+# TLS, the domain and routing are handled by the reverse proxy in front of it and are
+# not configured here — there are deliberately no proxy labels in this file.
+#
+# `dist/` is filled by deploy/vps-rebuild.sh; `nginx.conf` is deploy/nginx.conf.
+# Set the network below to the Docker network your reverse proxy reaches containers on.
 services:
   alesundtoday:
     image: nginx:alpine
@@ -7,15 +13,8 @@ services:
       - ./dist:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     networks:
-      - pangolin
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.alesundtoday.rule=Host(`alesundtoday.jacosverksted.no`)"
-      - "traefik.http.routers.alesundtoday.entrypoints=websecure"
-      - "traefik.http.routers.alesundtoday.tls=true"
-      - "traefik.http.routers.alesundtoday.tls.certresolver=letsencrypt"
-      - "traefik.http.services.alesundtoday.loadbalancer.server.port=80"
+      - proxy
 
 networks:
-  pangolin:
+  proxy:
     external: true
