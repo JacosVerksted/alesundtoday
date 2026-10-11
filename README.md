@@ -32,7 +32,7 @@ This app helps you plan your visit. Check any date to see which cruise ships are
 - **Installable as an app** (PWA) on Android, iOS ("Add to Home Screen" hint) and desktop, with a service worker so a returning visitor still gets the page when offline.
 - **Date rollover**: if a page stays open past midnight, it repaints itself for the new day.
 - **Privacy notice** page (`/privacy/`), linked from the footer.
-- **Link previews** (Open Graph / Twitter tags and a preview image) and a canonical URL.
+- **Search and sharing:** a descriptive title, a description that states today's actual status (rebuilt daily), schema.org structured data, `sitemap.xml`, `robots.txt`, Open Graph / Twitter tags with a preview image, and a canonical URL.
 
 ## How the busyness level works
 

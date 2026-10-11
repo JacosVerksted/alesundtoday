@@ -4,6 +4,24 @@ All notable changes to Ålesund Today (formerly "Visit Ålesund") are documented
 
 Newest first. Entries on the same date are grouped by theme.
 
+## 2026-10-11 (new name and search)
+
+### Changed
+- **The app is now called "Ålesund Today"** (formerly "Visit Ålesund"), matching the web
+  address and avoiding confusion with the official tourism organisation. Changed on the
+  page, the home-screen name, the privacy page, the README, link previews and the preview
+  image. Internal identifiers (package name, service-worker cache name) are unchanged.
+- The page title and description are written for search: "Ålesund Today – Cruise ship
+  schedule & busy days". The meta and link-preview description states **today's actual
+  status** (for example "Cruise ships in Ålesund today (11 October): no cruise ships in
+  port"); the site is rebuilt every day, so it stays current.
+
+### Added
+- schema.org `WebApplication` structured data, a `sitemap.xml`, and a `Sitemap:` line in
+  `robots.txt`. (The JSON-LD block is a data block, so the strict Content-Security-Policy
+  is unaffected — checked in the browser.)
+- The scraper and weather request now identify as `alesund-today` in their user-agent.
+
 ## 2026-10-11 (open access and scanner blocking)
 
 ### Changed
