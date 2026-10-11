@@ -160,7 +160,7 @@ const dataIsStale = daysSinceUpdate > 14;
         <span data-i18n="footer_data">Data:</span>
         <a href="https://alesund.havn.no/skipstrafikk/mooringplan-cruise/" class="underline hover:text-gray-600 ml-1" target="_blank" rel="noopener">Ålesund Havn</a>
       </p>
-      <p class="text-xs text-gray-400" data-i18n="footer_credit">Made in Norway <img src="/flags/no.svg" alt="Norway" class="inline-block h-3 w-auto align-[-1px] rounded-[1px]" /> by JacosVerksted</p>
+      <p class="text-xs text-gray-400" data-i18n="footer_credit">Made in Norway 🇳🇴 by JacosVerksted</p>
     </footer>
 
   </div>
@@ -236,7 +236,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Schedule updated ${n} day${n > 1 ? 's' : ''} ago`,
         footer_stale: ' — may be outdated',
         footer_data: 'Data:',
-        footer_credit: 'Made in Norway {NO} by JacosVerksted',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Great time to visit',
         level_moderate: 'Somewhat busy',
         level_busy: 'Quite busy',
@@ -278,7 +278,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'er' : ''} siden`,
         footer_stale: ' — kan være utdatert',
         footer_data: 'Data:',
-        footer_credit: 'Laget i Norge {NO} av JacosVerksted',
+        footer_credit: 'Laget i Norge 🇳🇴 av JacosVerksted',
         level_quiet: 'Flott tidspunkt å besøke',
         level_moderate: 'Litt travelt',
         level_busy: 'Ganske travelt',
@@ -320,7 +320,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'ar' : ''} sidan`,
         footer_stale: ' — kan vera utdatert',
         footer_data: 'Data:',
-        footer_credit: 'Laga i Noreg {NO} av JacosVerksted',
+        footer_credit: 'Laga i Noreg 🇳🇴 av JacosVerksted',
         level_quiet: 'Framifrå tidspunkt å vitja',
         level_moderate: 'Litt travelt',
         level_busy: 'Ganske travelt',
@@ -362,7 +362,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Fahrplan vor ${n} Tag${n > 1 ? 'en' : ''} aktualisiert`,
         footer_stale: ' — möglicherweise veraltet',
         footer_data: 'Daten:',
-        footer_credit: 'Made in Norway {NO} by JacosVerksted',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Toller Zeitpunkt für einen Besuch',
         level_moderate: 'Etwas belebt',
         level_busy: 'Ziemlich belebt',
@@ -404,7 +404,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Schema ${n} dag${n > 1 ? 'en' : ''} geleden bijgewerkt`,
         footer_stale: ' — mogelijk verouderd',
         footer_data: 'Gegevens:',
-        footer_credit: 'Made in Norway {NO} by JacosVerksted',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Geweldig moment om te bezoeken',
         level_moderate: 'Licht druk',
         level_busy: 'Behoorlijk druk',
@@ -446,7 +446,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Programme mis à jour il y a ${n} jour${n > 1 ? 's' : ''}`,
         footer_stale: ' — peut être obsolète',
         footer_data: 'Données :',
-        footer_credit: 'Made in Norway {NO} by JacosVerksted',
+        footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Excellent moment pour visiter',
         level_moderate: 'Légèrement chargé',
         level_busy: 'Assez chargé',
@@ -472,9 +472,6 @@ const dataIsStale = daysSinceUpdate > 14;
       },
     };
 
-    // Windows has no flag emoji, so the footer flag is an SVG image instead
-    const NO_FLAG_HTML = '<img src="/flags/no.svg" alt="Norway" class="inline-block h-3 w-auto align-[-1px] rounded-[1px]" />';
-
     // ── Apply language ────────────────────────────────────────────────────────
     function applyLang(lang: Lang) {
       const t = T[lang] ?? T.en;
@@ -493,9 +490,7 @@ const dataIsStale = daysSinceUpdate > 14;
       STATIC_KEYS.forEach((key) => {
         document.querySelectorAll<HTMLElement>(`[data-i18n="${key}"]`).forEach((el) => {
           const val = t[key];
-          if (typeof val !== 'string') return;
-          if (key === 'footer_credit') el.innerHTML = val.replace('{NO}', NO_FLAG_HTML);
-          else el.textContent = val;
+          if (typeof val === 'string') el.textContent = val;
         });
       });
 
