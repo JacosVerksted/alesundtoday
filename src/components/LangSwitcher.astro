@@ -10,7 +10,7 @@
     aria-haspopup="true"
     aria-expanded="false"
   >
-    <span id="lang-flag">🇬🇧</span>
+    <img id="lang-flag" src="/flags/gb.svg" alt="" class="h-3.5 w-auto rounded-[1px]" />
     <span id="lang-code" class="text-xs font-semibold">EN</span>
     <span class="text-[10px] text-gray-400">▾</span>
   </button>
@@ -21,22 +21,22 @@
     role="menu"
   >
     <button data-lang="en" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
-      🇬🇧 <span>English</span>
+      <img src="/flags/gb.svg" alt="" class="h-3.5 w-auto rounded-[1px]" /> <span>English</span>
     </button>
     <button data-lang="nb" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
-      🇳🇴 <span>Bokmål</span>
+      <img src="/flags/no.svg" alt="" class="h-3.5 w-auto rounded-[1px]" /> <span>Bokmål</span>
     </button>
     <button data-lang="nn" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
-      🇳🇴 <span>Nynorsk</span>
+      <img src="/flags/no.svg" alt="" class="h-3.5 w-auto rounded-[1px]" /> <span>Nynorsk</span>
     </button>
     <button data-lang="de" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
-      🇩🇪 <span>Deutsch</span>
+      <img src="/flags/de.svg" alt="" class="h-3.5 w-auto rounded-[1px]" /> <span>Deutsch</span>
     </button>
     <button data-lang="nl" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
-      🇳🇱 <span>Nederlands</span>
+      <img src="/flags/nl.svg" alt="" class="h-3.5 w-auto rounded-[1px]" /> <span>Nederlands</span>
     </button>
     <button data-lang="fr" class="lang-option flex items-center gap-2 w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg text-left" role="menuitem">
-      🇫🇷 <span>Français</span>
+      <img src="/flags/fr.svg" alt="" class="h-3.5 w-auto rounded-[1px]" /> <span>Français</span>
     </button>
   </div>
 </div>
@@ -44,21 +44,21 @@
 <script>
   const btn = document.getElementById('lang-btn')!;
   const menu = document.getElementById('lang-menu')!;
-  const flagEl = document.getElementById('lang-flag')!;
+  const flagEl = document.getElementById('lang-flag') as HTMLImageElement;
   const codeEl = document.getElementById('lang-code')!;
 
   const META: Record<string, { flag: string; code: string }> = {
-    en: { flag: '🇬🇧', code: 'EN' },
-    nb: { flag: '🇳🇴', code: 'NB' },
-    nn: { flag: '🇳🇴', code: 'NN' },
-    de: { flag: '🇩🇪', code: 'DE' },
-    nl: { flag: '🇳🇱', code: 'NL' },
-    fr: { flag: '🇫🇷', code: 'FR' },
+    en: { flag: 'gb', code: 'EN' },
+    nb: { flag: 'no', code: 'NB' },
+    nn: { flag: 'no', code: 'NN' },
+    de: { flag: 'de', code: 'DE' },
+    nl: { flag: 'nl', code: 'NL' },
+    fr: { flag: 'fr', code: 'FR' },
   };
 
   function updateBtn(lang: string) {
     const m = META[lang] ?? META.en;
-    flagEl.textContent = m.flag;
+    flagEl.src = `/flags/${m.flag}.svg`;
     codeEl.textContent = m.code;
   }
 
