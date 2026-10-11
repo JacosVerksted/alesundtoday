@@ -2,6 +2,86 @@
 
 All notable changes to Visit Ålesund are documented here.
 
+Newest first. Entries on the same date are grouped by theme.
+
+## 2026-10-11 (arrival times and berths)
+
+### Added
+- **Berth and arrival/departure times.** The port's per-call mooring plan PDFs
+  contain a table of vessel, berth ("bay"), ETA and ETD. The scraper now reads them,
+  and the status card shows an "In port 07:00–17:00" summary plus one line per ship
+  with its times and berth (e.g. `07:00–16:00 AIDAnova · Prestebrygga`).
+  - Overnight stays are marked `22:00–06:30 (+1)`, and the summary window is hidden
+    for those days (one window would wrongly suggest a ship is in port throughout).
+  - PDFs are only downloaded for today and later, one at a time with a short delay.
+    Results are cached in `schedule.json` keyed by the PDF link, so unchanged plans
+    are never downloaded twice (a changed plan gets a new link). A PDF that cannot be
+    read just leaves that day without times — it never fails the scrape.
+  - New: `scraper/pdf.mjs` (pdf.js, no code evaluation), `src/lib/visits.ts`,
+    and a new `in_port` string in all six languages.
+
+### Changed
+- Ship chips in the status card are now built with `textContent` instead of
+  `innerHTML`, since ship names come from scraped data.
+
+## 2026-10-11 (schedule not published yet)
+
+### Added
+- **"Schedule not available yet" for unpublished dates.** Future dates after the
+  port's published schedule used to show as green "quiet". They now appear greyed out
+  and struck through in the calendar (with a new legend entry), as a dashed card in the
+  14-day strip, and as "Schedule not available yet" in the status card. "Best upcoming
+  days" skips them. Today and past days without a ship still read "quiet".
+- **Off-season notice** under the status card when no cruise call is scheduled today
+  or later ("The port publishes its plan about a month ahead, so check back later").
+  "Best upcoming days" shows its own message when nothing is published to rank.
+
+### Changed
+- **How "published" is decided.** Measured from the weekly `schedule.json` history, the
+  port publishes its plan in monthly batches 4–8 weeks ahead and never back-fills gaps.
+  The schedule therefore counts as published up to the **end of the month of the latest
+  call** that lies within 70 days of the scrape (`src/lib/horizon.ts`). A single call far
+  in the future (say, one early January call) is still shown, but does not make the
+  unpublished weeks before it look "quiet". The server build and the in-page script share
+  this one function.
+
+## 2026-10-11 (appearance, language and sharing)
+
+### Added
+- **Dark mode**, following the device setting. Implemented by re-pointing the Tailwind
+  colour variables once in `src/styles/global.css` instead of adding `dark:` classes
+  everywhere, so classes added at runtime adapt too. The browser theme colour follows.
+- **Default language from the browser.** First-time visitors get Norwegian (Bokmål or
+  Nynorsk), German, Dutch or French when their browser prefers it; an explicit choice
+  in the language menu always wins (`src/lib/lang.ts`).
+- **Link previews:** Open Graph / Twitter tags, a canonical URL and a preview image
+  (`public/og-image.png`).
+- **Footer:** an "unofficial, independent project — not affiliated with Ålesund kommune
+  or Ålesund Havn" note, a credit to MET Norway for the weather data (required by their
+  open-data licence), and the author name now links to the GitHub profile. All translated.
+- **New icons.** An original ship-on-waves icon replaces the default Astro favicon
+  (SVG, PNG and ICO), and the home-screen / install icons now show the same ship with
+  the app name. Icon links carry a `?v=3` cache-buster; bump it when the icons change.
+
+### Fixed
+- The weather request's `User-Agent` pointed at a repository that doesn't exist. Both
+  the weather request and the scraper now identify themselves with this repository.
+
+## 2026-10-11 (hosting and automation)
+
+### Changed
+- **Scraping, building and deploying now run on the server, not in GitHub Actions.**
+  `deploy/vps-rebuild.sh` pulls this repository, scrapes the schedule and PDFs and builds
+  the site inside a throwaway `node:22-alpine` container, then publishes into the folder
+  nginx serves. It runs daily from cron. GitHub remains the code store only.
+  - Publishing adds new files before deleting old ones, so a page and its hashed assets
+    are never missing at the same time.
+  - If the scrape fails, the last good schedule is used and the site is still published.
+  - The script is wrapped in a function so its own `git reset` cannot corrupt a running run.
+  - Optional Uptime Kuma push monitoring via `KUMA_PUSH_URL` in `rebuild.env`.
+- The two GitHub Actions workflows are disabled and the deploy secrets were removed.
+
+
 ## 2026-07-09 (intro)
 
 ### Added
@@ -60,3 +140,13 @@ All notable changes to Visit Ålesund are documented here.
   has a stable `#weekview-strip` id and is targeted explicitly.
 - The status card's ship-count line no longer says "today" (e.g. "1 cruise ship in
   port" instead of "…in port today"), since the card can now show any date.
+
+## Before July 2026
+
+- Static Astro + Tailwind site with a build-time scraper of the port's mooring plan,
+  a 14-day strip, calendar, best days, weather strip, ship drawer, six languages and
+  an installable PWA.
+- Hosting moved from Netlify to a self-hosted server (nginx in Docker), with a hardened
+  `nginx.conf` (rate limiting, bot blocking, security headers, per-path cache headers).
+- Service worker switched to network-first for HTML so phones see fresh content;
+  fixes for the date rolling over at midnight.

@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Tailwind scans every project file for class names. Docs and server files are prose,
+   so keep them out — otherwise ordinary words in them generate stray utility classes. */
+@source not "../../README.md";
+@source not "../../CHANGELOG.md";
+@source not "../../deploy";
+@source not "../../scraper";
+
 /* Day picked in the calendar / 14-day strip (blue outline avoids clashing
    with the box-shadow ring marking "today") */
 .selected-day {

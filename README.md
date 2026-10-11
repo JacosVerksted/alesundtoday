@@ -6,19 +6,115 @@ https://alesundtoday.jacosverksted.no/
 
 Ålesund is one of Norway's most beautiful cities — but on busy cruise ship days, the narrow streets and harbour front can be packed with thousands of extra visitors. A single large ship can bring more than 4,000 passengers into a city of 50,000 people.
 
-This app helps you plan your visit. Check any date to see how many cruise ships are in port, how crowded it's likely to be, and which upcoming days are the quietest.
+This app helps you plan your visit. Check any date to see which cruise ships are in port, when, how crowded it's likely to be, and which upcoming days are the quietest.
+
+> Unofficial, independent project — not affiliated with Ålesund kommune or Ålesund Havn. Schedules may change; check with the port.
 
 ## Features
 
-- Today's busyness at a glance — colour-coded from quiet (green) to very busy (red)
-- 14-day overview and full calendar view
-- Best upcoming days to visit, ranked by expected crowds
-- Live webcam of the cruise ship terminal
-- 5-day weather forecast
-- Installable as an app on your phone
-- Available in English, Norwegian (Bokmål & Nynorsk), German, Dutch and French
+**Planning**
+- **Today's status** at a glance: a colour-coded level from quiet (green) to very busy (red), the number of ships in port, and a chip per ship (tap for capacity and an estimate of the visitors it adds).
+- **Arrival and departure times and berths** for every ship, read from the port's mooring plan: an "In port 07:00–17:00" summary and one line per ship (`07:00–16:00 AIDAnova · Prestebrygga`). Overnight stays are marked `(+1)`.
+- **Pick any day.** Tap a day in the calendar or the 14-day strip to preview it in the status card ("It will be …"); "← Today" returns.
+- **14-day strip** and a **two-month calendar** with a legend (quiet, moderate under 3k passengers, busy 3–6k, very busy 6k+).
+- **Best upcoming days**: the quietest days in the next 90 days, ranked by expected passengers, at least three days apart.
+- **Weather**: 7-day forecast from MET Norway (Yr), fetched when the site is built.
+- **Live webcam** link to the port's harbour camera.
+- **Share** button: the device's share sheet where available, otherwise it copies the link.
 
-Data is sourced from the official mooring plan published by [Ålesund Havn](https://alesund.havn.no) and updated weekly.
+**Unpublished and off-season dates**
+- The port publishes its plan in monthly batches, roughly 4–8 weeks ahead. Future dates beyond what is published are **not** shown as "quiet": they are greyed out and struck through in the calendar, shown as a dashed card in the 14-day strip, and read "Schedule not available yet" in the status card. "Best upcoming days" skips them.
+- When no cruise call is scheduled from today onwards, an **off-season notice** appears under the status card.
+
+**Everywhere**
+- **Six languages**: English, Norwegian (Bokmål and Nynorsk), German, Dutch and French. First-time visitors get their browser's language; the menu choice always wins and is remembered.
+- **Dark mode** that follows the device setting.
+- **Installable as an app** (PWA) on Android, iOS ("Add to Home Screen" hint) and desktop, with a service worker so a returning visitor still gets the page when offline.
+- **Date rollover**: if a page stays open past midnight, it repaints itself for the new day.
+- **Link previews** (Open Graph / Twitter tags and a preview image) and a canonical URL.
+
+## How the busyness level works
+
+Level is based on the **total passenger capacity (PAX) in port** that day, not the number of ships — one mega-ship can outweigh several small coastal vessels:
+
+| Total PAX in port | Level |
+| --- | --- |
+| no ships | Quiet |
+| under 3,000 | Moderate |
+| 3,000–5,999 | Busy |
+| 6,000 or more | Very busy |
+
+If any ship's capacity is unknown, that day falls back to a ship-count rule (1 → moderate, 2 → busy, 3 or more → very busy). Capacities are maximum passenger capacities and live in `src/lib/capacities.mjs`; the visitor estimate in the ship drawer uses 2,500 for unknown ships. The same module is used by the app and the scraper.
+
+**Adding a ship:** add its name and maximum capacity to `CAPACITY` in `src/lib/capacities.mjs`. Names are matched case- and punctuation-insensitively.
+
+## How the data works
+
+1. **`scraper/scrape.mjs`** fetches the port's mooring plan page ([Ålesund Havn](https://alesund.havn.no/skipstrafikk/mooringplan-cruise/)). Each link reads `Mooringplan - DD.MM.YYYY - Ship1 - Ship2`; `scraper/parse.mjs` turns those into one entry per day (ships, count, PAX, level).
+2. For **today and later**, it downloads each day's PDF and `scraper/pdf.mjs` reads the table (vessel, berth, ETA, ETD — local Norwegian time) into `visits`. Downloads are sequential and spaced out, capped per run, and cached by PDF link inside `schedule.json`, so unchanged plans are not fetched again. A PDF that can't be read only means that day has no times.
+3. The result is written to **`public/schedule.json`**:
+   ```json
+   { "generated": "…", "source": "…",
+     "calls": [{ "date": "2026-10-21", "ships": ["AIDAnova", "Sky Princess"], "count": 2,
+                 "pax": null, "level": "busy",
+                 "visits": [{ "ship": "AIDAnova", "bay": "Prestebrygga",
+                              "eta": "2026-10-21T07:00", "etd": "2026-10-21T16:00" }],
+                 "pdfs": ["https://…pdf"] }] }
+   ```
+   `pax` is `null` when any ship's capacity is unknown; `visits` and `pdfs` exist only for days whose PDFs were read.
+4. **`src/lib/horizon.ts`** decides how far the schedule is *published*: up to the end of the month of the latest call within 70 days of the scrape. Later future dates get the `unknown` level. The server build and the in-page script share this function.
+5. Astro builds a static site from `schedule.json`; the page also fetches `/schedule.json` in the browser to preview other days.
+
+## Project structure
+
+```
+src/pages/index.astro        page, all translations (T), client script
+src/components/              StatusCard, WeekView, Calendar, BestDays, WeatherStrip,
+                             ShipDrawer, LangSwitcher
+src/lib/                     schedule.ts (days + levels), horizon.ts, visits.ts, lang.ts,
+                             bestDays.ts, ships.ts, capacities.mjs (shared with scraper)
+src/styles/global.css        Tailwind + dark-mode colour overrides
+scraper/                     scrape.mjs, parse.mjs, pdf.mjs
+public/                      schedule.json, sw.js, manifest, icons, og-image.png
+deploy/                      vps-rebuild.sh, nginx.conf, docker-compose.yml
+```
+
+Stack: [Astro](https://astro.build) (static output), Tailwind CSS 4, Node.js scraper (`node-html-parser`, `pdfjs-dist`). No server-side code at runtime.
+
+## Local development
+
+Requires Node.js 22.13 or newer.
+
+```bash
+npm install
+npm run scrape     # refresh public/schedule.json (downloads PDFs for upcoming days)
+npm run dev        # dev server on http://localhost:4321
+npm run build      # static site into dist/
+```
+
+Dark mode and other colours: the Tailwind colour variables are re-pointed in one place (`src/styles/global.css`), so a new colour utility needs a matching override there. Tailwind is told to ignore the docs, `deploy/` and `scraper/` when looking for class names.
+
+## Deployment and operations
+
+The site is plain static files in an `nginx:alpine` container on a self-hosted server; GitHub is the code store only.
+
+- **`deploy/vps-rebuild.sh`** does everything: pulls `main`, scrapes, builds inside a throwaway `node:22-alpine` container (no Node on the host, memory capped), and publishes into the folder nginx serves — adding new files before deleting old ones so assets are never missing. If the scrape fails it publishes the last good schedule. It is wrapped in a function so its own `git reset` cannot corrupt a running run.
+- **Schedule:** run daily from cron, for example `30 4 * * * /bin/bash <path>/deploy/vps-rebuild.sh`. A `git push` does **not** deploy by itself — run the script (or wait for the next cron run) to publish a change.
+- **Configuration** (environment or a `rebuild.env` next to the script's base folder): `BASE` (working folder, holds `src/`, `dist/`, `rebuild.log`, `schedule.last-good.json`), `DIST_DIR` (publish somewhere else for a dry run), `KUMA_PUSH_URL` (optional Uptime Kuma push monitor, pinged on success or failure).
+- **`deploy/nginx.conf`**: cache headers per path (hashed assets immutable, `sw.js` never cached, `schedule.json` hourly), rate limiting, bot blocking, security headers.
+- TLS, routing and any access restrictions are configured on the server's reverse proxy and are not part of this repository; `deploy/docker-compose.yml` is an older reference.
+- **Service worker (`public/sw.js`):** hashed `/_astro/` assets are cache-first (only successful responses are cached); HTML and `schedule.json` are network-first. Bump the cache name on any deploy that changes assets in a way that must purge old caches.
+- `.github/workflows/` holds the previous GitHub Actions deploy workflows. They are **disabled** and kept only for reference.
+
+## Data sources and credits
+
+- Cruise schedule and mooring plans: [Ålesund Havn](https://alesund.havn.no/skipstrafikk/mooringplan-cruise/) — public information, read once a day with an identifying user-agent; the site links back to the source.
+- Weather: [MET Norway](https://www.met.no/en) Locationforecast, used under MET Norway's open data licence (credit required, shown in the footer).
+- Unofficial and independent: not affiliated with, or endorsed by, Ålesund kommune or Ålesund Havn.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
