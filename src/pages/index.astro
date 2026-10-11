@@ -141,6 +141,7 @@ const dataIsStale = daysSinceUpdate > 14;
         <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block"></span> <span data-i18n="legend_moderate">Moderate (&lt;3k pax)</span></span>
         <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block"></span> <span data-i18n="legend_busy">Busy (3–6k pax)</span></span>
         <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span> <span data-i18n="legend_very_busy">Very busy (6k+ pax)</span></span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-gray-300 inline-block"></span> <span class="line-through decoration-gray-400"><span data-i18n="legend_unknown">Not published yet</span></span></span>
       </div>
     </section>
 
@@ -188,6 +189,7 @@ const dataIsStale = daysSinceUpdate > 14;
       legend_moderate: string;
       legend_busy: string;
       legend_very_busy: string;
+      legend_unknown: string;
       footer_updated_today: string;
       footer_updated_ago: (n: number) => string;
       footer_stale: string;
@@ -197,6 +199,8 @@ const dataIsStale = daysSinceUpdate > 14;
       level_moderate: string;
       level_busy: string;
       level_very_busy: string;
+      level_unknown: string;
+      unknown_note: string;
       ships_none: string;
       ships_one: string;
       ships_many: (n: number) => string;
@@ -232,6 +236,7 @@ const dataIsStale = daysSinceUpdate > 14;
         legend_moderate: 'Moderate (<3k pax)',
         legend_busy: 'Busy (3–6k pax)',
         legend_very_busy: 'Very busy (6k+ pax)',
+        legend_unknown: 'Not published yet',
         footer_updated_today: 'Schedule updated today',
         footer_updated_ago: (n) => `Schedule updated ${n} day${n > 1 ? 's' : ''} ago`,
         footer_stale: ' — may be outdated',
@@ -241,6 +246,8 @@ const dataIsStale = daysSinceUpdate > 14;
         level_moderate: 'Somewhat busy',
         level_busy: 'Quite busy',
         level_very_busy: 'Very crowded',
+        level_unknown: 'Schedule not available yet',
+        unknown_note: 'The port has not published ship arrivals for this day yet. Check back later.',
         ships_none: 'No cruise ships in port',
         ships_one: '1 cruise ship in port',
         ships_many: (n) => `${n} cruise ships in port`,
@@ -274,6 +281,7 @@ const dataIsStale = daysSinceUpdate > 14;
         legend_moderate: 'Moderat (<3k pax)',
         legend_busy: 'Travelt (3–6k pax)',
         legend_very_busy: 'Veldig travelt (6k+ pax)',
+        legend_unknown: 'Ikke publisert ennå',
         footer_updated_today: 'Rute oppdatert i dag',
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'er' : ''} siden`,
         footer_stale: ' — kan være utdatert',
@@ -283,6 +291,8 @@ const dataIsStale = daysSinceUpdate > 14;
         level_moderate: 'Litt travelt',
         level_busy: 'Ganske travelt',
         level_very_busy: 'Veldig folksomt',
+        level_unknown: 'Rute ikke tilgjengelig ennå',
+        unknown_note: 'Havnen har ikke publisert skipsanløp for denne dagen ennå. Sjekk igjen senere.',
         ships_none: 'Ingen cruiseskip i havn',
         ships_one: '1 cruiseskip i havn',
         ships_many: (n) => `${n} cruiseskip i havn`,
@@ -316,6 +326,7 @@ const dataIsStale = daysSinceUpdate > 14;
         legend_moderate: 'Moderat (<3k pax)',
         legend_busy: 'Travelt (3–6k pax)',
         legend_very_busy: 'Svært travelt (6k+ pax)',
+        legend_unknown: 'Ikkje publisert enno',
         footer_updated_today: 'Rute oppdatert i dag',
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'ar' : ''} sidan`,
         footer_stale: ' — kan vera utdatert',
@@ -325,6 +336,8 @@ const dataIsStale = daysSinceUpdate > 14;
         level_moderate: 'Litt travelt',
         level_busy: 'Ganske travelt',
         level_very_busy: 'Svært folksomt',
+        level_unknown: 'Ruta er ikkje tilgjengeleg enno',
+        unknown_note: 'Hamna har ikkje publisert skipsanløp for denne dagen enno. Sjekk att seinare.',
         ships_none: 'Ingen cruiseskip i hamn',
         ships_one: '1 cruiseskip i hamn',
         ships_many: (n) => `${n} cruiseskip i hamn`,
@@ -358,6 +371,7 @@ const dataIsStale = daysSinceUpdate > 14;
         legend_moderate: 'Mäßig (<3k pax)',
         legend_busy: 'Belebt (3–6k pax)',
         legend_very_busy: 'Sehr belebt (6k+ pax)',
+        legend_unknown: 'Noch nicht veröffentlicht',
         footer_updated_today: 'Fahrplan heute aktualisiert',
         footer_updated_ago: (n) => `Fahrplan vor ${n} Tag${n > 1 ? 'en' : ''} aktualisiert`,
         footer_stale: ' — möglicherweise veraltet',
@@ -367,6 +381,8 @@ const dataIsStale = daysSinceUpdate > 14;
         level_moderate: 'Etwas belebt',
         level_busy: 'Ziemlich belebt',
         level_very_busy: 'Sehr belebt',
+        level_unknown: 'Fahrplan noch nicht verfügbar',
+        unknown_note: 'Der Hafen hat die Schiffsanläufe für diesen Tag noch nicht veröffentlicht. Bitte später wieder nachsehen.',
         ships_none: 'Keine Kreuzfahrtschiffe im Hafen',
         ships_one: '1 Kreuzfahrtschiff im Hafen',
         ships_many: (n) => `${n} Kreuzfahrtschiffe im Hafen`,
@@ -400,6 +416,7 @@ const dataIsStale = daysSinceUpdate > 14;
         legend_moderate: 'Matig (<3k pax)',
         legend_busy: 'Druk (3–6k pax)',
         legend_very_busy: 'Zeer druk (6k+ pax)',
+        legend_unknown: 'Nog niet gepubliceerd',
         footer_updated_today: 'Schema vandaag bijgewerkt',
         footer_updated_ago: (n) => `Schema ${n} dag${n > 1 ? 'en' : ''} geleden bijgewerkt`,
         footer_stale: ' — mogelijk verouderd',
@@ -409,6 +426,8 @@ const dataIsStale = daysSinceUpdate > 14;
         level_moderate: 'Licht druk',
         level_busy: 'Behoorlijk druk',
         level_very_busy: 'Zeer druk',
+        level_unknown: 'Planning nog niet beschikbaar',
+        unknown_note: 'De haven heeft de scheepsaankomsten voor deze dag nog niet gepubliceerd. Kom later terug.',
         ships_none: 'Geen cruiseschepen in de haven',
         ships_one: '1 cruiseschip in de haven',
         ships_many: (n) => `${n} cruiseschepen in de haven`,
@@ -442,6 +461,7 @@ const dataIsStale = daysSinceUpdate > 14;
         legend_moderate: 'Modéré (<3k pax)',
         legend_busy: 'Chargé (3–6k pax)',
         legend_very_busy: 'Très chargé (6k+ pax)',
+        legend_unknown: 'Pas encore publié',
         footer_updated_today: 'Programme mis à jour aujourd\'hui',
         footer_updated_ago: (n) => `Programme mis à jour il y a ${n} jour${n > 1 ? 's' : ''}`,
         footer_stale: ' — peut être obsolète',
@@ -451,6 +471,8 @@ const dataIsStale = daysSinceUpdate > 14;
         level_moderate: 'Légèrement chargé',
         level_busy: 'Assez chargé',
         level_very_busy: 'Très chargé',
+        level_unknown: 'Programme pas encore disponible',
+        unknown_note: 'Le port n’a pas encore publié les escales pour ce jour. Revenez plus tard.',
         ships_none: 'Aucun navire de croisière au port',
         ships_one: '1 navire de croisière au port',
         ships_many: (n) => `${n} navires de croisière au port`,
@@ -483,7 +505,7 @@ const dataIsStale = daysSinceUpdate > 14;
         'subtitle','intro','webcam','share','section_weather','section_14days',
         'section_bestdays','section_calendar','legend_quiet','legend_moderate',
         'legend_busy','legend_very_busy','footer_data','footer_credit',
-        'level_quiet','level_moderate','level_busy','level_very_busy',
+        'level_quiet','level_moderate','level_busy','level_very_busy','level_unknown','unknown_note','legend_unknown',
         'no_quiet_days','drawer_capacity_label','drawer_visitors_label','drawer_footnote',
         'badge_quiet','badge_moderate','badge_busy','will_be','back_to_today',
       ];
@@ -678,12 +700,15 @@ const dataIsStale = daysSinceUpdate > 14;
     // the date-rollover refresh below).
     type Call = { date: string; ships: string[]; count: number; level: string };
     let scheduleCache: Call[] | null = null;
+    // Latest published call date; later future dates are "not published yet"
+    let scheduleHorizon = '';
     async function loadSchedule(): Promise<Call[]> {
       if (scheduleCache) return scheduleCache;
       try {
         const res = await fetch('/schedule.json');
         const data = await res.json();
         scheduleCache = (data.calls ?? []) as Call[];
+        scheduleHorizon = scheduleCache.reduce((m, c) => (c.date > m ? c.date : m), '');
       } catch {
         scheduleCache = [];
       }
@@ -695,17 +720,25 @@ const dataIsStale = daysSinceUpdate > 14;
       return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
     }
 
-    type Level = 'quiet' | 'moderate' | 'busy' | 'very-busy';
+    type Level = 'quiet' | 'moderate' | 'busy' | 'very-busy' | 'unknown';
+
+    // Mirrors getDay() in src/lib/schedule.ts: a future date past the last
+    // published call has no schedule yet; everything else without a call is quiet.
+    function levelFor(dateISO: string, call: Call | undefined): Level {
+      if (call) return call.level as Level;
+      return dateISO > localTodayISO() && dateISO > scheduleHorizon ? 'unknown' : 'quiet';
+    }
     const LEVEL_CFG: Record<Level, { bg: string; ring: string; dot: string; text: string; key: string }> = {
       quiet:       { bg: 'bg-emerald-50', ring: 'ring-emerald-200', dot: 'bg-emerald-500', text: 'text-emerald-700', key: 'level_quiet' },
       moderate:    { bg: 'bg-yellow-50',  ring: 'ring-yellow-200',  dot: 'bg-yellow-400',  text: 'text-yellow-700',  key: 'level_moderate' },
       busy:        { bg: 'bg-orange-50',  ring: 'ring-orange-200',  dot: 'bg-orange-500',  text: 'text-orange-700',  key: 'level_busy' },
       'very-busy': { bg: 'bg-red-50',     ring: 'ring-red-200',     dot: 'bg-red-500',     text: 'text-red-700',     key: 'level_very_busy' },
+      unknown:     { bg: 'bg-gray-50',    ring: 'ring-gray-200',    dot: 'bg-gray-300',    text: 'text-gray-500',    key: 'level_unknown' },
     };
-    const ALL_BG   = ['bg-emerald-50','bg-yellow-50','bg-orange-50','bg-red-50'];
-    const ALL_RING = ['ring-emerald-200','ring-yellow-200','ring-orange-200','ring-red-200'];
-    const ALL_DOT  = ['bg-emerald-500','bg-yellow-400','bg-orange-500','bg-red-500'];
-    const ALL_TEXT = ['text-emerald-700','text-yellow-700','text-orange-700','text-red-700'];
+    const ALL_BG   = ['bg-emerald-50','bg-yellow-50','bg-orange-50','bg-red-50','bg-gray-50'];
+    const ALL_RING = ['ring-emerald-200','ring-yellow-200','ring-orange-200','ring-red-200','ring-gray-200'];
+    const ALL_DOT  = ['bg-emerald-500','bg-yellow-400','bg-orange-500','bg-red-500','bg-gray-300'];
+    const ALL_TEXT = ['text-emerald-700','text-yellow-700','text-orange-700','text-red-700','text-gray-500'];
 
     // Repaint the top status card for an arbitrary date. When the date is not
     // today, an "It will be" eyebrow and a "back to today" button appear so it's
@@ -714,7 +747,7 @@ const dataIsStale = daysSinceUpdate > 14;
       const call  = calls.find(c => c.date === dateStr);
       const ships = call?.ships ?? [];
       const count = call?.count ?? 0;
-      const level = (call?.level ?? 'quiet') as Level;
+      const level = levelFor(dateStr, call);
       const cfg   = LEVEL_CFG[level];
 
       const section = document.querySelector<HTMLElement>('section.rounded-2xl');
@@ -739,8 +772,18 @@ const dataIsStale = daysSinceUpdate > 14;
         heading.classList.add(cfg.text);
       }
 
-      const countEl = section.querySelector<HTMLElement>('[data-i18n-ships]');
-      if (countEl) countEl.dataset.count = String(count);
+      // Sub-line: ship count, or the "not published yet" note for unknown days
+      const countEl = section.querySelector<HTMLElement>('[data-i18n-ships], [data-i18n="unknown_note"]');
+      if (countEl) {
+        if (level === 'unknown') {
+          delete countEl.dataset.i18nShips;
+          countEl.dataset.i18n = 'unknown_note';
+        } else {
+          delete countEl.dataset.i18n;
+          countEl.dataset.i18nShips = '';
+          countEl.dataset.count = String(count);
+        }
+      }
 
       section.querySelector('.flex.flex-wrap.gap-2')?.remove();
       if (ships.length > 0) {
@@ -817,12 +860,14 @@ const dataIsStale = daysSinceUpdate > 14;
           moderate:   'bg-yellow-100 border-yellow-200',
           busy:       'bg-orange-100 border-orange-200',
           'very-busy':'bg-red-100 border-red-200',
+          unknown:    'bg-gray-50 border-gray-200 border-dashed',
         };
         const wkDot: Record<string, string> = {
           quiet:      'bg-emerald-500',
           moderate:   'bg-yellow-400',
           busy:       'bg-orange-500',
           'very-busy':'bg-red-500',
+          unknown:    'bg-gray-300',
         };
         const _d = new Date();
         weekContainer.innerHTML = '';
@@ -832,7 +877,7 @@ const dataIsStale = daysSinceUpdate > 14;
           const iso = `${dd.getFullYear()}-${String(dd.getMonth()+1).padStart(2,'0')}-${String(dd.getDate()).padStart(2,'0')}`;
           const dc = calls.find(c => c.date === iso);
           const dc_count = dc?.count ?? 0;
-          const dc_level = dc?.level ?? 'quiet';
+          const dc_level = levelFor(iso, dc);
           const bg = wkBg[dc_level] ?? wkBg.quiet;
           const dot = wkDot[dc_level] ?? wkDot.quiet;
           const dayNum = dd.getDate();
@@ -843,7 +888,7 @@ const dataIsStale = daysSinceUpdate > 14;
           div.setAttribute('tabindex', '0');
           div.innerHTML = `
             <span class="text-xs font-medium text-gray-500 uppercase tracking-wide" data-i18n-weekday data-date="${iso}"></span>
-            <span class="text-lg font-bold mt-0.5 ${i === 0 ? 'text-gray-900' : 'text-gray-700'}">${dayNum}</span>
+            <span class="text-lg font-bold mt-0.5 ${dc_level === 'unknown' ? 'text-gray-400 line-through' : i === 0 ? 'text-gray-900' : 'text-gray-700'}">${dayNum}</span>
             <div class="flex flex-col items-center gap-1 mt-2">
               <div class="w-2.5 h-2.5 rounded-full ${dot}"></div>
               ${dc_count > 0 ? `<span class="text-[10px] text-gray-500" data-i18n-skipcount data-count="${dc_count}"></span>` : ''}

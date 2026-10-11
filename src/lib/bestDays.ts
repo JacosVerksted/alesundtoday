@@ -18,7 +18,7 @@ export function getBestDays(
   startDate.setUTCDate(startDate.getUTCDate() + 1);
   const startISO = startDate.toISOString().slice(0, 10);
 
-  const candidates = getRange(startISO, maxDaysAhead);
+  const candidates = getRange(startISO, maxDaysAhead).filter((d) => d.level !== 'unknown');
 
   // Score each day (lower = better)
   const scored = candidates.map((day, idx) => {

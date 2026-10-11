@@ -12,12 +12,15 @@ const levelConfig = {
   moderate:  { label: 'Somewhat busy',        color: 'bg-yellow-400',  ring: 'ring-yellow-200',  text: 'text-yellow-700', bg: 'bg-yellow-50',  key: 'level_moderate' },
   busy:      { label: 'Quite busy',           color: 'bg-orange-500',  ring: 'ring-orange-200',  text: 'text-orange-700', bg: 'bg-orange-50',  key: 'level_busy' },
   'very-busy': { label: 'Very crowded',       color: 'bg-red-500',     ring: 'ring-red-200',     text: 'text-red-700',    bg: 'bg-red-50',     key: 'level_very_busy' },
+  unknown:   { label: 'Schedule not available yet', color: 'bg-gray-300', ring: 'ring-gray-200', text: 'text-gray-500', bg: 'bg-gray-50', key: 'level_unknown' },
 };
 
 const cfg = levelConfig[day.level];
 
+const isUnknown = day.level === 'unknown';
 const shipsText =
-  day.count === 0 ? 'No cruise ships in port'
+  isUnknown ? 'The port has not published ship arrivals for this day yet. Check back later.'
+  : day.count === 0 ? 'No cruise ships in port'
   : day.count === 1 ? '1 cruise ship in port'
   : `${day.count} cruise ships in port`;
 ---
@@ -51,7 +54,9 @@ const shipsText =
         data-i18n="will_be"
       >It will be</p>
       <h2 class={`text-2xl font-bold ${cfg.text}`} data-i18n={cfg.key}>{cfg.label}</h2>
-      <p class="text-gray-600 text-sm" data-i18n-ships data-count={day.count}>{shipsText}</p>
+      {isUnknown
+        ? <p class="text-gray-600 text-sm" data-i18n="unknown_note">{shipsText}</p>
+        : <p class="text-gray-600 text-sm" data-i18n-ships data-count={day.count}>{shipsText}</p>}
     </div>
   </div>
 

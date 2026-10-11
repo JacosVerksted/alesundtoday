@@ -1,6 +1,7 @@
 import rawSchedule from '../../public/schedule.json';
 
-export type BusynessLevel = 'quiet' | 'moderate' | 'busy' | 'very-busy';
+/** 'unknown' = a future date after the last published call (schedule not out yet). */
+export type BusynessLevel = 'quiet' | 'moderate' | 'busy' | 'very-busy' | 'unknown';
 
 export interface CruiseCall {
   date: string;
@@ -21,6 +22,9 @@ const callMap = new Map<string, CruiseCall>(
 );
 
 export const generatedAt: string = rawSchedule.generated;
+
+/** Latest date the port has published a call for. Later future dates are unknown. */
+export const scheduleHorizon: string = rawSchedule.calls.reduce((m, c) => (c.date > m ? c.date : m), '');
 
 function todayISO(): string {
   // Use local date (not UTC) so Norwegian users see the correct day
@@ -43,6 +47,9 @@ function makeQuiet(date: string, todayStr: string): DayInfo {
 export function getDay(dateISO: string): DayInfo {
   const todayStr = todayISO();
   const call = callMap.get(dateISO);
+  if (!call && dateISO > todayStr && dateISO > scheduleHorizon) {
+    return { ...makeQuiet(dateISO, todayStr), pax: null, level: 'unknown' };
+  }
   if (!call) return makeQuiet(dateISO, todayStr);
   return {
     ...call,
