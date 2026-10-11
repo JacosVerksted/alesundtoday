@@ -112,6 +112,17 @@ The site is plain static files in an `nginx:alpine` container on a self-hosted s
 - **Service worker (`public/sw.js`):** hashed `/_astro/` assets are cache-first (only successful responses are cached); HTML and `schedule.json` are network-first. Bump the cache name on any deploy that changes assets in a way that must purge old caches.
 - There are no GitHub Actions workflows: deploying and refreshing the schedule happen only on the server.
 
+## Privacy and security
+
+This is a static site: no backend, no database, no accounts and no forms. The app itself collects no personal data.
+
+- **No tracking.** No cookies, analytics, advertising or fingerprinting. The only thing the page stores in the browser is the chosen language (`localStorage`), which never leaves the device.
+- **No third parties when the page is used.** No external scripts, fonts, images or embeds are loaded, and the page only ever requests its own files (enforced by the Content-Security-Policy). The weather is fetched from MET Norway when the site is *built*, not from visitors' browsers. Links to Ålesund Havn, MET Norway and GitHub are ordinary links.
+- **Logging.** The site's own web server writes no access log. The reverse proxy in front of it is shared server infrastructure outside this repository and keeps its own request log (time, client address, path, status; request headers are dropped) in size-limited rotating files. The app never reads these logs.
+- **Hardening.** Strict Content-Security-Policy, HSTS, Permissions-Policy, `nosniff`, no referrer; per-visitor rate limiting; only `GET`/`HEAD` accepted; files are served from a read-only mount; no secrets or credentials in the repository or its history.
+- **Data.** Only public information is used (the port's published mooring plans and MET Norway's forecast). Requests to the port are one run per day with an identifying user-agent.
+- **Unofficial.** Not affiliated with or endorsed by Ålesund kommune or Ålesund Havn.
+
 ## Data sources and credits
 
 - Cruise schedule and mooring plans: [Ålesund Havn](https://alesund.havn.no/skipstrafikk/mooringplan-cruise/) — public information, read once a day with an identifying user-agent; the site links back to the source.
@@ -120,7 +131,7 @@ The site is plain static files in an `nginx:alpine` container on a self-hosted s
 
 ## Licence
 
-Copyright © 2026 JacosVerksted. All rights reserved. The source is public so it can be read, but it is not licensed for reuse — see [LICENSE](LICENSE).
+Copyright © 2026 JacosVerksted. All rights reserved. The source is public so it can be read and reviewed — anyone, including Ålesund kommune and Ålesund Havn, may view it and run a local copy to evaluate it. Any other use, including selling or republishing it, needs written permission. See [LICENSE](LICENSE).
 
 ## Changelog
 

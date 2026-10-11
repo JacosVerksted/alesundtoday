@@ -4,6 +4,17 @@ All notable changes to Visit Ålesund are documented here.
 
 Newest first. Entries on the same date are grouped by theme.
 
+## 2026-10-11 (licence and privacy notes)
+
+### Changed
+- `LICENSE` now explicitly allows viewing the code and running a local copy solely to
+  review or evaluate it (e.g. by the municipality or the port). Selling, republishing and
+  any other use still need written permission.
+
+### Added
+- A **Privacy and security** section in the README (no cookies or tracking, nothing loaded
+  from third parties by the page, what is and isn't logged, the hardening in place).
+
 ## 2026-10-11 (web server)
 
 ### Changed

@@ -1,10 +1,19 @@
 Copyright (c) 2026 JacosVerksted. All rights reserved.
 
-This source code is published on GitHub so that it can be read. It is NOT open source.
-No licence or permission is granted to copy, modify, redistribute, sublicense or use this
-code, or any part of it, in other projects or services without the author's prior written
-permission. (GitHub's Terms of Service separately allow others to view and fork public
-repositories on GitHub; nothing beyond that is granted.)
+This source code is published on GitHub so that it can be read and reviewed. It is NOT
+open source.
+
+Permitted, free of charge:
+- Anyone may view the code.
+- Anyone may copy it locally and run it solely to review or evaluate it (for example,
+  Ålesund kommune or Ålesund Havn checking how the service works).
+
+Not permitted without the author's prior written permission: any other use, including
+commercial use, selling it, offering it as or inside a product or service, redistributing or
+republishing it, or building other products or services from it, whether modified or not.
+
+(GitHub's Terms of Service separately allow others to view and fork public repositories on
+GitHub; nothing beyond that is granted here.)
 
 Not covered by this notice:
 - Third-party packages used by the project, which keep their own licences.
