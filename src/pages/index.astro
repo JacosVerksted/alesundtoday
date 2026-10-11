@@ -162,7 +162,11 @@ const dataIsStale = daysSinceUpdate > 14;
       <p class="text-xs text-gray-400">
         <span data-i18n="footer_data">Data:</span>
         <a href="https://alesund.havn.no/skipstrafikk/mooringplan-cruise/" class="underline hover:text-gray-600 ml-1" target="_blank" rel="noopener">Ålesund Havn</a>
+        <span aria-hidden="true"> · </span>
+        <span data-i18n="footer_weather">Weather:</span>
+        <a href="https://www.met.no/en" class="underline hover:text-gray-600 ml-1" target="_blank" rel="noopener">MET Norway</a>
       </p>
+      <p class="text-[11px] leading-snug text-gray-400 max-w-xs mx-auto" data-i18n="footer_disclaimer">Unofficial, independent project — not affiliated with Ålesund kommune or Ålesund Havn. Schedules may change; check with the port.</p>
       <p class="text-xs text-gray-400" data-i18n="footer_credit">Made in Norway 🇳🇴 by <a href="https://github.com/JacosVerksted" class="underline hover:text-gray-600" target="_blank" rel="noopener">JacosVerksted</a></p>
     </footer>
 
@@ -196,6 +200,8 @@ const dataIsStale = daysSinceUpdate > 14;
       footer_updated_ago: (n: number) => string;
       footer_stale: string;
       footer_data: string;
+      footer_weather: string;
+      footer_disclaimer: string;
       footer_credit: string;
       level_quiet: string;
       level_moderate: string;
@@ -243,6 +249,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Schedule updated ${n} day${n > 1 ? 's' : ''} ago`,
         footer_stale: ' — may be outdated',
         footer_data: 'Data:',
+        footer_weather: 'Weather:',
+        footer_disclaimer: 'Unofficial, independent project — not affiliated with Ålesund kommune or Ålesund Havn. Schedules may change; check with the port.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Great time to visit',
         level_moderate: 'Somewhat busy',
@@ -288,6 +296,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'er' : ''} siden`,
         footer_stale: ' — kan være utdatert',
         footer_data: 'Data:',
+        footer_weather: 'Vær:',
+        footer_disclaimer: 'Uoffisielt, uavhengig prosjekt – ikke tilknyttet Ålesund kommune eller Ålesund Havn. Rutene kan endres; sjekk med havna.',
         footer_credit: 'Laget i Norge 🇳🇴 av JacosVerksted',
         level_quiet: 'Flott tidspunkt å besøke',
         level_moderate: 'Litt travelt',
@@ -333,6 +343,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Rute oppdatert for ${n} dag${n > 1 ? 'ar' : ''} sidan`,
         footer_stale: ' — kan vera utdatert',
         footer_data: 'Data:',
+        footer_weather: 'Vêr:',
+        footer_disclaimer: 'Uoffisielt, uavhengig prosjekt – ikkje knytt til Ålesund kommune eller Ålesund Havn. Rutene kan endrast; sjekk med hamna.',
         footer_credit: 'Laga i Noreg 🇳🇴 av JacosVerksted',
         level_quiet: 'Framifrå tidspunkt å vitja',
         level_moderate: 'Litt travelt',
@@ -378,6 +390,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Fahrplan vor ${n} Tag${n > 1 ? 'en' : ''} aktualisiert`,
         footer_stale: ' — möglicherweise veraltet',
         footer_data: 'Daten:',
+        footer_weather: 'Wetter:',
+        footer_disclaimer: 'Inoffizielles, unabhängiges Projekt – nicht mit der Stadt Ålesund oder dem Hafen Ålesund verbunden. Fahrpläne können sich ändern; im Zweifel beim Hafen nachfragen.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Toller Zeitpunkt für einen Besuch',
         level_moderate: 'Etwas belebt',
@@ -423,6 +437,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Schema ${n} dag${n > 1 ? 'en' : ''} geleden bijgewerkt`,
         footer_stale: ' — mogelijk verouderd',
         footer_data: 'Gegevens:',
+        footer_weather: 'Weer:',
+        footer_disclaimer: 'Onofficieel, onafhankelijk project – niet verbonden aan de gemeente Ålesund of de haven van Ålesund. Planningen kunnen wijzigen; controleer dit bij de haven.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Geweldig moment om te bezoeken',
         level_moderate: 'Licht druk',
@@ -468,6 +484,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_updated_ago: (n) => `Programme mis à jour il y a ${n} jour${n > 1 ? 's' : ''}`,
         footer_stale: ' — peut être obsolète',
         footer_data: 'Données :',
+        footer_weather: 'Météo :',
+        footer_disclaimer: 'Projet non officiel et indépendant – sans lien avec la commune d’Ålesund ni le port d’Ålesund. Les horaires peuvent changer ; vérifiez auprès du port.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Excellent moment pour visiter',
         level_moderate: 'Légèrement chargé',
@@ -508,7 +526,7 @@ const dataIsStale = daysSinceUpdate > 14;
       const STATIC_KEYS: (keyof Strings)[] = [
         'subtitle','intro','webcam','share','section_weather','section_14days',
         'section_bestdays','section_calendar','legend_quiet','legend_moderate',
-        'legend_busy','legend_very_busy','footer_data','footer_credit',
+        'legend_busy','legend_very_busy','footer_data','footer_weather','footer_disclaimer','footer_credit',
         'level_quiet','level_moderate','level_busy','level_very_busy','level_unknown','unknown_note','legend_unknown',
         'no_quiet_days','drawer_capacity_label','drawer_visitors_label','drawer_footnote',
         'badge_quiet','badge_moderate','badge_busy','will_be','back_to_today',

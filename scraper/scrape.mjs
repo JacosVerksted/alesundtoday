@@ -12,7 +12,7 @@ async function main() {
   let html;
   try {
     const res = await fetch(SOURCE_URL, {
-      headers: { 'User-Agent': 'visit-alesund-scraper/1.0' },
+      headers: { 'User-Agent': 'visit-alesund-scraper/1.0 github.com/JacosVerksted/alesundtoday' },
     });
     if (!res.ok) {
       console.error(`HTTP ${res.status} from ${SOURCE_URL}`);
