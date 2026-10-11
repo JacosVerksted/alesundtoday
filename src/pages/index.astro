@@ -187,6 +187,10 @@ const dataIsStale = daysSinceUpdate > 14;
         <a href="https://www.met.no/en" class="underline hover:text-gray-600 ml-1" target="_blank" rel="noopener">MET Norway</a>
       </p>
       <p class="text-[11px] leading-snug text-gray-400 max-w-xs mx-auto" data-i18n="footer_disclaimer">Unofficial, independent project — not affiliated with Ålesund kommune or Ålesund Havn. Schedules may change; check with the port.</p>
+      <p class="text-[11px] leading-snug text-gray-400 max-w-xs mx-auto">
+        <span data-i18n="footer_privacy_note">No cookies or tracking. Server logs are used for aggregate usage statistics.</span>
+        <a href="/privacy/" class="underline hover:text-gray-600 whitespace-nowrap" data-i18n="footer_privacy_link">Privacy</a>
+      </p>
       <p class="text-xs text-gray-400" data-i18n="footer_credit">Made in Norway 🇳🇴 by <a href="https://github.com/JacosVerksted" class="underline hover:text-gray-600" target="_blank" rel="noopener">JacosVerksted</a></p>
     </footer>
 
@@ -223,6 +227,8 @@ const dataIsStale = daysSinceUpdate > 14;
       footer_stale: string;
       footer_data: string;
       footer_weather: string;
+      footer_privacy_note: string;
+      footer_privacy_link: string;
       in_port: string;
       offseason_note: string;
       bestdays_none: string;
@@ -275,6 +281,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — may be outdated',
         footer_data: 'Data:',
         footer_weather: 'Weather:',
+        footer_privacy_note: 'No cookies or tracking. Server logs are used for aggregate usage statistics.',
+        footer_privacy_link: 'Privacy',
         in_port: 'In port',
         offseason_note: 'No cruise ships are scheduled at the moment. The port publishes its plan about a month ahead, so check back later.',
         bestdays_none: 'Not enough published schedule to rank days yet.',
@@ -325,6 +333,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — kan være utdatert',
         footer_data: 'Data:',
         footer_weather: 'Vær:',
+        footer_privacy_note: 'Ingen informasjonskapsler eller sporing. Serverlogger brukes til samlet bruksstatistikk.',
+        footer_privacy_link: 'Personvern',
         in_port: 'I havn',
         offseason_note: 'Ingen cruiseskip er planlagt akkurat nå. Havnen publiserer planen omtrent en måned i forveien, så sjekk igjen senere.',
         bestdays_none: 'Ikke nok publisert rute til å rangere dager ennå.',
@@ -375,6 +385,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — kan vera utdatert',
         footer_data: 'Data:',
         footer_weather: 'Vêr:',
+        footer_privacy_note: 'Ingen informasjonskapslar eller sporing. Serverloggar blir brukte til samla bruksstatistikk.',
+        footer_privacy_link: 'Personvern',
         in_port: 'I hamn',
         offseason_note: 'Ingen cruiseskip er planlagde akkurat no. Hamna publiserer planen omtrent ein månad i forvegen, så sjekk att seinare.',
         bestdays_none: 'Ikkje nok publisert rute til å rangere dagar enno.',
@@ -425,6 +437,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — möglicherweise veraltet',
         footer_data: 'Daten:',
         footer_weather: 'Wetter:',
+        footer_privacy_note: 'Keine Cookies oder Tracking. Serverprotokolle dienen der aggregierten Nutzungsstatistik.',
+        footer_privacy_link: 'Datenschutz',
         in_port: 'Im Hafen',
         offseason_note: 'Derzeit sind keine Kreuzfahrtschiffe geplant. Der Hafen veröffentlicht den Plan etwa einen Monat im Voraus – bitte später wieder nachsehen.',
         bestdays_none: 'Noch kein veröffentlichter Fahrplan, um Tage zu bewerten.',
@@ -475,6 +489,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — mogelijk verouderd',
         footer_data: 'Gegevens:',
         footer_weather: 'Weer:',
+        footer_privacy_note: 'Geen cookies of tracking. Serverlogboeken worden gebruikt voor geaggregeerde gebruiksstatistieken.',
+        footer_privacy_link: 'Privacy',
         in_port: 'In de haven',
         offseason_note: 'Er zijn momenteel geen cruiseschepen gepland. De haven publiceert de planning ongeveer een maand van tevoren, dus kom later terug.',
         bestdays_none: 'Nog niet genoeg gepubliceerde planning om dagen te rangschikken.',
@@ -525,6 +541,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — peut être obsolète',
         footer_data: 'Données :',
         footer_weather: 'Météo :',
+        footer_privacy_note: 'Pas de cookies ni de suivi. Les journaux du serveur servent à des statistiques d’usage agrégées.',
+        footer_privacy_link: 'Confidentialité',
         in_port: 'Au port',
         offseason_note: 'Aucun paquebot n’est prévu pour le moment. Le port publie son programme environ un mois à l’avance ; revenez plus tard.',
         bestdays_none: 'Pas encore assez de programme publié pour classer les jours.',
@@ -569,7 +587,7 @@ const dataIsStale = daysSinceUpdate > 14;
       const STATIC_KEYS: (keyof Strings)[] = [
         'subtitle','intro','webcam','share','section_weather','section_14days',
         'section_bestdays','section_calendar','legend_quiet','legend_moderate',
-        'legend_busy','legend_very_busy','footer_data','footer_weather','footer_disclaimer','offseason_note','bestdays_none','footer_credit',
+        'legend_busy','legend_very_busy','footer_data','footer_weather','footer_disclaimer','footer_privacy_note','footer_privacy_link','offseason_note','bestdays_none','footer_credit',
         'level_quiet','level_moderate','level_busy','level_very_busy','level_unknown','unknown_note','legend_unknown',
         'no_quiet_days','drawer_capacity_label','drawer_visitors_label','drawer_footnote',
         'badge_quiet','badge_moderate','badge_busy','will_be','back_to_today',

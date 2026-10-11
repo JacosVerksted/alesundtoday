@@ -4,6 +4,16 @@ All notable changes to Visit Ålesund are documented here.
 
 Newest first. Entries on the same date are grouped by theme.
 
+## 2026-10-11 (privacy notice)
+
+### Added
+- **Privacy page** at `/privacy/` (English; Norwegian for Bokmål and Nynorsk readers)
+  covering who is responsible, what is and isn't collected, the server request log and
+  its purpose, how long it is kept (about two to three weeks, overwritten automatically),
+  sharing, and visitors' rights including the complaint route to Datatilsynet.
+- A **footer line** in all six languages ("No cookies or tracking. Server logs are used
+  for aggregate usage statistics.") linking to the privacy page.
+
 ## 2026-10-11 (licence and privacy notes)
 
 ### Changed

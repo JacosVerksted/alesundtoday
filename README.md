@@ -31,6 +31,7 @@ This app helps you plan your visit. Check any date to see which cruise ships are
 - **Dark mode** that follows the device setting.
 - **Installable as an app** (PWA) on Android, iOS ("Add to Home Screen" hint) and desktop, with a service worker so a returning visitor still gets the page when offline.
 - **Date rollover**: if a page stays open past midnight, it repaints itself for the new day.
+- **Privacy notice** page (`/privacy/`), linked from the footer.
 - **Link previews** (Open Graph / Twitter tags and a preview image) and a canonical URL.
 
 ## How the busyness level works
@@ -69,6 +70,7 @@ If any ship's capacity is unknown, that day falls back to a ship-count rule (1 �
 
 ```
 src/pages/index.astro        page, all translations (T), client script
+src/pages/privacy.astro      privacy notice (English and Norwegian)
 src/components/              StatusCard, WeekView, Calendar, BestDays, WeatherStrip,
                              ShipDrawer, LangSwitcher
 src/lib/                     schedule.ts (days + levels), horizon.ts, visits.ts, lang.ts,
@@ -118,9 +120,10 @@ This is a static site: no backend, no database, no accounts and no forms. The ap
 
 - **No tracking in the browser.** No cookies, tracking scripts, advertising, fingerprinting or third-party analytics. The only thing the page stores in the browser is the chosen language (`localStorage`), which never leaves the device. Usage statistics come only from the server-side request log described under *Logging*.
 - **No third parties when the page is used.** No external scripts, fonts, images or embeds are loaded, and the page only ever requests its own files (enforced by the Content-Security-Policy). The weather is fetched from MET Norway when the site is *built*, not from visitors' browsers. Links to Ålesund Havn, MET Norway and GitHub are ordinary links.
-- **Logging.** The site's own web server writes no access log. The reverse proxy in front of it is shared server infrastructure outside this repository and keeps its own request log (time, client address, path, status; request headers are dropped) in size-limited rotating files (the oldest entries are overwritten). The operator uses this log for aggregate usage statistics and reports, such as visits over time and where the app is used. The app itself never reads the logs.
+- **Logging.** The site's own web server writes no access log. The reverse proxy in front of it is shared server infrastructure outside this repository and keeps its own request log (time, client address, path, status; request headers are dropped) in size-limited rotating files, so entries typically exist for two to three weeks before being overwritten. The operator uses this log for aggregate usage statistics and reports, such as visits over time and where the app is used. The app itself never reads the logs.
 - **Hardening.** Strict Content-Security-Policy, HSTS, Permissions-Policy, `nosniff`, no referrer; per-visitor rate limiting; only `GET`/`HEAD` accepted; files are served from a read-only mount; no secrets or credentials in the repository or its history.
 - **Data.** Only public information is used (the port's published mooring plans and MET Norway's forecast). Requests to the port are one run per day with an identifying user-agent.
+- **Visitor notice.** A privacy notice for visitors (English and Norwegian) lives at [/privacy/](https://alesundtoday.jacosverksted.no/privacy/) and is linked from the footer.
 - **Unofficial.** Not affiliated with or endorsed by Ålesund kommune or Ålesund Havn.
 
 ## Data sources and credits
