@@ -76,7 +76,7 @@ src/lib/                     schedule.ts (days + levels), horizon.ts, visits.ts,
 src/styles/global.css        Tailwind + dark-mode colour overrides
 scraper/                     scrape.mjs, parse.mjs, pdf.mjs
 public/                      schedule.json, sw.js, manifest, icons, og-image.png
-deploy/                      vps-rebuild.sh, nginx.conf, docker-compose.yml
+deploy/                      vps-rebuild.sh, nginx.conf
 ```
 
 Stack: [Astro](https://astro.build) (static output), Tailwind CSS 4, Node.js scraper (`node-html-parser`, `pdfjs-dist`). No server-side code at runtime.
@@ -102,7 +102,7 @@ The site is plain static files in an `nginx:alpine` container on a self-hosted s
 - **Schedule:** run daily from cron, for example `30 4 * * * /bin/bash <path>/deploy/vps-rebuild.sh`. A `git push` does **not** deploy by itself — run the script (or wait for the next cron run) to publish a change.
 - **Configuration** (environment or a `rebuild.env` next to the script's base folder): `BASE` (working folder, holds `src/`, `dist/`, `rebuild.log`, `schedule.last-good.json`), `DIST_DIR` (publish somewhere else for a dry run), `KUMA_PUSH_URL` (optional Uptime Kuma push monitor, pinged on success or failure).
 - **`deploy/nginx.conf`**: cache headers per path (hashed assets immutable, `sw.js` never cached, `schedule.json` hourly), rate limiting, bot blocking, security headers.
-- TLS, routing and any access restrictions are configured on the server's reverse proxy and are not part of this repository; `deploy/docker-compose.yml` shows how the nginx container is run (with no proxy labels).
+- The site runs as a plain `nginx:alpine` container with `dist/` and `nginx.conf` mounted read-only. TLS, the domain, routing and any access restrictions are handled by a reverse proxy on the server and are not part of this repository.
 - **Service worker (`public/sw.js`):** hashed `/_astro/` assets are cache-first (only successful responses are cached); HTML and `schedule.json` are network-first. Bump the cache name on any deploy that changes assets in a way that must purge old caches.
 - There are no GitHub Actions workflows: deploying and refreshing the schedule happen only on the server.
 
