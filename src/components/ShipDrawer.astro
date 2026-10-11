@@ -48,6 +48,8 @@
 ></div>
 
 <script>
+  import { getLang } from '../lib/lang';
+
   const drawer = document.getElementById('ship-drawer')!;
   const backdrop = document.getElementById('drawer-backdrop')!;
   const nameEl = document.getElementById('drawer-ship-name')!;
@@ -56,7 +58,7 @@
   const closeBtn = document.getElementById('drawer-close')!;
 
   function getLangStrings() {
-    const lang = localStorage.getItem('lang') ?? 'en';
+    const lang = getLang();
     const localeMap: Record<string, string> = {
       en: 'en-GB', nb: 'nb-NO', nn: 'nb-NO', de: 'de-DE', nl: 'nl-NL', fr: 'fr-FR',
     };

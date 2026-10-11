@@ -1,4 +1,5 @@
 import rawSchedule from '../../public/schedule.json';
+import { computeHorizon } from './horizon';
 
 /** 'unknown' = a future date after the last published call (schedule not out yet). */
 export type BusynessLevel = 'quiet' | 'moderate' | 'busy' | 'very-busy' | 'unknown';
@@ -23,8 +24,17 @@ const callMap = new Map<string, CruiseCall>(
 
 export const generatedAt: string = rawSchedule.generated;
 
-/** Latest date the port has published a call for. Later future dates are unknown. */
-export const scheduleHorizon: string = rawSchedule.calls.reduce((m, c) => (c.date > m ? c.date : m), '');
+/** Last date the port's schedule is published for (see horizon.ts). Later future dates are unknown. */
+export const scheduleHorizon: string = computeHorizon(
+  rawSchedule.calls.map((c) => c.date),
+  rawSchedule.generated
+);
+
+/** False in the off-season: no cruise call today or later in the published schedule. */
+export function hasUpcomingCalls(): boolean {
+  const today = todayISO();
+  return rawSchedule.calls.some((c) => c.date >= today);
+}
 
 function todayISO(): string {
   // Use local date (not UTC) so Norwegian users see the correct day

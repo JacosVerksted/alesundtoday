@@ -6,3 +6,62 @@
   outline: 2px solid #2563eb;
   outline-offset: 1px;
 }
+
+/* ── Dark mode ───────────────────────────────────────────────────────────────
+   Follows the device setting. Instead of a `dark:` class on every element, the
+   Tailwind colour variables the page uses are re-pointed in one place, so
+   markup — including classes the page script adds at runtime — adapts as is.
+   Gray scale is flipped; the pastel status tints become translucent so they
+   sit on a dark surface; the dark-on-pastel text colours are lightened. */
+:root { color-scheme: light dark; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-50:  #0f1419;   /* page background */
+    --color-gray-100: #1a222d;
+    --color-gray-200: #2a3441;
+    --color-gray-300: #475466;
+    --color-gray-400: #8f9bad;
+    --color-gray-500: #a6b1c1;
+    --color-gray-600: #bac3d0;
+    --color-gray-700: #d1d8e2;
+    --color-gray-800: #e5e9f0;
+    --color-gray-900: #f4f6f9;
+
+    --color-emerald-50:  rgb(16 185 129 / 0.12);
+    --color-emerald-100: rgb(16 185 129 / 0.20);
+    --color-emerald-200: rgb(16 185 129 / 0.38);
+    --color-emerald-700: #6ee7b7;
+    --color-emerald-800: #a7f3d0;
+    --color-yellow-50:   rgb(250 204 21 / 0.12);
+    --color-yellow-100:  rgb(250 204 21 / 0.20);
+    --color-yellow-200:  rgb(250 204 21 / 0.38);
+    --color-yellow-700:  #fde047;
+    --color-yellow-800:  #fef08a;
+    --color-orange-50:   rgb(249 115 22 / 0.12);
+    --color-orange-100:  rgb(249 115 22 / 0.20);
+    --color-orange-200:  rgb(249 115 22 / 0.38);
+    --color-orange-700:  #fdba74;
+    --color-orange-800:  #fed7aa;
+    --color-red-50:      rgb(239 68 68 / 0.13);
+    --color-red-100:     rgb(239 68 68 / 0.22);
+    --color-red-200:     rgb(239 68 68 / 0.40);
+    --color-red-700:     #fca5a5;
+    --color-red-800:     #fecaca;
+    --color-sky-50:      rgb(56 189 248 / 0.10);
+    --color-sky-100:     rgb(56 189 248 / 0.22);
+    --color-blue-600:    #60a5fa;
+  }
+
+  /* White surfaces (cards, drawer, chips) become raised dark surfaces */
+  .bg-white { background-color: #161e29; }
+  .bg-white\/70 { background-color: rgb(255 255 255 / 0.10); }
+  @media (hover: hover) {
+    .hover\:bg-white:hover { background-color: rgb(255 255 255 / 0.18); }
+  }
+
+  /* The "today" ring is offset from its box by a page-coloured gap */
+  * { --tw-ring-offset-color: #0f1419; }
+
+  .selected-day { outline-color: #60a5fa; }
+}

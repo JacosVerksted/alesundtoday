@@ -6,7 +6,7 @@ import BestDays from '../components/BestDays.astro';
 import ShipDrawer from '../components/ShipDrawer.astro';
 import WeatherStrip from '../components/WeatherStrip.astro';
 import LangSwitcher from '../components/LangSwitcher.astro';
-import { getToday, getRange, getMonth, generatedAt } from '../lib/schedule';
+import { getToday, getRange, getMonth, generatedAt, hasUpcomingCalls } from '../lib/schedule';
 import { getBestDays } from '../lib/bestDays';
 import '../styles/global.css';
 
@@ -17,6 +17,7 @@ const thisMonth = getMonth(now.getUTCFullYear(), now.getUTCMonth() + 1);
 const nextMonthDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
 const nextMonth = getMonth(nextMonthDate.getUTCFullYear(), nextMonthDate.getUTCMonth() + 1);
 const bestDays = getBestDays(today.date, { count: 5 });
+const offSeason = !hasUpcomingCalls();
 
 const generatedDate = new Date(generatedAt);
 const daysSinceUpdate = Math.floor((Date.now() - generatedDate.getTime()) / 86400000);
@@ -29,7 +30,20 @@ const dataIsStale = daysSinceUpdate > 14;
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Is today a good day to visit Ålesund? Check cruise ship traffic before you go." />
-  <meta name="theme-color" content="#10b981" />
+  <meta name="theme-color" content="#10b981" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f1419" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="canonical" href="https://alesundtoday.jacosverksted.no/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Visit Ålesund" />
+  <meta property="og:title" content="Visit Ålesund — Is it busy today?" />
+  <meta property="og:description" content="Cruise ship traffic in Ålesund: today's status, a 14-day outlook, the best days to visit and the weather." />
+  <meta property="og:url" content="https://alesundtoday.jacosverksted.no/" />
+  <meta property="og:image" content="https://alesundtoday.jacosverksted.no/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A cruise ship on waves with the text Visit Ålesund — Is it busy today?" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>Visit Ålesund — Is it busy today?</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
   <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png?v=3" />
@@ -89,6 +103,12 @@ const dataIsStale = daysSinceUpdate > 14;
     <section>
       <StatusCard day={today} />
     </section>
+
+    {offSeason && (
+      <p class="rounded-xl bg-gray-100 px-4 py-3 text-sm text-gray-600" data-i18n="offseason_note">
+        No cruise ships are scheduled at the moment. The port publishes its plan about a month ahead, so check back later.
+      </p>
+    )}
 
     <!-- Share button -->
     <div class="flex justify-end">
@@ -177,9 +197,10 @@ const dataIsStale = daysSinceUpdate > 14;
 
   <script>
     import { getCapacity } from '../lib/ships';
+    import { getLang, type Lang } from '../lib/lang';
+    import { computeHorizon } from '../lib/horizon';
 
     // ── Translations ──────────────────────────────────────────────────────────
-    type Lang = 'en' | 'nb' | 'nn' | 'de' | 'nl' | 'fr';
 
     interface Strings {
       subtitle: string;
@@ -201,6 +222,8 @@ const dataIsStale = daysSinceUpdate > 14;
       footer_stale: string;
       footer_data: string;
       footer_weather: string;
+      offseason_note: string;
+      bestdays_none: string;
       footer_disclaimer: string;
       footer_credit: string;
       level_quiet: string;
@@ -250,6 +273,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — may be outdated',
         footer_data: 'Data:',
         footer_weather: 'Weather:',
+        offseason_note: 'No cruise ships are scheduled at the moment. The port publishes its plan about a month ahead, so check back later.',
+        bestdays_none: 'Not enough published schedule to rank days yet.',
         footer_disclaimer: 'Unofficial, independent project — not affiliated with Ålesund kommune or Ålesund Havn. Schedules may change; check with the port.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Great time to visit',
@@ -297,6 +322,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — kan være utdatert',
         footer_data: 'Data:',
         footer_weather: 'Vær:',
+        offseason_note: 'Ingen cruiseskip er planlagt akkurat nå. Havnen publiserer planen omtrent en måned i forveien, så sjekk igjen senere.',
+        bestdays_none: 'Ikke nok publisert rute til å rangere dager ennå.',
         footer_disclaimer: 'Uoffisielt, uavhengig prosjekt – ikke tilknyttet Ålesund kommune eller Ålesund Havn. Rutene kan endres; sjekk med havna.',
         footer_credit: 'Laget i Norge 🇳🇴 av JacosVerksted',
         level_quiet: 'Flott tidspunkt å besøke',
@@ -344,6 +371,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — kan vera utdatert',
         footer_data: 'Data:',
         footer_weather: 'Vêr:',
+        offseason_note: 'Ingen cruiseskip er planlagde akkurat no. Hamna publiserer planen omtrent ein månad i forvegen, så sjekk att seinare.',
+        bestdays_none: 'Ikkje nok publisert rute til å rangere dagar enno.',
         footer_disclaimer: 'Uoffisielt, uavhengig prosjekt – ikkje knytt til Ålesund kommune eller Ålesund Havn. Rutene kan endrast; sjekk med hamna.',
         footer_credit: 'Laga i Noreg 🇳🇴 av JacosVerksted',
         level_quiet: 'Framifrå tidspunkt å vitja',
@@ -391,6 +420,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — möglicherweise veraltet',
         footer_data: 'Daten:',
         footer_weather: 'Wetter:',
+        offseason_note: 'Derzeit sind keine Kreuzfahrtschiffe geplant. Der Hafen veröffentlicht den Plan etwa einen Monat im Voraus – bitte später wieder nachsehen.',
+        bestdays_none: 'Noch kein veröffentlichter Fahrplan, um Tage zu bewerten.',
         footer_disclaimer: 'Inoffizielles, unabhängiges Projekt – nicht mit der Stadt Ålesund oder dem Hafen Ålesund verbunden. Fahrpläne können sich ändern; im Zweifel beim Hafen nachfragen.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Toller Zeitpunkt für einen Besuch',
@@ -438,6 +469,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — mogelijk verouderd',
         footer_data: 'Gegevens:',
         footer_weather: 'Weer:',
+        offseason_note: 'Er zijn momenteel geen cruiseschepen gepland. De haven publiceert de planning ongeveer een maand van tevoren, dus kom later terug.',
+        bestdays_none: 'Nog niet genoeg gepubliceerde planning om dagen te rangschikken.',
         footer_disclaimer: 'Onofficieel, onafhankelijk project – niet verbonden aan de gemeente Ålesund of de haven van Ålesund. Planningen kunnen wijzigen; controleer dit bij de haven.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Geweldig moment om te bezoeken',
@@ -485,6 +518,8 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — peut être obsolète',
         footer_data: 'Données :',
         footer_weather: 'Météo :',
+        offseason_note: 'Aucun paquebot n’est prévu pour le moment. Le port publie son programme environ un mois à l’avance ; revenez plus tard.',
+        bestdays_none: 'Pas encore assez de programme publié pour classer les jours.',
         footer_disclaimer: 'Projet non officiel et indépendant – sans lien avec la commune d’Ålesund ni le port d’Ålesund. Les horaires peuvent changer ; vérifiez auprès du port.',
         footer_credit: 'Made in Norway 🇳🇴 by JacosVerksted',
         level_quiet: 'Excellent moment pour visiter',
@@ -526,7 +561,7 @@ const dataIsStale = daysSinceUpdate > 14;
       const STATIC_KEYS: (keyof Strings)[] = [
         'subtitle','intro','webcam','share','section_weather','section_14days',
         'section_bestdays','section_calendar','legend_quiet','legend_moderate',
-        'legend_busy','legend_very_busy','footer_data','footer_weather','footer_disclaimer','footer_credit',
+        'legend_busy','legend_very_busy','footer_data','footer_weather','footer_disclaimer','offseason_note','bestdays_none','footer_credit',
         'level_quiet','level_moderate','level_busy','level_very_busy','level_unknown','unknown_note','legend_unknown',
         'no_quiet_days','drawer_capacity_label','drawer_visitors_label','drawer_footnote',
         'badge_quiet','badge_moderate','badge_busy','will_be','back_to_today',
@@ -617,7 +652,7 @@ const dataIsStale = daysSinceUpdate > 14;
     }
 
     // ── Boot ──────────────────────────────────────────────────────────────────
-    const initLang = (localStorage.getItem('lang') as Lang) ?? 'en';
+    const initLang = getLang();
     applyLang(initLang);
 
     window.addEventListener('langchange', (e) => {
@@ -633,7 +668,7 @@ const dataIsStale = daysSinceUpdate > 14;
     const shareBtn = document.getElementById('share-btn');
     shareBtn?.addEventListener('click', async () => {
       const url = location.href;
-      const lang = (localStorage.getItem('lang') as Lang) ?? 'en';
+      const lang = getLang();
       const t = T[lang] ?? T.en;
       const shareSpan = shareBtn.querySelector<HTMLElement>('[data-i18n="share"]');
       if (navigator.share) {
@@ -702,7 +737,7 @@ const dataIsStale = daysSinceUpdate > 14;
       e.preventDefault();
       deferredPrompt = e as any;
       installBar.hidden = false;
-      setInstallStrings(localStorage.getItem('lang') ?? 'en');
+      setInstallStrings(getLang());
     });
 
     installBtn.addEventListener('click', async () => {
@@ -733,7 +768,7 @@ const dataIsStale = daysSinceUpdate > 14;
         const res = await fetch('/schedule.json');
         const data = await res.json();
         scheduleCache = (data.calls ?? []) as Call[];
-        scheduleHorizon = scheduleCache.reduce((m, c) => (c.date > m ? c.date : m), '');
+        scheduleHorizon = computeHorizon(scheduleCache.map((c) => c.date), data.generated ?? new Date().toISOString());
       } catch {
         scheduleCache = [];
       }
@@ -835,7 +870,7 @@ const dataIsStale = daysSinceUpdate > 14;
       if (eyebrow) eyebrow.hidden = isToday;
       if (backBtn) backBtn.hidden = isToday;
 
-      applyLang((localStorage.getItem('lang') as Lang) ?? 'en');
+      applyLang(getLang());
     }
 
     // Day selection: clicking any day in the calendar or the 14-day strip
@@ -932,7 +967,7 @@ const dataIsStale = daysSinceUpdate > 14;
       });
 
       // Re-apply language so all translated strings update
-      applyLang((localStorage.getItem('lang') as Lang) ?? 'en');
+      applyLang(getLang());
     })();
   </script>
 </body>

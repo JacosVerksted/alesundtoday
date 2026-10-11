@@ -42,6 +42,8 @@
 </div>
 
 <script>
+  import { getLang } from '../lib/lang';
+
   const btn = document.getElementById('lang-btn')!;
   const menu = document.getElementById('lang-menu')!;
   const flagEl = document.getElementById('lang-flag')!;
@@ -63,7 +65,7 @@
   }
 
   // Reflect current stored language
-  updateBtn(localStorage.getItem('lang') ?? 'en');
+  updateBtn(getLang());
 
   btn.addEventListener('click', () => {
     const open = !menu.classList.contains('hidden');
