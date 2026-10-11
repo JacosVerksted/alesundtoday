@@ -104,7 +104,7 @@ The site is plain static files in an `nginx:alpine` container on a self-hosted s
 - **`deploy/nginx.conf`**: cache headers per path (hashed assets immutable, `sw.js` never cached, `schedule.json` hourly), rate limiting, bot blocking, security headers.
 - TLS, routing and any access restrictions are configured on the server's reverse proxy and are not part of this repository; `deploy/docker-compose.yml` is an older reference.
 - **Service worker (`public/sw.js`):** hashed `/_astro/` assets are cache-first (only successful responses are cached); HTML and `schedule.json` are network-first. Bump the cache name on any deploy that changes assets in a way that must purge old caches.
-- `.github/workflows/` holds the previous GitHub Actions deploy workflows. They are **disabled** and kept only for reference.
+- There are no GitHub Actions workflows: deploying and refreshing the schedule happen only on the server.
 
 ## Data sources and credits
 

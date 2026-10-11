@@ -79,7 +79,7 @@ Newest first. Entries on the same date are grouped by theme.
   - If the scrape fails, the last good schedule is used and the site is still published.
   - The script is wrapped in a function so its own `git reset` cannot corrupt a running run.
   - Optional Uptime Kuma push monitoring via `KUMA_PUSH_URL` in `rebuild.env`.
-- The two GitHub Actions workflows are disabled and the deploy secrets were removed.
+- The two GitHub Actions workflows (daily rebuild, weekly schedule refresh) were disabled, then deleted from the repository, and the deploy secrets were removed.
 
 
 ## 2026-07-09 (intro)
