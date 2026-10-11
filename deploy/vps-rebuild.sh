@@ -3,7 +3,7 @@
 # Replaces the GitHub Actions workflows (daily-rebuild / refresh-data).
 #
 # Code comes from GitHub (public repo, plain https pull). Node never touches the
-# host: scrape + build run in a throwaway node:22-alpine container.
+# host: scrape + build run in a throwaway node:22-alpine docker run.
 #
 # Usage:  vps-rebuild.sh            # pull, scrape, build, publish
 #         DIST_DIR=/tmp/x vps-rebuild.sh   # dry run into another folder
@@ -13,7 +13,7 @@ set -euo pipefail
 
 BASE="${BASE:-/home/rick/docker/alesundtoday}"
 SRC="$BASE/src"
-DIST_DIR="${DIST_DIR:-$BASE/dist}"          # bind-mounted into the nginx container
+DIST_DIR="${DIST_DIR:-$BASE/dist}"          # bind-mounted into nginx
 LAST_GOOD="$BASE/schedule.last-good.json"
 LOG="$BASE/rebuild.log"
 REPO="https://github.com/JacosVerksted/alesundtoday.git"
