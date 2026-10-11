@@ -162,7 +162,7 @@ const dataIsStale = daysSinceUpdate > 14;
         <span data-i18n="footer_data">Data:</span>
         <a href="https://alesund.havn.no/skipstrafikk/mooringplan-cruise/" class="underline hover:text-gray-600 ml-1" target="_blank" rel="noopener">Ålesund Havn</a>
       </p>
-      <p class="text-xs text-gray-400" data-i18n="footer_credit">Made in Norway 🇳🇴 by JacosVerksted</p>
+      <p class="text-xs text-gray-400" data-i18n="footer_credit">Made in Norway 🇳🇴 by <a href="https://github.com/JacosVerksted" class="underline hover:text-gray-600" target="_blank" rel="noopener">JacosVerksted</a></p>
     </footer>
 
   </div>
@@ -495,6 +495,8 @@ const dataIsStale = daysSinceUpdate > 14;
       },
     };
 
+    const AUTHOR_LINK_HTML = '<a href="https://github.com/JacosVerksted" class="underline hover:text-gray-600" target="_blank" rel="noopener">JacosVerksted</a>';
+
     // ── Apply language ────────────────────────────────────────────────────────
     function applyLang(lang: Lang) {
       const t = T[lang] ?? T.en;
@@ -513,7 +515,10 @@ const dataIsStale = daysSinceUpdate > 14;
       STATIC_KEYS.forEach((key) => {
         document.querySelectorAll<HTMLElement>(`[data-i18n="${key}"]`).forEach((el) => {
           const val = t[key];
-          if (typeof val === 'string') el.textContent = val;
+          if (typeof val !== 'string') return;
+          // The credit line links the author's name to their GitHub page
+          if (key === 'footer_credit') el.innerHTML = val.replace('JacosVerksted', AUTHOR_LINK_HTML);
+          else el.textContent = val;
         });
       });
 
