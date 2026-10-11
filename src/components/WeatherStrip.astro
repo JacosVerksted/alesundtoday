@@ -23,7 +23,7 @@ let forecasts: Forecast[] = [];
 try {
   const res = await fetch(
     'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=62.4722&lon=6.1494',
-    { headers: { 'User-Agent': 'visit-alesund/1.0 github.com/JacosVerksted/alesundtoday' } }
+    { headers: { 'User-Agent': 'alesund-today/1.0 github.com/JacosVerksted/alesundtoday' } }
   );
   if (res.ok) {
     const json = await res.json();

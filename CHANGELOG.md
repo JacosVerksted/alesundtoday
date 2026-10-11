@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Visit Ålesund are documented here.
+All notable changes to Ålesund Today (formerly "Visit Ålesund") are documented here.
 
 Newest first. Entries on the same date are grouped by theme.
 

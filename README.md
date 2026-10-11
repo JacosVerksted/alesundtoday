@@ -1,8 +1,8 @@
 https://alesundtoday.jacosverksted.no/
 
-# Visit Ålesund
+# Ålesund Today
 
-**Is today a good day to visit Ålesund?**
+**Is today a good day to visit Ålesund?** (Formerly "Visit Ålesund".)
 
 Ålesund is one of Norway's most beautiful cities — but on busy cruise ship days, the narrow streets and harbour front can be packed with thousands of extra visitors. A single large ship can bring more than 4,000 passengers into a city of 50,000 people.
 

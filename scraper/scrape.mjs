@@ -5,7 +5,7 @@ import { parseMooringplan } from './parse.mjs';
 import { parseMooringPdf } from './pdf.mjs';
 
 const SOURCE_URL = 'https://alesund.havn.no/skipstrafikk/mooringplan-cruise/';
-const USER_AGENT = 'visit-alesund-scraper/1.0 github.com/JacosVerksted/alesundtoday';
+const USER_AGENT = 'alesund-today-scraper/1.0 github.com/JacosVerksted/alesundtoday';
 const __dir = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dir, '..', 'public', 'schedule.json');
 

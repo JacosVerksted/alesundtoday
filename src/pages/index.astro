@@ -19,6 +19,25 @@ const nextMonth = getMonth(nextMonthDate.getUTCFullYear(), nextMonthDate.getUTCM
 const bestDays = getBestDays(today.date, { count: 5 });
 const offSeason = !hasUpcomingCalls();
 
+// Search results and link previews show this text, so it states today's real status.
+// The site is rebuilt every day, so it stays current.
+const todayLabel = new Date(today.date + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+const todayStatus = today.count === 0 ? 'no cruise ships in port' : `${today.count} cruise ship${today.count > 1 ? 's' : ''} in port`;
+const description = `Cruise ships in Ålesund today (${todayLabel}): ${todayStatus}. See the next 14 days, arrival times, crowds and the best days to visit.`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Ålesund Today',
+  url: 'https://alesundtoday.jacosverksted.no/',
+  description: 'Free cruise ship schedule for Ålesund: which ships are in port, arrival and departure times, how busy the town will be and the best days to visit.',
+  applicationCategory: 'TravelApplication',
+  operatingSystem: 'Any',
+  inLanguage: ['en', 'nb', 'nn', 'de', 'nl', 'fr'],
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'NOK' },
+  author: { '@type': 'Person', name: 'JacosVerksted' },
+};
+
 const generatedDate = new Date(generatedAt);
 const daysSinceUpdate = Math.floor((Date.now() - generatedDate.getTime()) / 86400000);
 const dataIsStale = daysSinceUpdate > 14;
@@ -29,22 +48,23 @@ const dataIsStale = daysSinceUpdate > 14;
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Is today a good day to visit Ålesund? Check cruise ship traffic before you go." />
+  <meta name="description" content={description} />
   <meta name="theme-color" content="#10b981" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0f1419" media="(prefers-color-scheme: dark)" />
   <meta name="color-scheme" content="light dark" />
   <link rel="canonical" href="https://alesundtoday.jacosverksted.no/" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Visit Ålesund" />
-  <meta property="og:title" content="Visit Ålesund — Is it busy today?" />
-  <meta property="og:description" content="Cruise ship traffic in Ålesund: today's status, a 14-day outlook, the best days to visit and the weather." />
+  <meta property="og:site_name" content="Ålesund Today" />
+  <meta property="og:title" content="Ålesund Today – Cruise ship schedule & busy days" />
+  <meta property="og:description" content={description} />
   <meta property="og:url" content="https://alesundtoday.jacosverksted.no/" />
   <meta property="og:image" content="https://alesundtoday.jacosverksted.no/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="A cruise ship on waves with the text Visit Ålesund — Is it busy today?" />
+  <meta property="og:image:alt" content="A cruise ship on waves with the text Ålesund Today — Is it busy today?" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>Visit Ålesund — Is it busy today?</title>
+  <title>Ålesund Today – Cruise ship schedule & busy days</title>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
   <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png?v=3" />
   <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
@@ -57,7 +77,7 @@ const dataIsStale = daysSinceUpdate > 14;
     <!-- Header -->
     <header class="flex items-center justify-between gap-2">
       <div class="min-w-0">
-        <h1 class="text-xl font-bold text-gray-900">Visit Ålesund</h1>
+        <h1 class="text-xl font-bold text-gray-900">Ålesund Today</h1>
         <p class="text-sm text-gray-500" data-i18n="subtitle">Cruise traffic tracker</p>
       </div>
       <div class="flex items-center gap-2 flex-shrink-0">
@@ -704,7 +724,7 @@ const dataIsStale = daysSinceUpdate > 14;
       const t = T[lang] ?? T.en;
       const shareSpan = shareBtn.querySelector<HTMLElement>('[data-i18n="share"]');
       if (navigator.share) {
-        try { await navigator.share({ title: 'Visit Ålesund', url }); return; } catch {}
+        try { await navigator.share({ title: 'Ålesund Today', url }); return; } catch {}
       }
       try {
         await navigator.clipboard.writeText(url);

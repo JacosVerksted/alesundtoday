@@ -1,7 +1,7 @@
 {
-  "name": "Visit Ålesund",
+  "name": "Ålesund Today",
   "short_name": "Ålesund",
-  "description": "Is today a good day to visit Ålesund? Check cruise ship traffic.",
+  "description": "Which cruise ships are in Ålesund today, and how busy will the town be? Schedule, arrival times and best days to visit.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
