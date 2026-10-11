@@ -199,6 +199,7 @@ const dataIsStale = daysSinceUpdate > 14;
     import { getCapacity } from '../lib/ships';
     import { getLang, type Lang } from '../lib/lang';
     import { computeHorizon } from '../lib/horizon';
+    import { portWindow, timeRange, type Visit } from '../lib/visits';
 
     // ── Translations ──────────────────────────────────────────────────────────
 
@@ -222,6 +223,7 @@ const dataIsStale = daysSinceUpdate > 14;
       footer_stale: string;
       footer_data: string;
       footer_weather: string;
+      in_port: string;
       offseason_note: string;
       bestdays_none: string;
       footer_disclaimer: string;
@@ -273,6 +275,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — may be outdated',
         footer_data: 'Data:',
         footer_weather: 'Weather:',
+        in_port: 'In port',
         offseason_note: 'No cruise ships are scheduled at the moment. The port publishes its plan about a month ahead, so check back later.',
         bestdays_none: 'Not enough published schedule to rank days yet.',
         footer_disclaimer: 'Unofficial, independent project — not affiliated with Ålesund kommune or Ålesund Havn. Schedules may change; check with the port.',
@@ -322,6 +325,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — kan være utdatert',
         footer_data: 'Data:',
         footer_weather: 'Vær:',
+        in_port: 'I havn',
         offseason_note: 'Ingen cruiseskip er planlagt akkurat nå. Havnen publiserer planen omtrent en måned i forveien, så sjekk igjen senere.',
         bestdays_none: 'Ikke nok publisert rute til å rangere dager ennå.',
         footer_disclaimer: 'Uoffisielt, uavhengig prosjekt – ikke tilknyttet Ålesund kommune eller Ålesund Havn. Rutene kan endres; sjekk med havna.',
@@ -371,6 +375,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — kan vera utdatert',
         footer_data: 'Data:',
         footer_weather: 'Vêr:',
+        in_port: 'I hamn',
         offseason_note: 'Ingen cruiseskip er planlagde akkurat no. Hamna publiserer planen omtrent ein månad i forvegen, så sjekk att seinare.',
         bestdays_none: 'Ikkje nok publisert rute til å rangere dagar enno.',
         footer_disclaimer: 'Uoffisielt, uavhengig prosjekt – ikkje knytt til Ålesund kommune eller Ålesund Havn. Rutene kan endrast; sjekk med hamna.',
@@ -420,6 +425,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — möglicherweise veraltet',
         footer_data: 'Daten:',
         footer_weather: 'Wetter:',
+        in_port: 'Im Hafen',
         offseason_note: 'Derzeit sind keine Kreuzfahrtschiffe geplant. Der Hafen veröffentlicht den Plan etwa einen Monat im Voraus – bitte später wieder nachsehen.',
         bestdays_none: 'Noch kein veröffentlichter Fahrplan, um Tage zu bewerten.',
         footer_disclaimer: 'Inoffizielles, unabhängiges Projekt – nicht mit der Stadt Ålesund oder dem Hafen Ålesund verbunden. Fahrpläne können sich ändern; im Zweifel beim Hafen nachfragen.',
@@ -469,6 +475,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — mogelijk verouderd',
         footer_data: 'Gegevens:',
         footer_weather: 'Weer:',
+        in_port: 'In de haven',
         offseason_note: 'Er zijn momenteel geen cruiseschepen gepland. De haven publiceert de planning ongeveer een maand van tevoren, dus kom later terug.',
         bestdays_none: 'Nog niet genoeg gepubliceerde planning om dagen te rangschikken.',
         footer_disclaimer: 'Onofficieel, onafhankelijk project – niet verbonden aan de gemeente Ålesund of de haven van Ålesund. Planningen kunnen wijzigen; controleer dit bij de haven.',
@@ -518,6 +525,7 @@ const dataIsStale = daysSinceUpdate > 14;
         footer_stale: ' — peut être obsolète',
         footer_data: 'Données :',
         footer_weather: 'Météo :',
+        in_port: 'Au port',
         offseason_note: 'Aucun paquebot n’est prévu pour le moment. Le port publie son programme environ un mois à l’avance ; revenez plus tard.',
         bestdays_none: 'Pas encore assez de programme publié pour classer les jours.',
         footer_disclaimer: 'Projet non officiel et indépendant – sans lien avec la commune d’Ålesund ni le port d’Ålesund. Les horaires peuvent changer ; vérifiez auprès du port.',
@@ -574,6 +582,12 @@ const dataIsStale = daysSinceUpdate > 14;
           if (key === 'footer_credit') el.innerHTML = val.replace('JacosVerksted', AUTHOR_LINK_HTML);
           else el.textContent = val;
         });
+      });
+
+      // "In port 07:00–21:00"
+      document.querySelectorAll<HTMLElement>('[data-i18n-inport]').forEach((el) => {
+        const w = el.dataset.window ?? '';
+        el.textContent = w ? `${t.in_port} ${w}` : '';
       });
 
       // Ships-in-port count
@@ -758,7 +772,7 @@ const dataIsStale = daysSinceUpdate > 14;
     // both day selection and the daily date-rollover repaint of the top card.
     // Shared schedule cache + status-card renderer (used by day selection and
     // the date-rollover refresh below).
-    type Call = { date: string; ships: string[]; count: number; level: string };
+    type Call = { date: string; ships: string[]; count: number; level: string; visits?: Visit[] };
     let scheduleCache: Call[] | null = null;
     // Latest published call date; later future dates are "not published yet"
     let scheduleHorizon = '';
@@ -845,7 +859,17 @@ const dataIsStale = daysSinceUpdate > 14;
         }
       }
 
+      // "In port 07:00–21:00" summary, from the port's mooring plan when available
+      const visits = call?.visits ?? [];
+      const inPort = document.getElementById('status-inport');
+      if (inPort) {
+        const window = portWindow(visits);
+        inPort.hidden = !window;
+        inPort.dataset.window = window;
+      }
+
       section.querySelector('.flex.flex-wrap.gap-2')?.remove();
+      section.querySelector('.visit-times')?.remove();
       if (ships.length > 0) {
         const div = document.createElement('div');
         div.className = 'flex flex-wrap gap-2';
@@ -856,13 +880,32 @@ const dataIsStale = daysSinceUpdate > 14;
           btn.dataset.ship = ship;
           btn.dataset.capacity = cap !== null ? String(cap) : '';
           btn.setAttribute('aria-label', `View details for ${ship}`);
-          const capHtml = cap !== null
-            ? `<span class="text-gray-400 text-xs">&middot; ${(cap / 1000).toFixed(1)}k pax</span>`
-            : '';
-          btn.innerHTML = `<span>&#128674;</span><span>${ship}</span>${capHtml}`;
+          // Built with textContent, not innerHTML: ship names come from scraped data
+          const icon = document.createElement('span'); icon.textContent = '\u{1F6A2}';
+          const name = document.createElement('span'); name.textContent = ship;
+          btn.append(icon, name);
+          if (cap !== null) {
+            const capEl = document.createElement('span');
+            capEl.className = 'text-gray-400 text-xs';
+            capEl.textContent = `\u00B7\u00A0${(cap / 1000).toFixed(1)}k pax`;
+            btn.append(capEl);
+          }
           div.appendChild(btn);
         });
         section.appendChild(div);
+      }
+      if (visits.length > 0) {
+        const ul = document.createElement('ul');
+        ul.className = 'visit-times mt-3 space-y-1 text-sm text-gray-600';
+        visits.forEach(v => {
+          const li = document.createElement('li');
+          const time = document.createElement('span'); time.className = 'font-medium tabular-nums text-gray-700'; time.textContent = timeRange(v.eta, v.etd);
+          const ship = document.createElement('span'); ship.textContent = ` ${v.ship}`;
+          const bay = document.createElement('span'); bay.className = 'text-gray-400'; bay.textContent = ` \u00B7 ${v.bay}`;
+          li.append(time, ship, bay);
+          ul.appendChild(li);
+        });
+        section.appendChild(ul);
       }
 
       const eyebrow = document.getElementById('status-eyebrow');

@@ -49,7 +49,10 @@ run_node() {  # run_node "<shell command>"  — capped, non-root, no host instal
     -v "$SRC:/app" -w /app "$IMAGE" sh -c "$1"
 }
 
-# 2. Fresh schedule; if the scrape fails keep the last good one rather than fail the site
+# 2. Fresh schedule; if the scrape fails keep the last good one rather than fail the site.
+#    The last good file also seeds the scraper's cache, so mooring-plan PDFs that were
+#    already read (arrival times, berths) are not downloaded again.
+if [ -f "$LAST_GOOD" ]; then cp "$LAST_GOOD" "$SRC/public/schedule.json"; fi
 run_node "npm ci --no-audit --no-fund --loglevel=error"
 if run_node "node scraper/scrape.mjs"; then
   cp "$SRC/public/schedule.json" "$LAST_GOOD"

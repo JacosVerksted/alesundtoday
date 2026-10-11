@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-05T13:10:56.906Z",
+  "generated": "2026-10-11T12:26:55.918Z",
   "source": "https://alesund.havn.no/skipstrafikk/mooringplan-cruise/",
   "calls": [
     {
@@ -5014,7 +5014,18 @@
       ],
       "count": 1,
       "pax": 822,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Trollfjord",
+          "bay": "Storneskaia",
+          "eta": "2026-10-12T11:00",
+          "etd": "2026-10-12T15:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i3b9a2eae-211c-433e-901d-3ad99e5e9f6c/12102026-trollfjord.pdf"
+      ]
     },
     {
       "date": "2026-10-13",
@@ -5023,7 +5034,18 @@
       ],
       "count": 1,
       "pax": 1000,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Midnatsol",
+          "bay": "Storneskaia",
+          "eta": "2026-10-13T11:00",
+          "etd": "2026-10-13T15:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i2663c811-dc1d-4aef-ada6-a9049cb2a713/13102026-midnatsol.pdf"
+      ]
     },
     {
       "date": "2026-10-14",
@@ -5033,7 +5055,24 @@
       ],
       "count": 2,
       "pax": 5184,
-      "level": "busy"
+      "level": "busy",
+      "visits": [
+        {
+          "ship": "AIDAperla",
+          "bay": "Storneskaia",
+          "eta": "2026-10-14T07:00",
+          "etd": "2026-10-14T16:00"
+        },
+        {
+          "ship": "HANSEATIC NATURE",
+          "bay": "Prestebrygga",
+          "eta": "2026-10-14T09:00",
+          "etd": "2026-10-14T13:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i73e4595f-6bbf-4503-a74d-872fd7f7ea7a/14102026-hanseatic-nature-aidaperla.pdf"
+      ]
     },
     {
       "date": "2026-10-15",
@@ -5042,7 +5081,18 @@
       ],
       "count": 1,
       "pax": 1870,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Aurora",
+          "bay": "Storneskaia",
+          "eta": "2026-10-15T08:00",
+          "etd": "2026-10-15T17:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i66714d12-05f6-4724-a5c4-c41405057516/15102026-aurora.pdf"
+      ]
     },
     {
       "date": "2026-10-16",
@@ -5051,7 +5101,18 @@
       ],
       "count": 1,
       "pax": 2996,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Queen Anne",
+          "bay": "Storneskaia",
+          "eta": "2026-10-16T08:00",
+          "etd": "2026-10-16T18:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/id246da3c-ac92-4d6a-b139-3f471a9485ab/16102026-queen-anne.pdf"
+      ]
     },
     {
       "date": "2026-10-19",
@@ -5061,7 +5122,24 @@
       ],
       "count": 2,
       "pax": 3666,
-      "level": "busy"
+      "level": "busy",
+      "visits": [
+        {
+          "ship": "Nieuw Statendam",
+          "bay": "Storneskaia",
+          "eta": "2026-10-19T10:00",
+          "etd": "2026-10-19T21:00"
+        },
+        {
+          "ship": "Finnmarken",
+          "bay": "Prestebrygga",
+          "eta": "2026-10-19T11:00",
+          "etd": "2026-10-19T15:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i26aa3e04-1b65-484f-9016-185cbb748054/19102026-finnmarken-nieuw-statendam.pdf"
+      ]
     },
     {
       "date": "2026-10-20",
@@ -5070,7 +5148,18 @@
       ],
       "count": 1,
       "pax": null,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Ambition",
+          "bay": "Storneskaia",
+          "eta": "2026-10-20T08:00",
+          "etd": "2026-10-20T18:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/iaece110f-6e55-42ca-9734-80bfe4afe927/20102026-ambition.pdf"
+      ]
     },
     {
       "date": "2026-10-21",
@@ -5080,7 +5169,24 @@
       ],
       "count": 2,
       "pax": null,
-      "level": "busy"
+      "level": "busy",
+      "visits": [
+        {
+          "ship": "AIDAnova",
+          "bay": "Prestebrygga",
+          "eta": "2026-10-21T07:00",
+          "etd": "2026-10-21T16:00"
+        },
+        {
+          "ship": "Sky Princess",
+          "bay": "Storneskaia",
+          "eta": "2026-10-21T08:00",
+          "etd": "2026-10-21T17:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i9dc89041-6272-434e-83cf-e6cb8b767108/21102026-aidanova-sky-princess.pdf"
+      ]
     },
     {
       "date": "2026-10-22",
@@ -5089,7 +5195,18 @@
       ],
       "count": 1,
       "pax": null,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Regatta",
+          "bay": "Storneskaia",
+          "eta": "2026-10-22T10:00",
+          "etd": "2026-10-22T18:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/if49881ba-d048-4e1f-90f2-e0ea8f9ddd99/22102026-ms-regatta.pdf"
+      ]
     },
     {
       "date": "2026-10-26",
@@ -5098,7 +5215,18 @@
       ],
       "count": 1,
       "pax": 822,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Trollfjord",
+          "bay": "Storneskaia",
+          "eta": "2026-10-26T11:00",
+          "etd": "2026-10-26T15:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/idfc0cc7e-feb6-4a69-8d16-7802530330fc/26102026-trollfjord.pdf"
+      ]
     },
     {
       "date": "2026-10-27",
@@ -5107,7 +5235,18 @@
       ],
       "count": 1,
       "pax": 1000,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "Midnatsol",
+          "bay": "Storneskaia",
+          "eta": "2026-10-27T11:00",
+          "etd": "2026-10-27T15:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i55b941d1-3e29-4288-b7f2-4b69b92bc5ed/27102026-midnatsol.pdf"
+      ]
     },
     {
       "date": "2026-10-28",
@@ -5116,7 +5255,18 @@
       ],
       "count": 1,
       "pax": 4954,
-      "level": "busy"
+      "level": "busy",
+      "visits": [
+        {
+          "ship": "AIDAperla",
+          "bay": "Storneskaia",
+          "eta": "2026-10-28T07:00",
+          "etd": "2026-10-28T16:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/i081b0613-5cbc-4a2f-aa33-2f4e4e667e78/28102026-aidaperla.pdf"
+      ]
     },
     {
       "date": "2026-10-29",
@@ -5125,7 +5275,18 @@
       ],
       "count": 1,
       "pax": 230,
-      "level": "moderate"
+      "level": "moderate",
+      "visits": [
+        {
+          "ship": "HANSEATIC NATURE",
+          "bay": "Storneskaia",
+          "eta": "2026-10-29T09:00",
+          "etd": "2026-10-29T13:00"
+        }
+      ],
+      "pdfs": [
+        "https://alesund.havn.no/_f/p29/ifcaeed10-ec5d-482a-bb9a-5130a3a81719/29102026-hanseatic-nature.pdf"
+      ]
     }
   ]
 }

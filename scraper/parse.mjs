@@ -13,14 +13,17 @@ function toISO(dd, mm, yyyy) {
 /**
  * Parse the mooringplan HTML page and return cruise call entries.
  * @param {string} html
- * @returns {{ date: string; ships: string[]; count: number; pax: number | null; level: string }[]}
+ * @param {string} [baseUrl] used to resolve relative PDF links
+ * @returns {{ date: string; ships: string[]; count: number; pax: number | null; level: string; pdfs: string[] }[]}
  */
-export function parseMooringplan(html) {
+export function parseMooringplan(html, baseUrl = 'https://alesund.havn.no/') {
   const root = parse(html);
   const anchors = root.querySelectorAll('a[href]');
 
   /** @type {Map<string, Set<string>>} */
   const byDate = new Map();
+  /** @type {Map<string, Set<string>>} */
+  const pdfsByDate = new Map();
 
   for (const a of anchors) {
     const href = a.getAttribute('href') || '';
@@ -56,6 +59,10 @@ export function parseMooringplan(html) {
     for (const ship of ships) {
       byDate.get(iso).add(ship);
     }
+    if (href.includes('.pdf')) {
+      if (!pdfsByDate.has(iso)) pdfsByDate.set(iso, new Set());
+      pdfsByDate.get(iso).add(new URL(href, baseUrl).href);
+    }
   }
 
   const calls = [];
@@ -65,7 +72,7 @@ export function parseMooringplan(html) {
     // Busyness is driven by total passengers in port (PAX); when any ship's
     // capacity is unknown it falls back to the ship-count rule.
     const { pax, level } = dayLevel(ships);
-    calls.push({ date, ships, count, pax, level });
+    calls.push({ date, ships, count, pax, level, pdfs: [...(pdfsByDate.get(date) ?? [])] });
   }
 
   calls.sort((a, b) => a.date.localeCompare(b.date));

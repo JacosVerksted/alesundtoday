@@ -1,5 +1,6 @@
 import rawSchedule from '../../public/schedule.json';
 import { computeHorizon } from './horizon';
+import type { Visit } from './visits';
 
 /** 'unknown' = a future date after the last published call (schedule not out yet). */
 export type BusynessLevel = 'quiet' | 'moderate' | 'busy' | 'very-busy' | 'unknown';
@@ -11,6 +12,8 @@ export interface CruiseCall {
   /** Total passenger capacity in port; null when any ship's PAX is unknown. */
   pax: number | null;
   level: BusynessLevel;
+  /** Berth and arrival/departure per ship, when the port's plan has been read. */
+  visits?: Visit[];
 }
 
 export interface DayInfo extends CruiseCall {
